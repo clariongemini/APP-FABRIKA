@@ -1,0 +1,35 @@
+---
+description: MCP orkestrasyonu — ilk kurulumda zorunlu MCP kontrolü ve ajan-MCP eşlemesi.
+globs: [".cursor/mcp.json", ".cursor/mcp.*", "docs/MCP_SETUP.md"]
+alwaysApply: true
+---
+# MCP ORKESTRATÖR — Ajan Güçlendirme Katmanı
+
+Fabrika ajanları MCP olmadan kısıtlı kalır. **İlk oturumda** ve **her yeni proje bootstrap'inde** MCP kontrolü zorunludur.
+
+## İLK OTURUM PROTOKOLÜ
+
+1. `./scripts/check-mcp.sh` çalıştır (veya kullanıcıdan çalıştırmasını iste)
+2. P0 eksikse:
+   - `docs/MCP_SETUP.md` adımlarını sun
+   - `.cursor/mcp.json.example` → `.cursor/mcp.json` kopyala
+   - GitHub PAT ve browser MCP etkinleştirmesini hatırlat
+3. P0 tamamlanmadan **Android kod üretimine başlama** (belge okuma hariç)
+
+## AJAN → MCP HARİTASI
+
+| Ajan | MCP | Kullanım |
+|------|-----|----------|
+| CPO | Browser, Fetch | Rakip analizi, Play Store, pazar verisi |
+| Mimar | GitHub, Docker | CI durumu, build ortamı |
+| Android Elite | — | Kod üretimi (MCP gerekmez) |
+| Denetçi | GitHub | PR check, CI sonuçları |
+| OEM Denetçi | Browser | Üretici dokümantasyonu, MIUI rehberleri |
+
+## KURULUM KOMUTU
+
+```bash
+./scripts/first-setup.sh
+```
+
+Kaynak: `.cursor/mcp.required.json`

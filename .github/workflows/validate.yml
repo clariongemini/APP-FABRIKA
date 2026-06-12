@@ -1,0 +1,31 @@
+name: Factory Validation
+
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+    branches: [main, master]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Run code validation
+        run: bash scripts/validate-code.sh
+
+      - name: Run 33-layer audit
+        run: bash scripts/audit-layers.sh
+
+      - name: Run layer component audit
+        run: bash scripts/audit-layer-components.sh
+
+      - name: Run OEM compatibility audit
+        run: bash scripts/audit-oem-compat.sh
+
+      - name: Run security audit
+        run: bash scripts/audit-security.sh
+
+      - name: Factory health score
+        run: bash scripts/factory-health.sh

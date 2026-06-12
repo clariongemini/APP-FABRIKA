@@ -1,0 +1,55 @@
+{
+  "factory": "Ulas Autonomous Android APP Factory",
+  "version": "1.0",
+  "description": "Fabrika ajanlarının otonom çalışması için önerilen ücretsiz MCP sunucuları",
+  "required": [
+    {
+      "id": "cursor-ide-browser",
+      "name": "Cursor IDE Browser",
+      "priority": "P0",
+      "agents": ["01-product-cpo", "05-oem-compat-auditor"],
+      "purpose": "Rakip analizi, Play Store inceleme, dokümantasyon doğrulama",
+      "install": "Cursor Settings → MCP → Add → cursor-ide-browser (built-in)",
+      "builtin": true
+    },
+    {
+      "id": "github",
+      "name": "GitHub MCP",
+      "priority": "P0",
+      "agents": ["02-architect", "04-auditor-security"],
+      "purpose": "Repo, Issues, PR, CI durumu, release yönetimi",
+      "install": "npx -y @modelcontextprotocol/server-github",
+      "env": ["GITHUB_PERSONAL_ACCESS_TOKEN"],
+      "package": "@modelcontextprotocol/server-github"
+    }
+  ],
+  "recommended": [
+    {
+      "id": "docker",
+      "name": "Docker MCP",
+      "priority": "P1",
+      "agents": ["02-architect", "04-auditor-security"],
+      "purpose": "İzole Gradle build, CI benzeri ortam, bağımlılık testi",
+      "install": "Cursor Settings → MCP → Docker MCP",
+      "note": "Docker Desktop kurulu olmalı"
+    },
+    {
+      "id": "gitkraken",
+      "name": "GitKraken MCP",
+      "priority": "P1",
+      "agents": ["all"],
+      "purpose": "Git branch, commit, PR, code review",
+      "install": "Cursor Settings → MCP → GitKraken",
+      "note": "Ücretsiz GitKraken hesabı yeterli"
+    },
+    {
+      "id": "fetch",
+      "name": "Fetch MCP",
+      "priority": "P2",
+      "agents": ["01-product-cpo"],
+      "purpose": "Web sayfası / API dokümantasyonu çekme (rakip analizi)",
+      "install": "npx -y @modelcontextprotocol/server-fetch",
+      "package": "@modelcontextprotocol/server-fetch"
+    }
+  ]
+}

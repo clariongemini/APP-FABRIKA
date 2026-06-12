@@ -1,0 +1,45 @@
+# Android
+*.iml
+.gradle/
+build/
+local.properties
+.cxx/
+.externalNativeBuild/
+captures/
+*.apk
+*.aab
+*.ap_
+*.dex
+
+# IDE
+.idea/
+*.swp
+*.swo
+.DS_Store
+
+# Secrets — asla commit etme
+.env
+.env.*
+*.keystore
+*.jks
+google-services.json
+secrets.properties
+
+# Cursor local state
+.cursor/chat/
+.cursor/plans/
+.cursor/mcp.json
+
+# OS
+Thumbs.db
+
+# Factory runtime (proje bazlı — init-new-app.sh sonrası oluşur)
+.factory/project.json
+.factory/sync.json
+docs/01-VISION/PRODUCT_BRIEF.md
+docs/01-VISION/MARKET_ANALYSIS.md
+docs/01-VISION/MONETIZATION.md
+docs/02-ARCHITECTURE/MODULE_MAP.md
+docs/02-ARCHITECTURE/DATA_FLOW.md
+docs/02-ARCHITECTURE/SECURITY.md
+docs/02-ARCHITECTURE/OEM_TEST_REPORT.md

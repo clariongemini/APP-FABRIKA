@@ -1,0 +1,10 @@
+{
+  "name": "Ulas Autonomous Android APP Factory",
+  "type": "factory",
+  "version": "0.5.0",
+  "status": "publish-ready",
+  "agents": 6,
+  "layers": 33,
+  "components": 360,
+  "mcp_required": ["cursor-ide-browser", "github"]
+}

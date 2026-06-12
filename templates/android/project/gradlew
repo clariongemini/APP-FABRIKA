@@ -1,0 +1,7 @@
+#!/bin/sh
+# Gradle wrapper placeholder — scaffold sonrası çalıştır:
+#   gradle wrapper --gradle-version 8.11.1
+# veya Android Studio ile projeyi aç (wrapper otomatik oluşur)
+echo "Gradle wrapper henüz oluşturulmadı."
+echo "Android Studio ile projeyi açın veya: gradle wrapper"
+exit 1
