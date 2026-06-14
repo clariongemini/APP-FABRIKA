@@ -29,6 +29,7 @@ Geliştirici prompt verdiğinde ajan **doğrudan koda atlamaz**. Önce `YAPILACA
 | Bileşen | Dosya |
 |---------|-------|
 | Kural (always) | `.cursor/rules/00-overmind-zero-hallucination.mdc` |
+| Reasoning (v2.1) | `.cursor/rules/19-claude-reasoning.mdc` — rehber: `docs/CLAUDE_REASONING.md` |
 | `/baslat` | `.cursor/commands/baslat.md` |
 | `/devam-et` | `.cursor/commands/devam-et.md` |
 | `/denetle` | `.cursor/commands/denetle.md` |

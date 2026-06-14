@@ -15,7 +15,7 @@ Otomatik güncelleme: `./scripts/factory-health.sh`
 | 7 | Arka Plan & FCM | 10 | WorkManager + FCM şablonu |
 | 8 | OEM / ROM | 10 | Samsung, MIUI matris + OEM modül |
 | 9 | Monetizasyon & Integrity | 10 | Billing + Play Integrity |
-| 10 | Test & CI/CD & Governance | 10 | Maestro + GitHub Actions + audit chain |
+| 10 | Test & CI/CD & Governance | 10 | Maestro + GitHub Actions + audit chain + `run-all-tests.sh` |
 
 ## Tek Komutla Tam Kurulum
 

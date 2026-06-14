@@ -152,6 +152,7 @@ Uygulama sırasında tespit edilen eksikler (otomatik veya ajan önerisi):
 | EK-20260614-07 | F0 | `state-recovery.sh` + `18-state-recovery.mdc` | truncation / yarım Gradle kurtarma | tamamlandı |
 | EK-20260614-08 | F0 | `test/` smoke harness | fabrika adım denetimi + FactorySmoke app | tamamlandı |
 | EK-20260614-09 | F0 | AI Studio bootstrap lab | `bootstrap-external-project.sh` canlı infaz | tamamlandı |
+| EK-20260614-10 | F0 | Dokümantasyon v2.1 denetimi | sürüm hizası + profesyonel dil | tamamlandı |
 
 ---
 

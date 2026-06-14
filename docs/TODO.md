@@ -15,6 +15,7 @@
 - [x] Sürüm 2.1.0-stable senkron
 - [x] `test/run-all-tests.sh` orkestratör + `bootstrap-aistudio-lab.sh`
 - [x] `factory-quality-gate.sh` Toplam/grep düzeltmesi (set -e sessiz exit)
+- [x] Dokümantasyon denetimi — v2.1 tutarlılık, profesyonel dil (Teacher/Jules vb. kaldırıldı)
 
 ## v2.0.0-reasoning-alpha (2026-06-14)
 

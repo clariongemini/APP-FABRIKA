@@ -2,6 +2,8 @@
 
 Composer token truncation veya yarım Gradle/TOML edit sonrası fabrikayı kararlı duruma döndürür.
 
+**Agent handoff:** Recover sonrası `LATEST.recovery.handoff.json` ile ajan küçük batch yeniden yazar — operatör müdahalesi gerekmeden devam edilir.
+
 ## Akış
 
 ```

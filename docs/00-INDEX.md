@@ -24,7 +24,9 @@ Bu dosya fabrika reposunun merkezi hafızasıdır. Uygulama projelerinde `init-n
 | [Executive OS](./EXECUTIVE_OS.md) | CEO V7, hiyerarşik denetim |
 | [YAPILACAKLAR Sistemi](./YAPILACAKLAR_SISTEMI.md) | F0–F8 faz planı, `/baslat` `/devam-et` |
 | [Test harness](../test/README.md) | `run-all-tests.sh` · AI Studio lab · 40+ audit |
-| [33 Katman Anayasa](./33-LAYER-ARCHITECTURE.md) | Sistem DNA'sı (360 bileşen) |
+| [Claude-Native reasoning](./CLAUDE_REASONING.md) | v2.1 — thinking, architecture_check, negative_constraints |
+| [Governance](../governance/README.md) | Executive OS charter dizini · fabrika sürümü |
+| [33 Katman çerçevesi](./33-LAYER-ARCHITECTURE.md) | Sistem DNA'sı (360 bileşen) |
 | [33 Katman Manifest](./33-LAYER-MANIFEST.yaml) | Kaynak doğruluk (tam dosya okuma yasak) |
 | [33 Katman Dilimleri](./33-LAYER-MANIFEST/README.md) | On-demand `layer-NN.yaml` — Cursor context budget |
 | [Cursor Context Budget](./CURSOR_CONTEXT_BUDGET.md) | Token / okuma sırası rehberi |

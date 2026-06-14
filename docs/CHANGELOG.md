@@ -15,9 +15,15 @@
 - `test/bootstrap-aistudio-lab.sh` + `test/fixtures/aistudio-minimal/` — `bootstrap-external-project.sh` dikey doğrulama
 - `test/README.md` — lab ve orkestratör dokümantasyonu
 
-### Fixed
+### Fixed (lab patch)
 
 - `scripts/factory-quality-gate.sh` — `Toplam:` grep eşleşmesi; `set -e` sessiz exit 1
+
+### Docs (v2.1 tutarlılık)
+
+- README, `00-INDEX`, `governance/README` — v2.1.0-stable + Claude-Native reasoning referansları
+- Informal ifadeler kaldırıldı (Teacher/Student, anayasası vb.)
+- Test harness: 40+ audit + `run-all-tests.sh` + AI Studio lab
 
 ### Changed
 
@@ -42,7 +48,7 @@
 
 ### Changed
 
-- `.cursorrules` — Claude-Native protokol özeti (Overmind anayasası)
+- `.cursorrules` — Claude-Native protokol özeti (Overmind merkez kural seti)
 - `00-overmind-zero-hallucination.mdc` — reasoning adımı eklendi
 - `19-aistudio-import` → **`20-aistudio-import.mdc`** (19 numarası reasoning için ayrıldı)
 - `governance/phase-agents.json` — F0 ajan listesine `19-claude-reasoning`
@@ -122,11 +128,11 @@ Aşağıdaki [0.6.0] bölümündeki tüm özellikler bu sürümde birleştirildi
 - `scripts/state-recovery.sh` — `--checkpoint` / `--recover` / `--status`
 - `gradle-build-loop.sh` — pre-build checkpoint + aynı hata ×2 auto-recover
 - `.cursor/rules/18-state-recovery.mdc` — truncation protokolü
-- `docs/STATE_RECOVERY.md` — Teacher/Student recovery akışı
+- `docs/STATE_RECOVERY.md` — agent handoff + selective rollback akışı
 
 ### Factory smoke test
 
-- `test/` — FactorySmoke denetim uygulaması + `run-factory-audit.sh` (32 kontrol)
+- `test/` — FactorySmoke + `run-all-tests.sh` orkestratör + AI Studio lab (40+ audit)
 - `scripts/scaffold-android-project-to.sh` — hedef dizine Android iskelet
 - Scaffold binary copy fix (`gradle-wrapper.jar`)
 - `state-recovery.sh` — `RECOVERY_ROOT` ile alt proje checkpoint
@@ -141,7 +147,7 @@ Aşağıdaki [0.6.0] bölümündeki tüm özellikler bu sürümde birleştirildi
 
 - `docs/AI_STUDIO_IMPORT.md` — Stitch → AI Studio → Fabrika iş akışı
 - `scripts/bootstrap-external-project.sh` — harici proje bootstrap (sync + governance + YAPILACAKLAR)
-- `.cursor/commands/import-aistudio.md` + `19-aistudio-import.mdc`
+- `.cursor/commands/import-aistudio.md` + `20-aistudio-import.mdc`
 - **Eklenmedi:** `auto-bootstrap.sh` / `alwaysApply` lifecycle (Cursor on-load yok; over-orchestration riski)
 
 ### ADR-009: Executive Operating System

@@ -380,7 +380,8 @@ The entire flow is governed by a **zero-hallucination protocol** and the **YAPIL
 | **16 AI Ajanı** (`.cursor/rules/`) | Uzmanlaşmış departmanlar | Her ajan belirli katmanlardan sorumlu; tek başına nihai onay veremez |
 | **Executive OS** (`governance/`) | CEO V7, sprint lock, denetim | Karar → teslimat → ölçüm zinciri; runtime dosyalar proje bazlı üretilir |
 | **YAPILACAKLAR** (`YAPILACAKLAR.md`) | F0–F8 faz planı | Aynı anda tek faz `işleniyor`; L1 doğrulama zorunlu |
-| **33 Katman** (`docs/33-LAYER-ARCHITECTURE.md`) | Sistem anayasası | 360 bileşen manifest ile otomatik denetlenir |
+| **33 Katman** (`docs/33-LAYER-ARCHITECTURE.md`) | Merkezi katman çerçevesi | 360 bileşen manifest ile otomatik denetlenir |
+| **Claude-Native reasoning** (`docs/CLAUDE_REASONING.md`) | v2.1 yapılandırılmış akıl yürütme | `19-claude-reasoning.mdc` — thinking, architecture_check, negative_constraints |
 | **13 Standart** (`docs/03-STANDARDS/`) | Liquid Glass, i18n, Security… | Kod ve belge üretiminde referans; ihlal = süreç durur |
 | **Android İskeleti** (`templates/android/project/`) | 10 Gradle modülü | Hilt, Room, Billing, FCM, OEM, Compose tema hazır |
 | **MCP** (Browser + GitHub P0) | Gerçek dünya yetenekleri | Pazar araştırması, CI/PR, dokümantasyon doğrulama |

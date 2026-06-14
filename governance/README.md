@@ -2,6 +2,13 @@
 
 Portable governance layer for **any** Android project bootstrapped from the Factory.
 
+| Alan | Değer |
+|------|-------|
+| Fabrika sürümü | **v2.1.0-stable** |
+| Claude-Native reasoning | v2.1 — `docs/CLAUDE_REASONING.md`, kural `19-claude-reasoning.mdc` |
+| Önceki reasoning sürümü | v2.0.0-reasoning-alpha (CHANGELOG geçmişi) |
+| Executive OS | 7.0 |
+
 ## Purpose
 
 Enforce the chain:
