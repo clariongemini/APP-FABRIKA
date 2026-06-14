@@ -32,6 +32,15 @@
 
 - `README.md` — kapsamlı TR/EN rehber, Cursor entegrasyonu, Mermaid diyagramlar, kullanıcı yolculuğu
 
+### Cursor 10/10 bridge (v0.6.3)
+
+- `scripts/gradle-build-loop.sh` — Gradle assembleDebug + stacktrace + retry + log snapshot
+- `scripts/run-maestro.sh` — Maestro E2E terminal köprüsü
+- `.cursor/snapshots/` — MCP handoff + build/maestro kanıt dizini
+- `docs/CURSOR_TERMINAL_BRIDGE.md` — Cursor IDE sınırları ve protokol
+- `00-overmind`, `02-architect`, `03-android`, `04-auditor`, `06-mcp`, `01-cpo` — build loop + glob optimizasyonu
+- `16-analytics` — proje-özel glob kaldırıldı
+
 ### ADR-009: Executive Operating System
 
 **Durum:** Kabul edildi  

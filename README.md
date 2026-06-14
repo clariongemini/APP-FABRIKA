@@ -220,13 +220,29 @@ sequenceDiagram
 ```
 09:00  cursor .                          → Proje açılır, Overmind kuralları yüklenir
 09:05  /baslat "Offline habit tracker…"  → YAPILACAKLAR oluşur, F0 başlar
-09:30  Agent: CPO pazar analizi          → MCP Browser → Play Store rakipleri
+09:30  Agent: CPO pazar analizi          → MCP Browser → .cursor/snapshots/mcp/
 10:00  Agent: Mimar MODULE_MAP           → 10 modül yapısı onaylanır
 11:00  /devam-et                         → F3 Android iskelet doğrulanır
+11:30  ./scripts/gradle-build-loop.sh    → Derleme kanıtı (LATEST.gradle.log)
 14:00  Agent: Android Compose UI         → Liquid Glass tema uygulanır
+14:30  ./scripts/gradle-build-loop.sh    → Hata varsa log okunur, düzeltilir
 16:00  /denetle                          → CAO audit, OEM matris kontrol
 17:00  ./scripts/factory-quality-gate.sh → 100/100 kalite kapısı
 ```
+
+### Cursor terminal köprüsü (10/10 için)
+
+Cursor IDE **derleme ve emülatör görmez**. Fabrika terminal script'leri ile kapatır:
+
+| Script | Amaç |
+|--------|------|
+| [`scripts/gradle-build-loop.sh`](scripts/gradle-build-loop.sh) | `./gradlew assembleDebug --stacktrace` + retry + log snapshot |
+| [`scripts/run-maestro.sh`](scripts/run-maestro.sh) | Maestro E2E (adb + cihaz gerekir) |
+| [`.cursor/snapshots/`](.cursor/snapshots/README.md) | MCP handoff + build log kanıtı |
+
+Detay: [`docs/CURSOR_TERMINAL_BRIDGE.md`](docs/CURSOR_TERMINAL_BRIDGE.md)
+
+**Gradle edit sırası (Composer):** `libs.versions.toml` → `build.gradle.kts` → `AndroidManifest.xml` → `.kt`
 
 ---
 

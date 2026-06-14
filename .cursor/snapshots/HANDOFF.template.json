@@ -1,0 +1,22 @@
+{
+  "schema": "factory-mcp-handoff-v1",
+  "agent": "01-product-cpo",
+  "task": "Play Store competitor scan",
+  "created_at": "2026-01-01T00:00:00Z",
+  "sources": [
+    {
+      "type": "mcp-browser",
+      "url": "https://play.google.com/store/apps/details?id=example",
+      "summary": "One-line evidence summary"
+    }
+  ],
+  "findings": [
+    "Finding 1 with evidence",
+    "Finding 2 with evidence"
+  ],
+  "next_agent": "02-architect",
+  "next_action": "Update MODULE_MAP.md with feature boundaries",
+  "artifacts_written": [
+    "docs/01-VISION/MARKET_ANALYSIS.md"
+  ]
+}

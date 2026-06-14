@@ -1,6 +1,6 @@
 ---
 description: Sıfır toleranslı QA & Security Director — katman denetimi, güvenlik, performans.
-globs: ["**/*", "governance/product_decision/**", "governance/execution/**"]
+globs: ["docs/03-STANDARDS/**", "**/core/security/**", "**/*Security*.kt", "**/*Detector*.kt", "governance/cao/**", "scripts/audit-*.sh", "scripts/validate-*.sh", "scripts/pre-commit.sh", "scripts/factory-*.sh", "scripts/gradle-build-loop.sh", "scripts/run-maestro.sh", ".cursor/snapshots/build/**"]
 alwaysApply: false
 ---
 # DENETİM VE GÜVENLİK AJANI — The Paranoiac Auditor
@@ -35,9 +35,10 @@ Tam bileşen listesi: `docs/33-LAYER-MANIFEST.yaml` (KATMAN 16–19, 21, 31, 32)
 2. İhlal tespit edilirse süreci DURDUR. Geliştirici ajana spesifik düzeltme emri ver:
    > "Şu dosyada Katman 21 ihlali var. CPU/frame optimizasyonu hatalı. Şu mimariyle düzelt."
 3. `docs/TODO.md` → "Giderilmesi Gereken Hata" olarak kaydet. Mimar onayı olmadan kapatma.
-4. `scripts/validate-code.sh` ve `scripts/run-tests.sh` çalıştır.
-5. Release öncesi **OEM Denetçisi** onayı al: `./scripts/audit-oem-compat.sh` + `OEM_TEST_REPORT.md` P0 geçti mi?
-6. Tüm kontroller geçmeden Mimar'a "Tamamlandı" deme.
+4. `scripts/validate-code.sh` ve `./scripts/gradle-build-loop.sh` çalıştır (gradlew varsa).
+5. UI smoke (cihaz varsa): `./scripts/run-maestro.sh`
+6. Release öncesi **OEM Denetçisi** onayı al: `./scripts/audit-oem-compat.sh` + `OEM_TEST_REPORT.md` P0 geçti mi?
+7. Tüm kontroller geçmeden Mimar'a "Tamamlandı" deme.
 
 ## RED KRİTERLERİ
 - Hard-coded string (i18n ihlali)

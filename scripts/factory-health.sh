@@ -68,9 +68,13 @@ check_exec "scripts/governance/init-governance.sh" && c=$((c + 1))
 check_exec "scripts/ceo/run_ceo_cycle.sh" && c=$((c + 1))
 check_exec "scripts/bootstrap-gradle-wrapper.sh" && c=$((c + 1))
 check_exec "scripts/setup-mcp.sh" && c=$((c + 1))
+check_exec "scripts/gradle-build-loop.sh" && c=$((c + 1))
+check_exec "scripts/run-maestro.sh" && c=$((c + 1))
+check_file "docs/CURSOR_TERMINAL_BRIDGE.md" && c=$((c + 1))
+check_file ".cursor/snapshots/README.md" && c=$((c + 1))
 bash "$ROOT/scripts/validate-android-template.sh" &>/dev/null && c=$((c + 1))
 bash "$ROOT/scripts/governance/validate-factory-governance.sh" &>/dev/null && c=$((c + 1))
-report "Kullanışlılık (DX)" $c 17
+report "Kullanışlılık (DX)" $c 21
 
 # 4. Kod Tasarımı
 c=0

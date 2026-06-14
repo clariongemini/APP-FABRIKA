@@ -125,6 +125,8 @@ Uygulama sırasında tespit edilen eksikler (otomatik veya ajan önerisi):
 | EK-20260614-02 | F0 | `governance/FACTORY_REPO_POLICY.md` | runtime vs git ayrımı | tamamlandı |
 | EK-20260614-03 | F0 | `scripts/factory-quality-gate.sh` | 100/100 kalite kapısı | tamamlandı |
 | EK-20260614-04 | F3 | BillingRepository Hilt context | derlenebilir şablon | tamamlandı |
+| EK-20260614-05 | F0 | `gradle-build-loop.sh` + snapshots | Cursor terminal köprüsü | tamamlandı |
+| EK-20260614-06 | F0 | MCP handoff + auditor glob | context optimizasyonu | tamamlandı |
 
 ---
 

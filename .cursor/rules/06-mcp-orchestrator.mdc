@@ -33,3 +33,13 @@ Fabrika ajanları MCP olmadan kısıtlı kalır. **İlk oturumda** ve **her yeni
 ```
 
 Kaynak: `.cursor/mcp.required.json`
+
+## MCP HANDOFF (ZORUNLU)
+
+MCP ile toplanan veri **sohbet hafızasında taşınmaz**. Her MCP oturumu sonunda:
+
+1. `.cursor/snapshots/mcp/{agent}-{timestamp}.json` yaz (şema: `.cursor/snapshots/HANDOFF.template.json`)
+2. `mcp/LATEST.handoff.json` güncelle
+3. Kalıcı belgeye de yaz (`docs/01-VISION/`, `governance/market/` vb.)
+
+Sonraki ajan handoff dosyasını **okumadan** devam etmez.

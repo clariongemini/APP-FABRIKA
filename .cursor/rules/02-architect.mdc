@@ -43,3 +43,13 @@ Tam bileşen listesi: `docs/33-LAYER-MANIFEST.yaml` (KATMAN 7–15, 20, 23–24,
 
 ## KURAL
 Ürün belgeleri tamamlanmadan mimari çizime başlama. Mimari onaysız kod yazdırma.
+
+## GRADLE BAĞIMLILIK KİLİDİ (Composer / Cursor)
+
+Yeni kütüphane veya modül eklerken **sıra değiştirilemez**:
+
+```
+gradle/libs.versions.toml  →  module/build.gradle.kts  →  settings.gradle.kts  →  Kotlin/XML
+```
+
+Android Elite'e `.kt` değişikliği devretmeden önce catalog + Gradle dosyalarının tutarlı olduğunu doğrula.

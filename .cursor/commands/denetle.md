@@ -12,6 +12,8 @@ Aktif faz veya son tamamlanan faz — kullanıcı belirtmezse aktif faz.
 python3 scripts/governance/validate-yapilacaklar.py
 python3 scripts/governance/validate-audit-chain.py
 python3 scripts/execution/validate_roadmap_consumption.py
+./scripts/gradle-build-loop.sh 2>/dev/null || true
+./scripts/run-maestro.sh 2>/dev/null || true
 python3 scripts/cao/run_cao_audit.py 2>/dev/null || true
 ./scripts/agent-approval-gate.sh 2>/dev/null || true
 ```

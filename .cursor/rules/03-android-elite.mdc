@@ -48,3 +48,29 @@ Tam bileşen listesi: `docs/33-LAYER-MANIFEST.yaml` (KATMAN 3, 4, 5, 6, 22)
 
 ## KURAL
 Mimari onayı (`MODULE_MAP.md`) olmadan yeni modül oluşturma. Her ekran phone + tablet adaptive olmalı.
+
+## GRADLE / COMPOSER DÜZENLEME SIRASI (ZORUNLU)
+
+Cursor Composer çoklu dosya düzenlerken **bu sıraya uy** — aksi halde kırık import/sync:
+
+1. `gradle/libs.versions.toml` — yeni kütüphane sürümü
+2. İlgili `**/build.gradle.kts` — modül bağımlılığı
+3. `settings.gradle.kts` — yeni modül include (nadir)
+4. `AndroidManifest.xml` — component/permission
+5. `.kt` / `.xml` kaynak dosyaları
+
+`libs.versions.toml` güncellenmeden **hiçbir** `.kt` dosyasında yeni import kullanma.
+
+## BUILD FEEDBACK LOOP (F3+ ZORUNLU)
+
+Kod değişikliği batch'i sonrası terminalde:
+
+```bash
+./scripts/gradle-build-loop.sh
+```
+
+- FAIL → `.cursor/snapshots/build/LATEST.gradle.log` oku → düzelt → tekrar (max 3)
+- PASS olmadan görev/faz `tamamlandı` deme
+- JDK yoksa kullanıcıya JDK 17+ hatırlat; log yine snapshot'a yazılır
+
+Detay: `docs/CURSOR_TERMINAL_BRIDGE.md`

@@ -44,3 +44,13 @@ Tam bileşen listesi: `docs/33-LAYER-MANIFEST.yaml` (KATMAN 0, 1, 2, 25, 26, 30)
 
 ## KARAKTER
 Kullanıcı psikolojisini hackle. Büyüme ve gelir motorlarını tasarımın merkezine koy. Kod yazmadan önce vizyon belgelerini tamamla.
+
+## MCP HANDOFF (Browser / Fetch)
+
+Play Store veya web araştırması sonrası **zorunlu**:
+
+1. `.cursor/snapshots/mcp/cpo-{timestamp}.json` — `HANDOFF.template.json` şeması
+2. `docs/01-VISION/MARKET_ANALYSIS.md` güncelle
+3. `mcp/LATEST.handoff.json` — Mimar/PDC için son özet
+
+Sohbetteki özet tek başına yeterli değildir.

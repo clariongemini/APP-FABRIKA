@@ -42,6 +42,7 @@ SYNC_ITEMS=(
   "docs/BOOTSTRAP.md"
   "docs/EXECUTIVE_OS.md"
   "docs/YAPILACAKLAR_SISTEMI.md"
+  "docs/CURSOR_TERMINAL_BRIDGE.md"
   "docs/MCP_SETUP.md"
   "docs/RELEASE_CHECKLIST.md"
   "docs/FACTORY_SCORECARD.md"

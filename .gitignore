@@ -29,6 +29,11 @@ secrets.properties
 .cursor/chat/
 .cursor/plans/
 .cursor/mcp.json
+.cursor/snapshots/build/
+.cursor/snapshots/maestro/
+.cursor/snapshots/mcp/
+!.cursor/snapshots/README.md
+!.cursor/snapshots/HANDOFF.template.json
 
 # OS
 Thumbs.db

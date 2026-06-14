@@ -7,8 +7,11 @@ cd "$ROOT"
 echo "==> Test çalıştırılıyor..."
 
 if [[ -f "$ROOT/gradlew" ]]; then
-  "$ROOT/gradlew" test --quiet
-  echo "==> Gradle testleri tamamlandı."
+  if [[ "${GRADLE_LOOP_STRICT:-}" == "1" ]]; then
+    bash "$ROOT/scripts/gradle-build-loop.sh" --strict
+  else
+    bash "$ROOT/scripts/gradle-build-loop.sh"
+  fi
 else
-  echo "==> Henüz Android projesi yok — test atlandı."
+  echo "==> Henüz Android projesi yok — gradle build loop atlandı."
 fi
