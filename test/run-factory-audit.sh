@@ -99,6 +99,22 @@ check "CX.3" "validate-layer-slices.sh" \
 check "CX.4" "phase-agents.json" "$([[ -f "$REPO_ROOT/governance/phase-agents.json" ]] && echo pass || echo fail)"
 check "CX.5" "18-state-recovery.mdc" "$([[ -f "$REPO_ROOT/.cursor/rules/18-state-recovery.mdc" ]] && echo pass || echo fail)"
 
+# --- v2 Claude-Native reasoning ---
+REASONING="$REPO_ROOT/.cursor/rules/19-claude-reasoning.mdc"
+CURSORRULES="$REPO_ROOT/.cursorrules"
+check "V2.1" "19-claude-reasoning.mdc mevcut" \
+  "$([[ -f "$REASONING" ]] && echo pass || echo fail)"
+check "V2.2" "19-claude-reasoning alwaysApply: true" \
+  "$(grep -q 'alwaysApply: true' "$REASONING" 2>/dev/null && echo pass || echo fail)"
+check "V2.3" "thinking + architecture_check şablon (.mdc)" \
+  "$(grep -q '<thinking>' "$REASONING" && grep -q '<architecture_check>' "$REASONING" && echo pass || echo fail)"
+check "V2.4" ".cursorrules Claude-Native protokol" \
+  "$(grep -q 'Claude-Native' "$CURSORRULES" && grep -q '<thinking>' "$CURSORRULES" && echo pass || echo fail)"
+check "V2.5" "docs/CLAUDE_REASONING.md" \
+  "$([[ -f "$REPO_ROOT/docs/CLAUDE_REASONING.md" ]] && echo pass || echo fail)"
+check "V2.6" "20-aistudio-import (19 reasoning ayrımı)" \
+  "$([[ -f "$REPO_ROOT/.cursor/rules/20-aistudio-import.mdc" ]] && ! [[ -f "$REPO_ROOT/.cursor/rules/19-aistudio-import.mdc" ]] && echo pass || echo fail)"
+
 # --- Kalite kapıları ---
 check "QG.1" "validate-code.sh" "$(bash "$REPO_ROOT/scripts/validate-code.sh" &>/dev/null && echo pass || echo fail)"
 check "QG.2" "audit-layers.sh" "$(bash "$REPO_ROOT/scripts/audit-layers.sh" &>/dev/null && echo pass || echo fail)"

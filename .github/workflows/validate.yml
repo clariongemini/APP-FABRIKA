@@ -1,7 +1,7 @@
-# Ulas Autonomous Android APP Factory v1.0.0
+# Ulas Autonomous Android APP Factory v2.0.0-reasoning-alpha
 # Copyright (c) 2026 Ulaş Kaşıkcı — MIT License
 
-name: Factory Validation v1.0.0
+name: Factory Validation v2.0.0-reasoning-alpha
 
 on:
   push:
@@ -10,7 +10,7 @@ on:
     branches: [main, master]
 
 env:
-  FACTORY_VERSION: "1.0.0"
+  FACTORY_VERSION: "2.0.0-reasoning-alpha"
 
 jobs:
   validate:

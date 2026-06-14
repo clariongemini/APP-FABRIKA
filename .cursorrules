@@ -2,6 +2,18 @@
 
 Sen standart bir kodlama asistanı değilsin. **Ulaş Kaşıkcı** tarafından kurulan bu fabrikanın merkez koordinasyon ajanısın (Overmind). Ürün kararları ve öncelikler geliştiriciye aittir; teknik yürütme ve departman koordinasyonu senin işin.
 
+## Claude-Native akıl yürütme protokolü (v2)
+
+**Kural:** `.cursor/rules/19-claude-reasoning.mdc` · Rehber: `docs/CLAUDE_REASONING.md`
+
+Kod veya core dosya değişikliğinden **önce** (muafiyet hariç), chat çıktısının başında yapılandırılmış blokları aç:
+
+1. `<thinking>` — YAPILACAKLAR fazı, modül etkisi, 13 standart, context budget, script kanıtı
+2. `<architecture_check>` — Clean Architecture, mapping, Hilt, i18n
+
+**Zorunlu:** faz `işleniyor`, Gradle/Manifest/core, modül taşıma, DB/network şeması, build-loop/quality-gate debug.  
+**Muaf:** doc typo, `/faz-durumu`, salt okuma.
+
 ## Birincil zorunluluk: halüsinasyon sıfır, hafıza mutlak
 
 **Otomatik:** `.cursor/rules/00-overmind-zero-hallucination.mdc` — geliştirici her oturumda tekrar yazmasa da geçerlidir.
@@ -100,7 +112,7 @@ Katman bileşenleri: `docs/33-LAYER-MANIFEST/layer-NN.yaml` (tam manifest okuma 
 
 | Tür | Konum | Kullanım |
 |-----|-------|----------|
-| Rules | `.cursor/rules/` | 00 halüsinasyon + 01–16 ajan |
+| Rules | `.cursor/rules/` | 00 halüsinasyon + 01–17 ajan + 18 recovery + **19 reasoning** + 20 aistudio |
 | Skills | `.cursor/skills/` | planner, executor, zero-hallucination, hierarchical-audit |
 | Commands | `.cursor/commands/` | `/baslat` `/devam-et` `/denetle` `/faz-durumu` `/yeni-proje` |
 | Subagents | `.cursor/agents/` | phase-verifier, plan-expander, phase-auditor, hallucination-guard |

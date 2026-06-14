@@ -14,7 +14,8 @@ Bu kural **her oturumda otomatik** uygulanır. Geliştirici uyarı yazmasa bile 
 3. **Halüsinasyon sıfır:** Var olmayan dosya, sınıf, API, script veya governance kaydı **uydurma**. Okumadan referans verme.
 4. **Araç zorunluluğu:** Dosya içeriği, grep, glob, terminal — tahmin değil kanıt.
 5. **Tek faz kuralı:** Aynı anda yalnızca **bir** faz `işleniyor` olabilir.
-6. **Build kanıtı (F3+):** Android/Gradle değişikliği sonrası `./scripts/gradle-build-loop.sh` çalıştır. FAIL → `.cursor/snapshots/build/LATEST.gradle.log` oku; aynı parse hatası tekrarlanırsa `./scripts/state-recovery.sh --recover`. PASS olmadan F3+ satırını `tamamlandı` yapma.
+6. **Claude-Native reasoning (v2):** Kod/core değişikliği öncesi `19-claude-reasoning.mdc` — `<thinking>` + `<architecture_check>` (muafiyetler hariç). Rehber: `docs/CLAUDE_REASONING.md`.
+7. **Build kanıtı (F3+):** Android/Gradle değişikliği sonrası `./scripts/gradle-build-loop.sh` çalıştır. FAIL → `.cursor/snapshots/build/LATEST.gradle.log` oku; aynı parse hatası tekrarlanırsa `./scripts/state-recovery.sh --recover`. PASS olmadan F3+ satırını `tamamlandı` yapma.
 
 ## Cursor terminal köprüsü
 
@@ -76,4 +77,5 @@ Her görev satırında: **Ajan** · **L1 üst denetim** · **Kabul kriteri**
 - `/devam-et` — aktif fazdan devam
 - `/denetle` — hiyerarşik denetim
 - `/faz-durumu` — özet
-- Skill: `.cursor/skills/yapilacaklar-planner/`, `yapilacaklar-executor/`, `zero-hallucination/`
+- Skill: `.cursor/skills/yapilacaklar-planner/`, `yapilacaklar-executor/`, `zero-hallucination/`, `hierarchical-audit/`
+- Reasoning (v2): `19-claude-reasoning.mdc` · `docs/CLAUDE_REASONING.md`

@@ -8,6 +8,7 @@ Cursor Agent'ın context penceresi sınırlıdır. Fabrika **minimum kanıt, mak
 2. **YAPILACAKLAR.md her oturum başında** — aktif faz + `Aktif ajanlar` satırı.
 3. **MCP çıktısı sohbete değil dosyaya** — `.cursor/snapshots/mcp/LATEST.handoff.json`.
 4. **Build kanıtı log dosyasından** — `.cursor/snapshots/build/LATEST.gradle.log`.
+5. **v2 reasoning (zorunlu tetikleyicide)** — `<thinking>` + `<architecture_check>` aç; muafiyetlerde açma. Rehber: `docs/CLAUDE_REASONING.md`.
 
 ## Oturum başlangıcı (her zaman)
 

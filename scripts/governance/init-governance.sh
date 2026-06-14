@@ -10,7 +10,7 @@ APP_NAME="${1:-}"
 PACKAGE_NAME="${2:-}"
 SLUG="${3:-}"
 DATE="$(date +%Y-%m-%d)"
-FACTORY_VERSION="1.0.0"
+FACTORY_VERSION="2.0.0-reasoning-alpha"
 
 if [[ -z "$APP_NAME" || -z "$PACKAGE_NAME" ]]; then
   if [[ -f "$ROOT/.factory/project.json" ]]; then

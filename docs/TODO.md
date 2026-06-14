@@ -8,6 +8,12 @@
 - [ ] MCP: `.cursor/mcp.json` + GitHub PAT + Browser etkin
 - [ ] Template repository ayarı GitHub Settings'te doğrula
 
+## v2.0.0-reasoning-alpha (2026-06-14)
+
+- [x] 19-claude-reasoning.mdc + docs/CLAUDE_REASONING.md
+- [x] 20-aistudio-import renumaralandırma
+- [x] run-factory-audit V2.* kontrolleri
+
 ## v1.0.0 (2026-06-14)
 
 - [x] Editorial geçiş + Ulaş Kaşıkcı attribution

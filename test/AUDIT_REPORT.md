@@ -1,6 +1,6 @@
 # Factory Audit Report — FactorySmoke
 
-> Oluşturulma: 2026-06-14T16:48:23+0300  
+> Oluşturulma: 2026-06-14T18:39:51+0300  
 > Fabrika: `/Users/ulas/Desktop/Repo`  
 > Smoke app: `test/factory-smoke-app`
 
@@ -8,11 +8,11 @@
 
 | Metrik | Değer |
 |--------|-------|
-| ✅ Geçti | 32 |
+| ✅ Geçti | 37 |
 | ❌ Başarısız | 0 |
-| ⚠️ Uyarı | 0 |
+| ⚠️ Uyarı | 1 |
 | ⏭️ Atlandı | 1 |
-| **Başarı oranı** | **96%** (fail hariç) |
+| **Başarı oranı** | **94%** (fail hariç) |
 
 ## Adım denetimi
 
@@ -45,11 +45,17 @@
 | CX.3 | validate-layer-slices.sh | ✅ pass |  |
 | CX.4 | phase-agents.json | ✅ pass |  |
 | CX.5 | 18-state-recovery.mdc | ✅ pass |  |
+| V2.1 | 19-claude-reasoning.mdc mevcut | ✅ pass |  |
+| V2.2 | 19-claude-reasoning alwaysApply: true | ✅ pass |  |
+| V2.3 | thinking + architecture_check şablon (.mdc) | ✅ pass |  |
+| V2.4 | .cursorrules Claude-Native protokol | ✅ pass |  |
+| V2.5 | docs/CLAUDE_REASONING.md | ✅ pass |  |
+| V2.6 | 20-aistudio-import (19 reasoning ayrımı) | ✅ pass |  |
 | QG.1 | validate-code.sh | ✅ pass |  |
 | QG.2 | audit-layers.sh | ✅ pass |  |
 | QG.3 | audit-layer-components.sh | ✅ pass |  |
 | QG.4 | factory-health.sh 100 | ✅ pass |  |
-| QG.5 | factory-quality-gate.sh | ✅ pass | MCP yerel uyarı olabilir |
+| QG.5 | factory-quality-gate.sh | ⚠️ warn | MCP yerel uyarı olabilir |
 | BUILD | factory-smoke-app assembleDebug | ⏭️ skip | JDK yok veya gradlew eksik — docs/BOOTSTRAP.md JDK 17+ |
 
 ## Fabrika akışı (uygulanması gerekenler)

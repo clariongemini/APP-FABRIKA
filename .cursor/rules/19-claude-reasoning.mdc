@@ -1,0 +1,60 @@
+---
+description: Claude-Native yapılandırılmış akıl yürütme — thinking & architecture_check (v2)
+alwaysApply: true
+---
+# Claude-Native Akıl Yürütme Protokolü (v2)
+
+Tüm departman ajanları (01–17, 18-state-recovery) **kendi kural setini uygulamadan önce** bu süzgeci uygular.  
+Executive OS, YAPILACAKLAR faz kapısı ve `00-overmind-zero-hallucination` **üstünde değil — onlarla birlikte** çalışır.
+
+Rehber: `docs/CLAUDE_REASONING.md`
+
+## Ne zaman zorunlu?
+
+Aşağıdakilerden **biri** geçerliyse, kullanıcıya görünür çıktının **en başında** `<thinking>` ve `<architecture_check>` bloklarını aç; kod/dosya değişikliğinden **önce** doldur:
+
+1. YAPILACAKLAR fazı `işleniyor` olarak güncellendi veya yeni faz görevi başlatıldı
+2. **Core dosyalar:** `*.gradle.kts`, `AndroidManifest.xml`, `libs.versions.toml`, Hilt modül `@Module`, Room `@Database`, Navigation graph
+3. Modüller arası kod taşıma veya yeni Gradle modülü
+4. Veritabanı / ağ katmanı şeması (Entity, DAO, DTO, API interface)
+5. `factory-quality-gate.sh` veya `gradle-build-loop.sh` hata ayıklama (rewrite loop önleme)
+6. F3+ Android kod batch'i (Compose ekran, repository, use-case)
+
+## Ne zaman muaf?
+
+Token bütçesini korumak için **blok açma**:
+
+- Yazım/noktalama, yalnızca markdown/doc typo
+- `/faz-durumu` özet raporu (kod yok)
+- Salt okuma / soru-cevap (dosya değişikliği yok)
+- `validate-*.sh` / audit script çıktısını kullanıcıya aktarma
+
+## Şablon (kopyala — maddeleri doldur)
+
+```xml
+<thinking>
+- Aktif YAPILACAKLAR.md fazı ve görevin kapsamı nedir?
+- Bu görevin etkilediği Gradle modülleri hangileridir? Modüller arası bağımlılık sınırları ihlal ediliyor mu?
+- 13 Teknik Standarttan hangileri (i18n, Liquid Glass, Security, OEM…) bu görev için bağlayıcıdır?
+- Context budget: yalnızca ilgili layer-NN.yaml dilimi mi okunuyor? (tam manifest yasak)
+- Sonraki adım: hangi script kanıtı gerekir? (gradle-build-loop / state-recovery)
+</thinking>
+
+<architecture_check>
+- Üretilecek kodun girdi/çıktı tipleri Clean Architecture (data → domain → presentation) ile uyumlu mu?
+- DTO → Entity → Domain mapping noktalarında mantıksal boşluk var mı?
+- Hilt: @Module / @Inject / @AndroidEntryPoint / @HiltViewModel eksiksiz planlandı mı?
+- i18n: hard-coded string yok; locale JSON anahtarları tanımlı mı?
+</architecture_check>
+```
+
+## Rewrite loop önleme
+
+1. Gradle parse hatası → log oku → **tek dosya** düzelt → `gradle-build-loop.sh` tekrar
+2. Aynı hata 2× → `state-recovery.sh --recover` (YAPILACAKLAR fazını değiştirme)
+3. `<architecture_check>` geçmeden geniş refactor yasak
+
+## Denetim
+
+- Statik: `test/run-factory-audit.sh` (V2.* satırları)
+- CAO / F8: reasoning blokları kod batch'inde atlandıysa görev `tamamlandı` sayılmaz

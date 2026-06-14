@@ -4,7 +4,7 @@ set -euo pipefail
 ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd)"
 TPL="$ROOT/templates/YAPILACAKLAR.template.md"
 OUT="$ROOT/YAPILACAKLAR.md"
-FACTORY_VERSION="1.0.0"
+FACTORY_VERSION="2.0.0-reasoning-alpha"
 DATE="$(date +%Y-%m-%d)"
 
 APP_NAME="Factory"

@@ -61,7 +61,7 @@ cat > "$REPO_ROOT/test/.factory/project.json" <<EOF
   "app_name": "$APP_NAME",
   "package_name": "$PACKAGE",
   "purpose": "factory-smoke-test",
-  "factory_version": "1.0.0",
+  "factory_version": "2.0.0-reasoning-alpha",
   "initialized_at": "$DATE"
 }
 EOF

@@ -9,7 +9,7 @@
 | Proje | Factory |
 | Package | `com.ulas.factory` |
 | Yazar | [Ulaş Kaşıkcı](docs/AUTHOR.md) |
-| Fabrika sürümü | v1.0.0 |
+| Fabrika sürümü | v2.0.0-reasoning-alpha |
 | Oluşturulma | 2026-06-14 |
 | Aktif faz | **F1 — Kolon & Taşıyıcı** |
 | Aktif ajanlar | `01-product-cpo`, `09-product-decision-council`, `17-marketing-growth`, `10-mavi-okyanus` · manifest: `layer-00.yaml`, `layer-01.yaml`, `layer-02.yaml`, `layer-25.yaml`, `layer-26.yaml`, `layer-30.yaml` |
@@ -103,6 +103,16 @@
 | F7.2 | Roadmap P0 feature implementasyonu | Android Elite | CEC | reality score ↑ | bekliyor |
 
 *Geliştirici promptundan türeyen ek WP'ler buraya `[EK-YYYYMMDD]` ile eklenir.*
+
+## [EK-20260614] v2 Claude-Native Akıl Yürütme · `tamamlandı`
+
+| # | Görev | Ajan | L1 | Kabul | Durum |
+|---|-------|------|----|-------|-------|
+| EK.1 | `.cursor/rules/19-claude-reasoning.mdc` (`alwaysApply`) | Overmind | CAO | thinking + architecture_check şablonu | tamamlandı |
+| EK.2 | `.cursorrules` + `docs/CLAUDE_REASONING.md` | Overmind | CEO | v2 protokol özeti | tamamlandı |
+| EK.3 | `19-aistudio` → `20-aistudio-import.mdc` (numara ayrımı) | Overmind | CAO | referans güncel | tamamlandı |
+| EK.4 | `test/run-factory-audit.sh` V2.1–V2.6 statik denetim | Denetçi | CAO | regex/ dosya varlığı | tamamlandı |
+| EK.5 | Fabrika sürümü `2.0.0-reasoning-alpha` | Overmind | CEO | meta + CI hizalı | tamamlandı |
 
 ---
 

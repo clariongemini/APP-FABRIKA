@@ -1,5 +1,23 @@
 # CHANGELOG
 
+## [2.0.0-reasoning-alpha] — 2026-06-14 — Claude-Native akıl yürütme (v2)
+
+### Added
+
+- `.cursor/rules/19-claude-reasoning.mdc` — `alwaysApply: true`; `<thinking>` + `<architecture_check>` şablonu
+- `docs/CLAUDE_REASONING.md` — tetikleyiciler, muafiyetler, Executive OS uyumu
+- `test/run-factory-audit.sh` — V2.1–V2.6 statik reasoning denetimi
+
+### Changed
+
+- `.cursorrules` — Claude-Native protokol özeti (Overmind anayasası)
+- `00-overmind-zero-hallucination.mdc` — reasoning adımı eklendi
+- `19-aistudio-import` → **`20-aistudio-import.mdc`** (19 numarası reasoning için ayrıldı)
+- `governance/phase-agents.json` — F0 ajan listesine `19-claude-reasoning`
+- Fabrika sürümü: **2.0.0-reasoning-alpha**
+
+---
+
 ## [1.0.0] — 2026-06-14 — İlk kararlı sürüm
 
 **Yazar:** Ulaş Kaşıkcı

@@ -8,6 +8,7 @@
         "06-mcp-orchestrator",
         "11-ceo-agent",
         "00-overmind-zero-hallucination",
+        "19-claude-reasoning",
         "12-chief-audit-officer"
       ],
       "manifest_layers": []

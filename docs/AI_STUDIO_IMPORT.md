@@ -80,7 +80,7 @@ Tasarım referansı: [Stitch export / ekran görüntüleri yolu]
 
 ## Cursor'da ilk oturum (agent protokolü)
 
-Agent **her oturumda** ( `.cursor/rules/19-aistudio-import.mdc` ):
+Agent **her oturumda** ( `.cursor/rules/20-aistudio-import.mdc` ):
 
 1. `.factory/bootstrap_manifest.json` var mı?  
    - **Yoksa** → `bootstrap-external-project.sh` veya manuel sync öner; kod yazma.  
