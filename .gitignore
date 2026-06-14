@@ -34,6 +34,8 @@ secrets.properties
 .cursor/snapshots/mcp/
 !.cursor/snapshots/README.md
 !.cursor/snapshots/HANDOFF.template.json
+!.cursor/snapshots/RECOVERY.template.json
+.cursor/snapshots/recovery/
 
 # OS
 Thumbs.db

@@ -1,12 +1,5 @@
 #!/usr/bin/env bash
 # Gradle build-feedback loop — Cursor Agent terminal köprüsü.
-# Hata → stacktrace log → retry (max N). Cursor IDE derleme görmez; bu script kanıt üretir.
-#
-# Kullanım:
-#   ./scripts/gradle-build-loop.sh
-#   GRADLE_TASK=lintDebug ./scripts/gradle-build-loop.sh
-#   GRADLE_LOOP_MAX_RETRIES=5 ./scripts/gradle-build-loop.sh
-#   ./scripts/gradle-build-loop.sh --strict   # gradlew/JDK yoksa exit 1
 set -euo pipefail
 
 ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
@@ -20,6 +13,7 @@ mkdir -p "$SNAPSHOT_DIR"
 TIMESTAMP="$(date +%Y%m%d-%H%M%S)"
 LOG="$SNAPSHOT_DIR/gradle-${TASK//:/-}-${TIMESTAMP}.log"
 LATEST="$SNAPSHOT_DIR/LATEST.gradle.log"
+RECOVERY="$ROOT/scripts/state-recovery.sh"
 
 skip_or_fail() {
   local msg="$1"
@@ -48,6 +42,12 @@ fi
 
 chmod +x "$ROOT/gradlew" 2>/dev/null || true
 
+if [[ -x "$RECOVERY" && "${RECOVERY_SKIP_CHECKPOINT:-0}" != "1" ]]; then
+  echo "==> State recovery checkpoint (pre-build)"
+  "$RECOVERY" --checkpoint || echo "    UYARI: checkpoint atlandı/başarısız"
+  echo ""
+fi
+
 attempt=1
 while [[ $attempt -le $MAX_RETRIES ]]; do
   echo "==> Deneme $attempt/$MAX_RETRIES: ./gradlew $TASK --stacktrace"
@@ -68,6 +68,15 @@ while [[ $attempt -le $MAX_RETRIES ]]; do
 
   echo ""
   echo "==> ❌ BUILD FAILED (exit $exit_code) — log: $LOG"
+
+  if [[ -x "$RECOVERY" ]]; then
+    if "$RECOVERY" --maybe-auto-recover "$LATEST" 2>/dev/null; then
+      echo "    Auto-recover tetiklendi."
+    elif [[ $attempt -ge 2 ]]; then
+      echo "    İpucu: ./scripts/state-recovery.sh --recover"
+    fi
+  fi
+
   if [[ $attempt -lt $MAX_RETRIES ]]; then
     echo "    Cursor Agent: logu oku, düzelt, tekrar dene."
   fi
@@ -77,4 +86,5 @@ done
 echo ""
 echo "==> BUILD FAILED — $MAX_RETRIES deneme tükendi"
 echo "    Cursor Agent ZORUNLU: $LATEST dosyasını okuyup hatayı düzelt."
+echo "    Kurtarma: ./scripts/state-recovery.sh --recover"
 exit 1

@@ -45,3 +45,14 @@ MCP çıktıları → `.cursor/snapshots/mcp/` — bkz. [`.cursor/snapshots/READ
 5. `.kt` kaynak dosyaları
 
 Bu sıra ihlal edilirse import/sync kırılması riski yüksektir.
+
+## State recovery
+
+```bash
+./scripts/state-recovery.sh --checkpoint
+./scripts/state-recovery.sh --recover
+```
+
+`gradle-build-loop.sh` build öncesi otomatik checkpoint alır; aynı parse hatası iki kez tekrarlanırsa `--recover` tetiklenir.
+
+Detay: [`docs/STATE_RECOVERY.md`](STATE_RECOVERY.md)

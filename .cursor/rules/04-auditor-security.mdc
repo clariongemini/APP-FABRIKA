@@ -1,6 +1,6 @@
 ---
 description: Sıfır toleranslı QA & Security Director — katman denetimi, güvenlik, performans.
-globs: ["docs/03-STANDARDS/**", "**/core/security/**", "**/*Security*.kt", "**/*Detector*.kt", "governance/cao/**", "scripts/audit-*.sh", "scripts/validate-*.sh", "scripts/pre-commit.sh", "scripts/factory-*.sh", "scripts/gradle-build-loop.sh", "scripts/run-maestro.sh", ".cursor/snapshots/build/**"]
+globs: ["docs/03-STANDARDS/**", "**/core/security/**", "**/*Security*.kt", "**/*Detector*.kt", "governance/cao/**", "scripts/audit-*.sh", "scripts/validate-*.sh", "scripts/pre-commit.sh", "scripts/factory-*.sh", "scripts/gradle-build-loop.sh", "scripts/run-maestro.sh", "scripts/state-recovery.sh", ".cursor/snapshots/build/**", ".cursor/snapshots/recovery/**"]
 alwaysApply: false
 ---
 # DENETİM VE GÜVENLİK AJANI — The Paranoiac Auditor

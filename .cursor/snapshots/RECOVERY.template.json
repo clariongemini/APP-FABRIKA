@@ -1,0 +1,10 @@
+{
+  "schema": "factory-recovery-handoff-v1",
+  "created_at": "2026-01-01T00:00:00Z",
+  "reason": "gradle-log-recoverable-error",
+  "restored_files": ["gradle/libs.versions.toml"],
+  "cleanliness": "gradlew-help-ok",
+  "yapilacaklar_active_phase": "F3",
+  "agent_instruction": "Etkilenen build dosyaları checkpoint'e döndürüldü. Küçük batch ile yeniden yaz.",
+  "next_action": "./scripts/gradle-build-loop.sh"
+}

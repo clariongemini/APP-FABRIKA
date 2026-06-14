@@ -128,6 +128,7 @@ Uygulama sırasında tespit edilen eksikler (otomatik veya ajan önerisi):
 | EK-20260614-04 | F3 | BillingRepository Hilt context | derlenebilir şablon | tamamlandı |
 | EK-20260614-05 | F0 | `gradle-build-loop.sh` + snapshots | Cursor terminal köprüsü | tamamlandı |
 | EK-20260614-06 | F0 | MCP handoff + auditor glob | context optimizasyonu | tamamlandı |
+| EK-20260614-07 | F0 | `state-recovery.sh` + `18-state-recovery.mdc` | truncation / yarım Gradle kurtarma | tamamlandı |
 
 ---
 

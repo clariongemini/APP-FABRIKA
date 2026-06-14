@@ -24,6 +24,7 @@ Bu dosya **fabrika reposunun** merkezi hafızasıdır. Uygulama projelerinde `in
 | [33 Katman Manifest](./33-LAYER-MANIFEST.yaml) | Kaynak doğruluk (tam dosya okuma yasak) |
 | [33 Katman Dilimleri](./33-LAYER-MANIFEST/README.md) | On-demand `layer-NN.yaml` — Cursor context budget |
 | [Cursor Context Budget](./CURSOR_CONTEXT_BUDGET.md) | Token / okuma sırası rehberi |
+| [State Recovery](./STATE_RECOVERY.md) | Truncation / yarım Gradle kurtarma |
 | [ANDROID_STRUCTURE](./02-ARCHITECTURE/ANDROID_STRUCTURE.md) | Standart klasör yapısı |
 | [Standartlar](./03-STANDARDS/) | Liquid Glass, i18n, Test, Performans |
 | [TODO](./TODO.md) | Fabrika geliştirme görevleri |

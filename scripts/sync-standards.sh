@@ -48,6 +48,7 @@ SYNC_ITEMS=(
   "docs/EXECUTIVE_OS.md"
   "docs/YAPILACAKLAR_SISTEMI.md"
   "docs/CURSOR_TERMINAL_BRIDGE.md"
+  "docs/STATE_RECOVERY.md"
   "docs/MCP_SETUP.md"
   "docs/RELEASE_CHECKLIST.md"
   "docs/FACTORY_SCORECARD.md"

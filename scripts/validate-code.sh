@@ -65,7 +65,11 @@ REQUIRED_FILES=(
   "scripts/factory-quality-gate.sh"
   "scripts/gradle-build-loop.sh"
   "scripts/run-maestro.sh"
+  "scripts/state-recovery.sh"
   "docs/CURSOR_TERMINAL_BRIDGE.md"
+  "docs/STATE_RECOVERY.md"
+  ".cursor/rules/18-state-recovery.mdc"
+  ".cursor/snapshots/RECOVERY.template.json"
   ".cursor/snapshots/README.md"
   ".cursor/snapshots/HANDOFF.template.json"
   "scripts/governance/validate-factory-governance.sh"
@@ -124,7 +128,7 @@ for file in "${REQUIRED_FILES[@]}"; do
 done
 
 # Wrapper scripts must be executable
-for script in run-ceo-cycle init-governance agent-approval-gate gradle-build-loop run-maestro; do
+for script in run-ceo-cycle init-governance agent-approval-gate gradle-build-loop run-maestro state-recovery; do
   if [[ ! -x "$ROOT/scripts/${script}.sh" ]]; then
     echo "HATA: Çalıştırılabilir değil — scripts/${script}.sh"
     ERRORS=$((ERRORS + 1))

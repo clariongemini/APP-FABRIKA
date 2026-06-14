@@ -14,7 +14,7 @@ Bu kural **her oturumda otomatik** uygulanır. Mimar halüsinasyon uyarısı yaz
 3. **Halüsinasyon sıfır:** Var olmayan dosya, sınıf, API, script veya governance kaydı **uydurma**. Okumadan referans verme.
 4. **Araç zorunluluğu:** Dosya içeriği, grep, glob, terminal — tahmin değil kanıt.
 5. **Tek faz kuralı:** Aynı anda yalnızca **bir** faz `işleniyor` olabilir.
-6. **Build kanıtı (F3+):** Android/Gradle değişikliği sonrası `./scripts/gradle-build-loop.sh` çalıştır. FAIL → `.cursor/snapshots/build/LATEST.gradle.log` oku, düzelt, tekrar dene. PASS olmadan F3+ satırını `tamamlandı` yapma.
+6. **Build kanıtı (F3+):** Android/Gradle değişikliği sonrası `./scripts/gradle-build-loop.sh` çalıştır. FAIL → `.cursor/snapshots/build/LATEST.gradle.log` oku; aynı parse hatası tekrarlanırsa `./scripts/state-recovery.sh --recover`. PASS olmadan F3+ satırını `tamamlandı` yapma.
 
 ## Cursor terminal köprüsü
 
@@ -23,6 +23,7 @@ Cursor IDE derleme/emülatör görmez. Zorunlu script'ler:
 | Script | Ne zaman? |
 |--------|-----------|
 | `./scripts/gradle-build-loop.sh` | Her `.kt`/`.kts` değişikliği batch'i sonrası (F3+) |
+| `./scripts/state-recovery.sh` | Truncation / yarım Gradle → `--checkpoint` / `--recover` |
 | `./scripts/run-maestro.sh` | F5 UI smoke / release öncesi (cihaz varsa) |
 | `.cursor/snapshots/mcp/` | MCP Browser/GitHub çıktısı — dosyaya yaz, sohbete güvenme |
 

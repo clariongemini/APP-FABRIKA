@@ -50,6 +50,13 @@
 - `YAPILACAKLAR.md` — `Aktif ajanlar` satırı; `validate-yapilacaklar.py` otomatik senkron
 - Ajan kuralları (`01`–`05`, `00-overmind`) — dilim referansları
 
+### State Recovery (v0.6.5-recovery-alpha)
+
+- `scripts/state-recovery.sh` — `--checkpoint` / `--recover` / `--status`
+- `gradle-build-loop.sh` — pre-build checkpoint + aynı hata ×2 auto-recover
+- `.cursor/rules/18-state-recovery.mdc` — truncation protokolü
+- `docs/STATE_RECOVERY.md` — Teacher/Student recovery akışı
+
 ### ADR-009: Executive Operating System
 
 **Durum:** Kabul edildi  

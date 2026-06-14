@@ -252,6 +252,8 @@ Tam `33-LAYER-MANIFEST.yaml` okuma **yasak**. Ajanlar yalnızca ihtiyaç duydukl
 | [`governance/phase-agents.json`](governance/phase-agents.json) | F0–F8 → aktif Cursor ajanları |
 | [`docs/CURSOR_CONTEXT_BUDGET.md`](docs/CURSOR_CONTEXT_BUDGET.md) | Ne zaman ne okunur |
 | `python3 scripts/split-layer-manifest.py` | Dilimleri manifest'ten üret |
+| [`scripts/state-recovery.sh`](scripts/state-recovery.sh) | Truncation → checkpoint + rollback |
+| [`docs/STATE_RECOVERY.md`](docs/STATE_RECOVERY.md) | Durum kurtarma akışı (v0.6.5) |
 
 **Gradle edit sırası (Composer):** `libs.versions.toml` → `build.gradle.kts` → `AndroidManifest.xml` → `.kt`
 
