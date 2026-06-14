@@ -11,8 +11,8 @@
 | Yazar | [Ulaş Kaşıkcı](docs/AUTHOR.md) |
 | Fabrika sürümü | v2.1.0-stable |
 | Oluşturulma | 2026-06-14 |
-| Aktif faz | **F1 — Kolon & Taşıyıcı** |
-| Aktif ajanlar | `01-product-cpo`, `09-product-decision-council`, `17-marketing-growth`, `10-mavi-okyanus` · manifest: `layer-00.yaml`, `layer-01.yaml`, `layer-02.yaml`, `layer-25.yaml`, `layer-26.yaml`, `layer-30.yaml` |
+| Aktif faz | **F2 — Kat Döşeme** (F1 tamamlandı) |
+| Aktif ajanlar | `02-architect`, `13-chief-execution-council`, `04-auditor-security` · manifest: `layer-07.yaml`, `layer-08.yaml`, `layer-09.yaml`, `layer-10.yaml`, `layer-11.yaml`, `layer-12.yaml` … (+9) |
 | Kaynak prompt | Fabrika kalite kapısı — Executive OS + 33 katman + Gradle wrapper + governance policy |
 
 ---
@@ -31,20 +31,20 @@
 
 ---
 
-## F1 — Kolon & Taşıyıcı (Vizyon + Pazar + Monetizasyon) · `işleniyor`
+## F1 — Kolon & Taşıyıcı (Vizyon + Pazar + Monetizasyon) · `tamamlandı`
 
 | # | Görev | Ajan | L1 | Kabul | Durum |
 |---|-------|------|----|-------|-------|
-| F1.1 | `docs/01-VISION/PRODUCT_BRIEF.md` doldur | CPO | PDC | brief onaylı | bekliyor |
-| F1.2 | `docs/01-VISION/MARKET_ANALYSIS.md` — rakip kanıtı (web/MCP) | CPO | PDC | kaynaklı analiz | bekliyor |
-| F1.3 | `docs/01-VISION/MONETIZATION.md` | CPO | PDC | model tanımlı | bekliyor |
-| F1.4 | PDC roadmap taslak: `governance/product_decision/roadmap_priorities.json` | PDC | CAO | P0 net | bekliyor |
+| F1.1 | `docs/FACTORY_META/PRODUCT_BRIEF.md` | CPO | PDC | brief onaylı | tamamlandı |
+| F1.2 | `docs/FACTORY_META/MARKET_ANALYSIS.md` — rakip kanıtı | CPO | PDC | kaynaklı analiz | tamamlandı |
+| F1.3 | `docs/FACTORY_META/MONETIZATION.md` | CPO | PDC | model tanımlı | tamamlandı |
+| F1.4 | PDC roadmap: `docs/FACTORY_META/roadmap_priorities.json` | PDC | CAO | P0 net | tamamlandı |
 
-**F1 çıkış kapısı:** CPO + PDC L1 onayı
+**F1 çıkış kapısı:** CPO + PDC L1 onayı · **Durum:** tamamlandı → F2 `bekliyor`
 
 ---
 
-## F2 — Kat Döşeme (Mimari & Modül Haritası) · `bekliyor`
+## F2 — Kat Döşeme (Mimari & Modül Haritası) · `işleniyor`
 
 | # | Görev | Ajan | L1 | Kabul | Durum |
 |---|-------|------|----|-------|-------|
@@ -122,7 +122,7 @@
 | EK.7 | Kelime cap 150–200 / blok | Overmind | CEO | over-thinking önleme | tamamlandı |
 | EK.8 | `validate-reasoning-template-xml.sh` + audit V2.7 | Denetçi | CAO | XML dengesi | tamamlandı |
 | EK.9 | Fabrika sürümü `2.1.0-stable` | Overmind | CEO | badge + CI sync | tamamlandı |
-| EK.10 | v2.2 canlı transcript parser | — | — | AI Studio koşusu sonrası | bekliyor |
+| EK.10 | v2.2 transcript parser | Denetçi | CAO | validate-reasoning-transcript.sh | tamamlandı |
 
 ---
 
@@ -130,8 +130,8 @@
 
 | # | Görev | Ajan | L1 | Kabul | Durum |
 |---|-------|------|----|-------|-------|
-| F8.1 | `python3 scripts/cao/run_cao_audit.py` | CAO | CEO | rapor | bekliyor |
-| F8.2 | `./scripts/ceo/run_ceo_cycle.sh` | CEO | CSGB | cycle ok | bekliyor |
+| F8.1 | `python3 scripts/cao/run_cao_audit.py` | CAO | CEO | rapor | tamamlandı |
+| F8.2 | `./scripts/ceo/run_ceo_cycle.sh` | CEO | CSGB | cycle ok | işleniyor |
 | F8.3 | `./scripts/agent-approval-gate.sh` | Overmind | Geliştirici | gate pass | bekliyor |
 | F8.4 | `docs/CHANGELOG.md` + release notları | CEO | EGC | ADR güncel | bekliyor |
 
@@ -152,7 +152,9 @@ Uygulama sırasında tespit edilen eksikler (otomatik veya ajan önerisi):
 | EK-20260614-07 | F0 | `state-recovery.sh` + `18-state-recovery.mdc` | truncation / yarım Gradle kurtarma | tamamlandı |
 | EK-20260614-08 | F0 | `test/` smoke harness | fabrika adım denetimi + FactorySmoke app | tamamlandı |
 | EK-20260614-09 | F0 | AI Studio bootstrap lab | `bootstrap-external-project.sh` canlı infaz | tamamlandı |
-| EK-20260614-10 | F0 | Dokümantasyon v2.1 denetimi | sürüm hizası + profesyonel dil | tamamlandı |
+| EK-20260614-11 | F1 | Fabrika meta vizyon | docs/FACTORY_META/* | tamamlandı |
+| EK-20260614-12 | F0 | verify-environment.sh | JDK + MCP + meta raporu | tamamlandı |
+| EK-20260614-13 | F0 | CI smoke-build | assembleDebug JDK 17 job | tamamlandı |
 
 ---
 
@@ -161,8 +163,8 @@ Uygulama sırasında tespit edilen eksikler (otomatik veya ajan önerisi):
 | Faz | Ad | Durum |
 |-----|-----|-------|
 | F0 | Zemin & Temel | tamamlandı |
-| F1 | Kolon & Taşıyıcı | işleniyor |
-| F2 | Kat Döşeme | bekliyor |
+| F1 | Kolon & Taşıyıcı | tamamlandı |
+| F2 | Kat Döşeme | işleniyor |
 | F3 | Duvar & Tesisat | bekliyor |
 | F4 | Cephe & UI | bekliyor |
 | F5 | Elektrik & Güvenlik | bekliyor |

@@ -25,6 +25,8 @@ run() {
 echo "==> Fabrika test paketi (v2.1.0-stable)"
 
 run "validate-reasoning-template-xml" bash scripts/validate-reasoning-template-xml.sh
+run "validate-reasoning-transcript (v2.2)" bash scripts/validate-reasoning-transcript.sh
+run "verify-environment" bash scripts/verify-environment.sh || true
 run "validate-factory-version" bash scripts/validate-factory-version.sh
 run "validate-code" bash scripts/validate-code.sh
 run "factory-audit (40 kontrol)" bash test/run-factory-audit.sh

@@ -121,6 +121,8 @@ check "V2.8" "negative_constraints şablon (.mdc)" \
   "$(grep -q '<negative_constraints>' "$REASONING" && grep -q '</negative_constraints>' "$REASONING" && echo pass || echo fail)"
 check "V2.9" "kelime cap 150-200 (.mdc)" \
   "$(grep -q '150–200' "$REASONING" && echo pass || echo fail)"
+check "V2.10" "validate-reasoning-transcript.sh (v2.2)" \
+  "$(bash "$REPO_ROOT/scripts/validate-reasoning-transcript.sh" &>/dev/null && echo pass || echo fail)"
 
 # --- Kalite kapıları ---
 check "QG.1" "validate-code.sh" "$(bash "$REPO_ROOT/scripts/validate-code.sh" &>/dev/null && echo pass || echo fail)"

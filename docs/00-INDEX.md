@@ -24,6 +24,7 @@ Bu dosya fabrika reposunun merkezi hafızasıdır. Uygulama projelerinde `init-n
 | [Executive OS](./EXECUTIVE_OS.md) | CEO V7, hiyerarşik denetim |
 | [YAPILACAKLAR Sistemi](./YAPILACAKLAR_SISTEMI.md) | F0–F8 faz planı, `/baslat` `/devam-et` |
 | [Test harness](../test/README.md) | `run-all-tests.sh` · AI Studio lab · 40+ audit |
+| [Fabrika meta vizyon](./FACTORY_META/README.md) | F1 PRODUCT_BRIEF · MARKET · MONETIZATION |
 | [Claude-Native reasoning](./CLAUDE_REASONING.md) | v2.1 — thinking, architecture_check, negative_constraints |
 | [Governance](../governance/README.md) | Executive OS charter dizini · fabrika sürümü |
 | [33 Katman çerçevesi](./33-LAYER-ARCHITECTURE.md) | Sistem DNA'sı (360 bileşen) |

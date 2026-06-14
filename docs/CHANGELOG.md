@@ -9,6 +9,14 @@
 - `scripts/validate-reasoning-template-xml.sh` — şablon XML açılış/kapanış dengesi
 - Audit **V2.7–V2.9** (XML script, negative_constraints, kelime cap)
 
+### Added (gap closure — 2026-06-14)
+
+- `docs/FACTORY_META/` — fabrika F1 vizyon, pazar, monetizasyon, roadmap
+- `scripts/verify-environment.sh` — JDK + MCP + meta raporu
+- `scripts/validate-reasoning-transcript.sh` — v2.2 transcript XML (V2.10 audit)
+- CI `smoke-build` job — JDK 17 + `assembleDebug`
+- `templates/governance/factory_roadmap_priorities.json` — init-governance factory seed
+
 ### Added (lab patch)
 
 - `test/run-all-tests.sh` — tek orkestratör (reasoning XML + audit + AI Studio lab + quality gate)

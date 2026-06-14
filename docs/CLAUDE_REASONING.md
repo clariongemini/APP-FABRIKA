@@ -49,6 +49,10 @@ Over-thinking (aynı cümleyi tekrarlama) yasak.
 
 Audit: `test/run-factory-audit.sh` → **V2.7**
 
+## v2.2 (transcript parser)
+
+`scripts/validate-reasoning-transcript.sh` — agent transcript / snapshot `.md` dosyalarındaki fenced `xml` bloklarında kapanmamış etiketleri yakalar. Audit: **V2.10** · CI: `validate.yml` smoke-build job.
+
 ## Şablon (kapatılmış etiketler zorunlu)
 
 ```xml
@@ -64,11 +68,6 @@ Audit: `test/run-factory-audit.sh` → **V2.7**
 - Katman bypass yok; mock bırakma yok; DI atlama yok
 </negative_constraints>
 ```
-
-## v2.2 (ertelendi)
-
-Canlı Cursor transcript’te kapanmamış etiket → **Format Hatası** runtime parser.  
-İlk AI Studio koşusu sonrası `phase-verifier` checklist’ine eklenecek.
 
 ## Executive OS
 

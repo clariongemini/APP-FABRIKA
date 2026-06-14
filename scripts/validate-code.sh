@@ -113,6 +113,10 @@ REQUIRED_FILES=(
   "docs/AI_STUDIO_IMPORT.md"
   ".cursor/rules/19-claude-reasoning.mdc"
   "scripts/validate-reasoning-template-xml.sh"
+  "scripts/validate-reasoning-transcript.sh"
+  "scripts/verify-environment.sh"
+  "docs/FACTORY_META/README.md"
+  "docs/FACTORY_META/PRODUCT_BRIEF.md"
   "docs/CLAUDE_REASONING.md"
   ".cursor/rules/20-aistudio-import.mdc"
   ".cursor/commands/import-aistudio.md"
@@ -140,7 +144,7 @@ for file in "${REQUIRED_FILES[@]}"; do
 done
 
 # Wrapper scripts must be executable
-for script in run-ceo-cycle init-governance agent-approval-gate gradle-build-loop run-maestro state-recovery scaffold-android-project-to bootstrap-external-project validate-factory-version validate-reasoning-template-xml; do
+for script in run-ceo-cycle init-governance agent-approval-gate gradle-build-loop run-maestro state-recovery scaffold-android-project-to bootstrap-external-project validate-factory-version validate-reasoning-template-xml validate-reasoning-transcript verify-environment; do
   if [[ ! -x "$ROOT/scripts/${script}.sh" ]]; then
     echo "HATA: Çalıştırılabilir değil — scripts/${script}.sh"
     ERRORS=$((ERRORS + 1))

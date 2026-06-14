@@ -33,7 +33,8 @@ chmod +x test/*.sh scripts/scaffold-android-project-to.sh
 - **F5:** Güvenlik + OEM audit script'leri
 - **CX:** gradle-build-loop, state-recovery, context budget
 - **QG:** validate-code, factory-health, layer audits
-- **BUILD:** `factory-smoke-app` → `assembleDebug` (JDK gerekir)
+- **BUILD:** `factory-smoke-app` → `assembleDebug` (JDK 17+; CI smoke-build job)
+- **ENV:** `scripts/verify-environment.sh` — JDK + MCP + FACTORY_META
 
 ## Not
 

@@ -15,7 +15,8 @@ Sen bağımsız doğrulama subagent'ısın. Uygulayan ajanın iddiasına güvenm
 
 1. `YAPILACAKLAR.md` içindeki hedef maddeyi oku (Ajan · L1 · Kabul).
 2. Kabul kriterindeki her dosya/script için **gerçekten var mı, içerik yeterli mi** kontrol et.
-3. `governance/executive/HIERARCHICAL_AUDIT_CHAIN.md` — L1 departmanın sorusunu sor.
+3. Kod/core değişikliği varsa: `bash scripts/validate-reasoning-transcript.sh [transcript.md]` — kapanmamış `<thinking>` vb. → FAIL.
+4. `governance/executive/HIERARCHICAL_AUDIT_CHAIN.md` — L1 departmanın sorusunu sor.
 
 ## Rapor
 

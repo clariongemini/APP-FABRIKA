@@ -1,6 +1,6 @@
 # Factory Audit Report — FactorySmoke
 
-> Oluşturulma: 2026-06-14T18:55:03+0300  
+> Oluşturulma: 2026-06-14T19:14:11+0300  
 > Fabrika: `/Users/ulas/Desktop/Repo`  
 > Smoke app: `test/factory-smoke-app`
 
@@ -8,7 +8,7 @@
 
 | Metrik | Değer |
 |--------|-------|
-| ✅ Geçti | 41 |
+| ✅ Geçti | 42 |
 | ❌ Başarısız | 0 |
 | ⚠️ Uyarı | 0 |
 | ⏭️ Atlandı | 1 |
@@ -54,6 +54,7 @@
 | V2.7 | validate-reasoning-template-xml.sh | ✅ pass | thinking/architecture_check/negative_constraints dengesi |
 | V2.8 | negative_constraints şablon (.mdc) | ✅ pass |  |
 | V2.9 | kelime cap 150-200 (.mdc) | ✅ pass |  |
+| V2.10 | validate-reasoning-transcript.sh (v2.2) | ✅ pass |  |
 | QG.1 | validate-code.sh | ✅ pass |  |
 | QG.2 | audit-layers.sh | ✅ pass |  |
 | QG.3 | audit-layer-components.sh | ✅ pass |  |

@@ -39,6 +39,9 @@ bash "$ROOT/scripts/validate-layer-slices.sh" 2>/dev/null || true
 echo ""
 bash "$ROOT/scripts/factory-health.sh"
 
+# 7. Ortam özeti (JDK/MCP — uyarı modu)
+bash "$ROOT/scripts/verify-environment.sh" || true
+
 echo ""
 echo "Sonraki adımlar:"
 echo "  1. MCP kurulumunu tamamla (docs/MCP_SETUP.md)"

@@ -34,7 +34,13 @@ mkdir -p "$GOV/analytics/output" "$GOV/cao" "$GOV/execution"
 # Project config + sprint lock (always refresh from templates)
 subst "$TPL/project.config.template.json" > "$GOV/project.config.json"
 subst "$TPL/SPRINT_LOCK.template.json" > "$GOV/executive/SPRINT_LOCK.json"
-subst "$TPL/roadmap_priorities.template.json" > "$GOV/product_decision/roadmap_priorities.json"
+if [[ "$PACKAGE_NAME" == "com.ulas.factory" && -f "$TPL/factory_roadmap_priorities.json" ]]; then
+  subst "$TPL/factory_roadmap_priorities.json" > "$GOV/product_decision/roadmap_priorities.json"
+elif [[ -f "$ROOT/docs/FACTORY_META/roadmap_priorities.json" ]]; then
+  sed -e "s/{{DATE}}/$DATE/g" "$ROOT/docs/FACTORY_META/roadmap_priorities.json" > "$GOV/product_decision/roadmap_priorities.json"
+else
+  subst "$TPL/roadmap_priorities.template.json" > "$GOV/product_decision/roadmap_priorities.json"
+fi
 subst "$TPL/SPRINT_P_ACTIVATION_GATE.template.json" > "$GOV/analytics/SPRINT_P_ACTIVATION_GATE.json"
 subst "$TPL/APPROVAL_QUEUE.template.md" > "$GOV/executive/APPROVAL_QUEUE.md"
 
@@ -59,6 +65,14 @@ chmod +x "$ROOT/scripts/"*.sh "$ROOT/scripts/ceo/"*.sh 2>/dev/null || true
 python3 "$ROOT/scripts/execution/validate_roadmap_consumption.py" 2>/dev/null || true
 python3 "$ROOT/scripts/governance/validate-audit-chain.py" 2>/dev/null || true
 python3 "$ROOT/scripts/governance/validate-yapilacaklar.py" 2>/dev/null || true
+
+# Factory meta: vision belgelerini 01-VISION'a kopyala (gitignore runtime)
+if [[ "$PACKAGE_NAME" == "com.ulas.factory" && -d "$ROOT/docs/FACTORY_META" ]]; then
+  mkdir -p "$ROOT/docs/01-VISION"
+  for f in PRODUCT_BRIEF.md MARKET_ANALYSIS.md MONETIZATION.md; do
+    [[ -f "$ROOT/docs/FACTORY_META/$f" ]] && cp "$ROOT/docs/FACTORY_META/$f" "$ROOT/docs/01-VISION/$f"
+  done
+fi
 
 echo ""
 echo "   ✅ Full Executive OS seeded for $APP_NAME"

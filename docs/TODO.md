@@ -15,7 +15,9 @@
 - [x] Sürüm 2.1.0-stable senkron
 - [x] `test/run-all-tests.sh` orkestratör + `bootstrap-aistudio-lab.sh`
 - [x] `factory-quality-gate.sh` Toplam/grep düzeltmesi (set -e sessiz exit)
-- [x] Dokümantasyon denetimi — v2.1 tutarlılık, profesyonel dil (Teacher/Jules vb. kaldırıldı)
+- [x] Dokümantasyon denetimi — v2.1 tutarlılık, profesyonel dil
+- [x] F1 FACTORY_META vizyon + roadmap
+- [x] verify-environment.sh + CI smoke-build + v2.2 transcript parser
 
 ## v2.0.0-reasoning-alpha (2026-06-14)
 
