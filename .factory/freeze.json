@@ -1,5 +1,9 @@
 {
   "policy": "build_less_ship_more",
+  "mode": "MAINTENANCE",
+  "status": "FROZEN",
+  "maturity": "PRODUCTION_READY",
+  "next_objective": "validate_through_products",
   "effective_from": "2026-06-14",
   "until_apps_released": 3,
   "required_apps": [],
@@ -11,6 +15,12 @@
     "new_intelligence_motors": true,
     "new_governance_departments": true
   },
+  "allowed_in_maintenance": [
+    "bugfix",
+    "documentation",
+    "sync_standards_improvements",
+    "real_app_data_entry"
+  ],
   "allowed_without_release": [
     "factory/certification",
     "factory/regression",
@@ -18,6 +28,14 @@
     "factory/outcomes",
     "bugfix_existing_scripts",
     "real_app_data_entry"
+  ],
+  "forbidden_until_validation": [
+    "v5",
+    "new_agents",
+    "new_councils",
+    "new_layers",
+    "new_intelligence_motors",
+    "new_governance_systems"
   ],
   "unlock_condition": "apps_released >= 3 in runtime/factory/portfolio/apps.json",
   "motto": "Build less factory, ship more products.",

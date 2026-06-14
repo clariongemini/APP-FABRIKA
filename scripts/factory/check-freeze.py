@@ -31,8 +31,11 @@ def main() -> int:
     need = policy.get("until_apps_released", 3)
     active = released < need
 
-    print(f"   Factory freeze: {'ACTIVE' if active else 'LIFTED'} ({released}/{need} apps released)")
+    mode = policy.get("mode", "MAINTENANCE")
+    status = policy.get("status", "FROZEN")
+    print(f"   Factory: {status} · {mode} ({released}/{need} apps released)")
     if active:
+        print(f"   Next: {policy.get('next_objective', 'validate_through_products')}")
         print(f"   Motto: {policy.get('motto', 'Build less, ship more')}")
         required = policy.get("required_apps") or []
         if required:

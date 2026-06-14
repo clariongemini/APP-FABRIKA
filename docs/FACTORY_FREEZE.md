@@ -2,7 +2,26 @@
 
 **North star:** [`FACTORY_MISSION.md`](../FACTORY_MISSION.md)
 
-Fabrika geliştirmesi **3 uygulama production release** olana kadar donduruldu.
+| Alan | Değer |
+|------|-------|
+| **Status** | FROZEN |
+| **Maturity** | PRODUCTION READY |
+| **Mode** | MAINTENANCE |
+| **Next objective** | Validate through products |
+
+Fabrika geliştirmesi **3 production release + outcome validation** olana kadar meta-genişleme donduruldu.
+
+## MAINTENANCE modunda izin verilen
+
+- Bug fix
+- Dokümantasyon
+- `sync-standards.sh` iyileştirmeleri
+- Hedef projede gerçek app verisi (`record-outcome`, portfolio)
+
+## MAINTENANCE modunda yasak
+
+- V5 / V6
+- Yeni ajan · council · katman · intelligence motoru · governance sistemi
 
 ## Kural (`.factory/freeze.json`)
 

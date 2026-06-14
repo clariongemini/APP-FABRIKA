@@ -6,8 +6,8 @@ Her Android projesine aktarılabilir fabrika paketi (Executive OS + 16 ajan) · 
 
 > **AGENTS FREEZE (V3):** Yeni ajan veya council eklenmez.  
 > **INTELLIGENCE FREEZE (V4):** Yeni engine eklenmez.  
-> **North star:** [`FACTORY_MISSION.md`](FACTORY_MISSION.md) — quality gate her çalışmada okunur.  
-> **DEVELOPMENT FREEZE:** 3 app release olana kadar — [`.factory/freeze.json`](.factory/freeze.json)
+> **North star:** [`FACTORY_MISSION.md`](FACTORY_MISSION.md) — **FROZEN · MAINTENANCE · Validate through products**  
+> **DEVELOPMENT FREEZE:** [`.factory/freeze.json`](.factory/freeze.json)
 
 ---
 
