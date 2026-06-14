@@ -69,7 +69,7 @@ python3 scripts/governance/validate-yapilacaklar.py
 
 | Tür | İçerik |
 |-----|--------|
-| Rules | `00-overmind-zero-hallucination.mdc` + `01`–`16` + `17-marketing-growth` |
+| Rules | `00-overmind-zero-hallucination.mdc` + `01`–`17` + `18-state-recovery` + `19-claude-reasoning` + `20-aistudio-import` |
 | Skills | `zero-hallucination`, `yapilacaklar-planner`, `yapilacaklar-executor`, `hierarchical-audit` |
 | Commands | `baslat`, `devam-et`, `denetle`, `faz-durumu`, `yeni-proje` |
 | Subagents | `phase-verifier`, `plan-expander`, `phase-auditor`, `hallucination-guard` |
