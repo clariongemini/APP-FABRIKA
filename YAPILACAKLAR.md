@@ -11,8 +11,8 @@
 | Yazar | [Ulaş Kaşıkcı](docs/AUTHOR.md) |
 | Fabrika sürümü | v2.1.0-stable |
 | Oluşturulma | 2026-06-14 |
-| Aktif faz | **F2 — Kat Döşeme** (F1 tamamlandı) |
-| Aktif ajanlar | `02-architect`, `13-chief-execution-council`, `04-auditor-security` · manifest: `layer-07.yaml`, `layer-08.yaml`, `layer-09.yaml`, `layer-10.yaml`, `layer-11.yaml`, `layer-12.yaml` … (+9) |
+| Aktif faz | **F3 — Duvar & Tesisat** (F2 tamamlandı) |
+| Aktif ajanlar | `03-android-elite`, `02-architect` · manifest: `layer-03.yaml`, `layer-04.yaml`, `layer-05.yaml`, `layer-06.yaml`, `layer-22.yaml` |
 | Kaynak prompt | Fabrika kalite kapısı — Executive OS + 33 katman + Gradle wrapper + governance policy |
 
 ---
@@ -44,18 +44,20 @@
 
 ---
 
-## F2 — Kat Döşeme (Mimari & Modül Haritası) · `işleniyor`
+## F2 — Kat Döşeme (Mimari & Modül Haritası) · `tamamlandı`
 
 | # | Görev | Ajan | L1 | Kabul | Durum |
 |---|-------|------|----|-------|-------|
-| F2.1 | `docs/02-ARCHITECTURE/MODULE_MAP.md` | Baş Mimar | CEC | modül listesi | bekliyor |
-| F2.2 | `docs/02-ARCHITECTURE/DATA_FLOW.md` | Baş Mimar | CEC | akış diyagramı | bekliyor |
-| F2.3 | `governance/dependency-rules.json` package uyumu | Baş Mimar | Denetçi | com.ulas.factory | bekliyor |
-| F2.4 | ArchUnit / mimari script (varsa) | Denetçi | CAO | ihlal yok | bekliyor |
+| F2.1 | `docs/02-ARCHITECTURE/MODULE_MAP.md` | Baş Mimar | CEC | modül listesi | tamamlandı |
+| F2.2 | `docs/02-ARCHITECTURE/DATA_FLOW.md` | Baş Mimar | CEC | akış diyagramı | tamamlandı |
+| F2.3 | `governance/dependency-rules.json` package uyumu | Baş Mimar | Denetçi | com.ulas.factory | tamamlandı |
+| F2.4 | `scripts/audit-module-map.sh` (ArchUnit yerine) | Denetçi | CAO | ihlal yok | tamamlandı |
+
+**F2 çıkış kapısı:** CEC + Denetçi L1 · tamamlandı → F3 `işleniyor`
 
 ---
 
-## F3 — Duvar & Tesisat (Android İskelet) · `bekliyor`
+## F3 — Duvar & Tesisat (Android İskelet) · `işleniyor`
 
 | # | Görev | Ajan | L1 | Kabul | Durum |
 |---|-------|------|----|-------|-------|
@@ -101,10 +103,9 @@
 |---|-------|------|----|-------|-------|
 | F7.1 | `governance/executive/APPROVAL_QUEUE.md` WP'ler sırayla | CDID | CEC | L1+L2 onay | bekliyor |
 | F7.2 | Roadmap P0 feature implementasyonu | Android Elite | CEC | reality score ↑ | bekliyor |
+| F7.3 | Gerçek Stitch export bootstrap (harici dizin) | Android Elite | CEC | bootstrap_manifest + lab parity | bekliyor |
 
-*Geliştirici promptundan türeyen ek WP'ler buraya `[EK-YYYYMMDD]` ile eklenir.*
-
-## [EK-20260614] v2 Claude-Native Akıl Yürütme · `tamamlandı`
+*Geliştirici promptundan türeyen ek WP'ler buraya `[EK-YYYYMMDD]` ile eklenir.* v2 Claude-Native Akıl Yürütme · `tamamlandı`
 
 | # | Görev | Ajan | L1 | Kabul | Durum |
 |---|-------|------|----|-------|-------|
@@ -131,7 +132,7 @@
 | # | Görev | Ajan | L1 | Kabul | Durum |
 |---|-------|------|----|-------|-------|
 | F8.1 | `python3 scripts/cao/run_cao_audit.py` | CAO | CEO | rapor | tamamlandı |
-| F8.2 | `./scripts/ceo/run_ceo_cycle.sh` | CEO | CSGB | cycle ok | işleniyor |
+| F8.2 | `./scripts/ceo/run_ceo_cycle.sh` | CEO | CSGB | cycle ok | bekliyor |
 | F8.3 | `./scripts/agent-approval-gate.sh` | Overmind | Geliştirici | gate pass | bekliyor |
 | F8.4 | `docs/CHANGELOG.md` + release notları | CEO | EGC | ADR güncel | bekliyor |
 
@@ -154,7 +155,7 @@ Uygulama sırasında tespit edilen eksikler (otomatik veya ajan önerisi):
 | EK-20260614-09 | F0 | AI Studio bootstrap lab | `bootstrap-external-project.sh` canlı infaz | tamamlandı |
 | EK-20260614-11 | F1 | Fabrika meta vizyon | docs/FACTORY_META/* | tamamlandı |
 | EK-20260614-12 | F0 | verify-environment.sh | JDK + MCP + meta raporu | tamamlandı |
-| EK-20260614-13 | F0 | CI smoke-build | assembleDebug JDK 17 job | tamamlandı |
+| EK-20260614-14 | F2 | MODULE_MAP + DATA_FLOW + audit-module-map | Kat Döşeme kapanışı | tamamlandı |
 
 ---
 
@@ -164,8 +165,8 @@ Uygulama sırasında tespit edilen eksikler (otomatik veya ajan önerisi):
 |-----|-----|-------|
 | F0 | Zemin & Temel | tamamlandı |
 | F1 | Kolon & Taşıyıcı | tamamlandı |
-| F2 | Kat Döşeme | işleniyor |
-| F3 | Duvar & Tesisat | bekliyor |
+| F2 | Kat Döşeme | tamamlandı |
+| F3 | Duvar & Tesisat | işleniyor |
 | F4 | Cephe & UI | bekliyor |
 | F5 | Elektrik & Güvenlik | bekliyor |
 | F6 | Ölçüm & Analitik | bekliyor |

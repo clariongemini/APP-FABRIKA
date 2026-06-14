@@ -19,7 +19,7 @@ if [[ ! -f "$TARGET" ]]; then
   cp "$EXAMPLE" "$TARGET"
   echo "✓ .cursor/mcp.json oluşturuldu (example'dan kopyalandı)"
 else
-  echo "✓ .cursor/mcp.json zaten mevcut"
+  echo "✓ .cursor/mcp.json zaten mevcut (üzerine yazılmadı)"
 fi
 
 echo ""

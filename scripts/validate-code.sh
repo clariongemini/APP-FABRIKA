@@ -114,7 +114,7 @@ REQUIRED_FILES=(
   ".cursor/rules/19-claude-reasoning.mdc"
   "scripts/validate-reasoning-template-xml.sh"
   "scripts/validate-reasoning-transcript.sh"
-  "scripts/verify-environment.sh"
+  "scripts/audit-module-map.sh"
   "docs/FACTORY_META/README.md"
   "docs/FACTORY_META/PRODUCT_BRIEF.md"
   "docs/CLAUDE_REASONING.md"
