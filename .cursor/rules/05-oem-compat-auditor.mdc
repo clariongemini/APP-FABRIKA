@@ -19,7 +19,7 @@ Contract: `governance/execution/PDC_CONSUMPTION_CONTRACT.md`
 
 ## SORUMLU ALAN
 - **KATMAN 22** — OEM alt kümesi (uygulama: Android Elite | denetim: sen)
-- Kaynak: `docs/33-LAYER-MANIFEST.yaml` + `docs/03-STANDARDS/OEM_MATRIX.yaml`
+- Kaynak: `docs/33-LAYER-MANIFEST/layer-22.yaml` + `docs/03-STANDARDS/OEM_MATRIX.yaml` — tam manifest okuma yasak
 
 ## ZORUNLU DENETİM (Her Release Öncesi)
 

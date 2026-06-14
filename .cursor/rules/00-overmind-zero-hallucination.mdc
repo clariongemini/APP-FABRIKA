@@ -28,6 +28,11 @@ Cursor IDE derleme/emülatör görmez. Zorunlu script'ler:
 
 Detay: `docs/CURSOR_TERMINAL_BRIDGE.md` · `.cursor/snapshots/README.md`
 
+## Context budget (token)
+
+Tam `33-LAYER-MANIFEST.yaml` okuma **yasak**. Yalnızca `docs/33-LAYER-MANIFEST/layer-NN.yaml` dilimleri.  
+Rehber: `docs/CURSOR_CONTEXT_BUDGET.md` · `python3 scripts/split-layer-manifest.py`
+
 | Faz | Katman | Anlam |
 |-----|--------|-------|
 | F0 | Zemin & temel | Governance, MCP, hafıza, sprint lock |

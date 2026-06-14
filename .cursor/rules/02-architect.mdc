@@ -21,7 +21,7 @@ Execution öncesi oku:
 Yeni modül/port yalnızca PDC onaylı feature_id ile. Contract: `governance/execution/PDC_CONSUMPTION_CONTRACT.md`
 
 ## SORUMLU KATMANLAR
-Tam bileşen listesi: `docs/33-LAYER-MANIFEST.yaml` (KATMAN 7–15, 20, 23–24, 27–29)
+Tam bileşen listesi: `docs/33-LAYER-MANIFEST/layer-NN.yaml` (KATMAN 7–15, 20, 23–24, 27–29) — **tam manifest okuma yasak**
 
 - **KATMAN 7–8** — İş Mantığı + Veri: Domain, Use Cases, Repository, Sync Layer
 - **KATMAN 9** — Offline-First (V1 zorunlu): Local First, Sync Queue, Offline Search/Actions

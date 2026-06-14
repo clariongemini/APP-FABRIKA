@@ -39,6 +39,11 @@ SYNC_ITEMS=(
   "docs/CHANGELOG.md"
   "docs/33-LAYER-ARCHITECTURE.md"
   "docs/33-LAYER-MANIFEST.yaml"
+  "docs/33-LAYER-MANIFEST/README.md"
+  "docs/CURSOR_CONTEXT_BUDGET.md"
+  "governance/phase-agents.json"
+  "scripts/split-layer-manifest.py"
+  "scripts/validate-layer-slices.sh"
   "docs/BOOTSTRAP.md"
   "docs/EXECUTIVE_OS.md"
   "docs/YAPILACAKLAR_SISTEMI.md"
@@ -85,6 +90,7 @@ cat > "$TARGET/.factory/sync.json" <<EOF
 EOF
 
 chmod +x "$TARGET/scripts/"*.sh 2>/dev/null || true
+python3 "$TARGET/scripts/split-layer-manifest.py" 2>/dev/null || true
 
 echo ""
 echo "    Executive OS: cd \"$TARGET\" && ./scripts/governance/init-governance.sh"

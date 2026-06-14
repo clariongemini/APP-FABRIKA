@@ -33,7 +33,11 @@ if [[ -d "$ROOT/.git" ]]; then
   echo "✓ Git pre-commit hook"
 fi
 
-# 5. Fabrika sağlık
+# 5. Layer manifest slices (context budget)
+python3 "$ROOT/scripts/split-layer-manifest.py" 2>/dev/null || true
+bash "$ROOT/scripts/validate-layer-slices.sh" 2>/dev/null || true
+
+# 6. Fabrika sağlık
 echo ""
 bash "$ROOT/scripts/factory-health.sh"
 

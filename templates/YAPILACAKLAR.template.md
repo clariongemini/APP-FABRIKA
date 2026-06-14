@@ -11,6 +11,7 @@
 | Fabrika sürümü | v{{FACTORY_VERSION}} |
 | Oluşturulma | {{DATE}} |
 | Aktif faz | **F0 — Zemin & Temel** |
+| Aktif ajanlar | *(validate-yapilacaklar.py ile otomatik — `governance/phase-agents.json`)* |
 | Kaynak prompt | *(Mimar promptu buraya)* |
 
 ---

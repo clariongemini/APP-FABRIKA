@@ -1,7 +1,7 @@
 {
   "name": "Ulas Autonomous Android APP Factory",
   "type": "factory",
-  "version": "0.6.0",
+  "version": "0.6.4",
   "status": "publish-ready",
   "agents": 16,
   "executive_os": "7.0",

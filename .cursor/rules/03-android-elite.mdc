@@ -22,7 +22,7 @@ Scope genişletme yasak. CEC alignment < 80 → yalnızca mevcut P0 tamamlama.
 Contract: `governance/execution/PDC_CONSUMPTION_CONTRACT.md`
 
 ## SORUMLU KATMANLAR
-Tam bileşen listesi: `docs/33-LAYER-MANIFEST.yaml` (KATMAN 3, 4, 5, 6, 22)
+Tam bileşen listesi: `docs/33-LAYER-MANIFEST/layer-NN.yaml` (KATMAN 3, 4, 5, 6, 22) — **tam manifest okuma yasak**
 
 - **KATMAN 3** — Tasarım Sistemi: Design Tokens, Typography/Color/Motion Engine, Dark Mode
 - **KATMAN 4** — UX Motoru: Zero Learning Curve, Thumb Zone, Predictive Navigation

@@ -41,6 +41,15 @@
 - `00-overmind`, `02-architect`, `03-android`, `04-auditor`, `06-mcp`, `01-cpo` — build loop + glob optimizasyonu
 - `16-analytics` — proje-özel glob kaldırıldı
 
+### Context budget & faz ajanları (v0.6.4)
+
+- `docs/33-LAYER-MANIFEST/layer-NN.yaml` — 33 katman dilimi (on-demand yükleme)
+- `scripts/split-layer-manifest.py` + `scripts/validate-layer-slices.sh`
+- `docs/CURSOR_CONTEXT_BUDGET.md` — tam manifest okuma yasağı + okuma sırası
+- `governance/phase-agents.json` — F0–F8 aktif Cursor ajan eşlemesi
+- `YAPILACAKLAR.md` — `Aktif ajanlar` satırı; `validate-yapilacaklar.py` otomatik senkron
+- Ajan kuralları (`01`–`05`, `00-overmind`) — dilim referansları
+
 ### ADR-009: Executive Operating System
 
 **Durum:** Kabul edildi  

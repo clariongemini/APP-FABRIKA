@@ -242,6 +242,17 @@ Cursor IDE **derleme ve emülatör görmez**. Fabrika terminal script'leri ile k
 
 Detay: [`docs/CURSOR_TERMINAL_BRIDGE.md`](docs/CURSOR_TERMINAL_BRIDGE.md)
 
+### Context budget (token optimizasyonu)
+
+Tam `33-LAYER-MANIFEST.yaml` okuma **yasak**. Ajanlar yalnızca ihtiyaç duydukları dilimleri yükler:
+
+| Kaynak | Amaç |
+|--------|------|
+| [`docs/33-LAYER-MANIFEST/layer-NN.yaml`](docs/33-LAYER-MANIFEST/README.md) | Katman başına ~20 satır dilim |
+| [`governance/phase-agents.json`](governance/phase-agents.json) | F0–F8 → aktif Cursor ajanları |
+| [`docs/CURSOR_CONTEXT_BUDGET.md`](docs/CURSOR_CONTEXT_BUDGET.md) | Ne zaman ne okunur |
+| `python3 scripts/split-layer-manifest.py` | Dilimleri manifest'ten üret |
+
 **Gradle edit sırası (Composer):** `libs.versions.toml` → `build.gradle.kts` → `AndroidManifest.xml` → `.kt`
 
 ---
@@ -613,6 +624,8 @@ Monetization: [e.g. subscription, 7-day free trial]
 │   ├── 00-INDEX.md           # Proje hafızası
 │   ├── 33-LAYER-ARCHITECTURE.md
 │   ├── 33-LAYER-MANIFEST.yaml
+│   ├── 33-LAYER-MANIFEST/     # layer-00 … layer-32 dilimleri
+│   ├── CURSOR_CONTEXT_BUDGET.md
 │   ├── 03-STANDARDS/         # 13 teknik standart
 │   ├── BOOTSTRAP.md          # Detaylı kurulum kılavuzu
 │   ├── EXECUTIVE_OS.md

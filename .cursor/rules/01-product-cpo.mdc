@@ -24,7 +24,7 @@ Her iş paketi (WP) bir PDC `feature_id` (F001, F002, …) taşır.
 Contract: `governance/execution/PDC_CONSUMPTION_CONTRACT.md`
 
 ## SORUMLU KATMANLAR
-Tam bileşen listesi: `docs/33-LAYER-MANIFEST.yaml` (KATMAN 0, 1, 2, 25, 26, 30)
+Tam bileşen listesi: `docs/33-LAYER-MANIFEST/layer-NN.yaml` (KATMAN 0, 1, 2, 25, 26, 30) — **tam manifest okuma yasak**
 
 - **KATMAN 0** — Vizyon Motoru: PMF, Flywheel, Growth/Retention/Network Effect Engine, Brand, Community
 - **KATMAN 1** — Ürün DNA'sı: Product/Design/Engineering/Security/Privacy/AI Principles

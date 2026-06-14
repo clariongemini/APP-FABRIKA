@@ -11,6 +11,7 @@
 | Fabrika sürümü | v0.6.0 |
 | Oluşturulma | 2026-06-14 |
 | Aktif faz | **F1 — Kolon & Taşıyıcı** |
+| Aktif ajanlar | `01-product-cpo`, `09-product-decision-council`, `17-marketing-growth`, `10-mavi-okyanus` · manifest: `layer-00.yaml`, `layer-01.yaml`, `layer-02.yaml`, `layer-25.yaml`, `layer-26.yaml`, `layer-30.yaml` |
 | Kaynak prompt | Fabrika v0.6 kalite kapısı — Executive OS + 33 katman + Gradle wrapper + governance policy |
 
 ---

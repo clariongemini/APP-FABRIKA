@@ -20,7 +20,7 @@ Denetim öncesi oku:
 P0 dışı feature güvenlik onayı verme. Contract: `governance/execution/PDC_CONSUMPTION_CONTRACT.md`
 
 ## SORUMLU KATMANLAR (DENETİM)
-Tam bileşen listesi: `docs/33-LAYER-MANIFEST.yaml` (KATMAN 16–19, 21, 31, 32)
+Tam bileşen listesi: `docs/33-LAYER-MANIFEST/layer-NN.yaml` (KATMAN 16–19, 21, 31, 32) — **tam manifest okuma yasak**
 
 - **KATMAN 16** — Güvenlik: TLS 1.3, JWT/OAuth2, Root/Hook Detection, Secure Storage
 - **KATMAN 17** — Gizlilik: Privacy By Design, Consent Engine, KVKK/GDPR, Data Governance

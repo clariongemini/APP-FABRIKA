@@ -26,7 +26,9 @@ echo ""
 
 # 1. AI Orkestrasyon & Executive OS
 c=0
-for f in .cursorrules AGENTS.md docs/33-LAYER-MANIFEST.yaml docs/33-LAYER-ARCHITECTURE.md \
+for f in .cursorrules AGENTS.md docs/33-LAYER-MANIFEST.yaml docs/33-LAYER-MANIFEST/README.md \
+         docs/CURSOR_CONTEXT_BUDGET.md governance/phase-agents.json \
+         docs/33-LAYER-ARCHITECTURE.md \
          docs/BOOTSTRAP.md docs/EXECUTIVE_OS.md docs/YAPILACAKLAR_SISTEMI.md; do
   check_file "$f" && c=$((c + 1))
 done
@@ -48,12 +50,15 @@ done
 for s in zero-hallucination yapilacaklar-planner yapilacaklar-executor hierarchical-audit; do
   check_file ".cursor/skills/${s}/SKILL.md" && c=$((c + 1))
 done
-report "AI Orkestrasyon & Executive OS" $c 29
+report "AI Orkestrasyon & Executive OS" $c 32
 
 # 2. 33 Katman
 c=0
-bash "$ROOT/scripts/audit-layers.sh" &>/dev/null && c=$((c + 5))
-bash "$ROOT/scripts/audit-layer-components.sh" &>/dev/null && c=$((c + 5))
+bash "$ROOT/scripts/audit-layers.sh" &>/dev/null && c=$((c + 3))
+bash "$ROOT/scripts/audit-layer-components.sh" &>/dev/null && c=$((c + 3))
+bash "$ROOT/scripts/validate-layer-slices.sh" &>/dev/null && c=$((c + 2))
+check_file "docs/CURSOR_CONTEXT_BUDGET.md" && c=$((c + 1))
+check_file "governance/phase-agents.json" && c=$((c + 1))
 report "33 Katman (360 bileşen)" $c 10
 
 # 3. Kullanışlılık (DX)

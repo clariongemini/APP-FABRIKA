@@ -94,7 +94,7 @@ Tüm kararlar ve kodlar `docs/33-LAYER-ARCHITECTURE.md` içindeki 33 Katmana %10
 | **AID** | `16-analytics-intelligence.mdc` | Measurement |
 | Growth | `17-marketing-growth.mdc` | GTM, ASO |
 
-Katman bileşenleri: `docs/33-LAYER-MANIFEST.yaml`. Denetim zinciri: `governance/executive/HIERARCHICAL_AUDIT_CHAIN.md`.
+Katman bileşenleri: `docs/33-LAYER-MANIFEST/layer-NN.yaml` (tam manifest okuma yasak — `docs/CURSOR_CONTEXT_BUDGET.md`). Denetim zinciri: `governance/executive/HIERARCHICAL_AUDIT_CHAIN.md`.
 
 ## Cursor Bileşenleri (.cursor/)
 
