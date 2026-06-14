@@ -70,6 +70,13 @@
 - Yanlışlıkla commit edilen smoke recovery dosyaları kaldırıldı
 - `validate-code.sh` — tracked recovery snapshot kontrolü
 
+### AI Studio import (v0.6.7)
+
+- `docs/AI_STUDIO_IMPORT.md` — Stitch → AI Studio → Fabrika iş akışı
+- `scripts/bootstrap-external-project.sh` — harici proje bootstrap (sync + governance + YAPILACAKLAR)
+- `.cursor/commands/import-aistudio.md` + `19-aistudio-import.mdc`
+- **Eklenmedi:** `auto-bootstrap.sh` / `alwaysApply` lifecycle (Cursor on-load yok; over-orchestration riski)
+
 ### ADR-009: Executive Operating System
 
 **Durum:** Kabul edildi  

@@ -47,6 +47,7 @@ test/factory-smoke-app/local.properties
 test/.factory/project.json
 
 .factory/project.json
+.factory/bootstrap_manifest.json
 .factory/sync.json
 governance/project.config.json
 governance/executive/SPRINT_LOCK.json

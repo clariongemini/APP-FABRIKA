@@ -108,6 +108,10 @@ REQUIRED_FILES=(
   "governance/phase-agents.json"
   "scripts/split-layer-manifest.py"
   "scripts/validate-layer-slices.sh"
+  "scripts/bootstrap-external-project.sh"
+  "docs/AI_STUDIO_IMPORT.md"
+  ".cursor/rules/19-aistudio-import.mdc"
+  ".cursor/commands/import-aistudio.md"
   "scripts/scaffold-android-project-to.sh"
   "test/bootstrap-smoke-app.sh"
   "test/run-factory-audit.sh"
@@ -132,7 +136,7 @@ for file in "${REQUIRED_FILES[@]}"; do
 done
 
 # Wrapper scripts must be executable
-for script in run-ceo-cycle init-governance agent-approval-gate gradle-build-loop run-maestro state-recovery scaffold-android-project-to; do
+for script in run-ceo-cycle init-governance agent-approval-gate gradle-build-loop run-maestro state-recovery scaffold-android-project-to bootstrap-external-project; do
   if [[ ! -x "$ROOT/scripts/${script}.sh" ]]; then
     echo "HATA: Çalıştırılabilir değil — scripts/${script}.sh"
     ERRORS=$((ERRORS + 1))

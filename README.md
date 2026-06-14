@@ -822,6 +822,17 @@ Template'i güncelledikten veya büyük değişiklikten sonra:
 
 Detay: [`test/README.md`](test/README.md) · [`docs/BOOTSTRAP.md`](docs/BOOTSTRAP.md)
 
+### Senaryo E — Stitch / AI Studio import
+
+Prompt → Google Stitch (tasarım) → AI Studio (Android export) → fabrika ile olgunlaştırma:
+
+```bash
+export FACTORY_REPO=~/Android-App-Factory
+"$FACTORY_REPO/scripts/bootstrap-external-project.sh" /path/to/export "App" "com.app" "vizyon"
+```
+
+Cursor: `/import-aistudio` → `/baslat` — Detay: [`docs/AI_STUDIO_IMPORT.md`](docs/AI_STUDIO_IMPORT.md)
+
 ---
 
 ## Belge Dizini / Documentation Index

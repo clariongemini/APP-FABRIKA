@@ -70,6 +70,22 @@ git submodule update --remote .factory
 ./.factory/scripts/sync-standards.sh .
 ```
 
+## Senaryo D: Google Stitch → AI Studio → Fabrika
+
+1. Prompt → **Google Stitch** (UI tasarım, manuel export)
+2. **Google AI Studio** → Android projesi indir
+3. Bootstrap (mevcut AI Studio kodu korunur):
+
+```bash
+export FACTORY_REPO=~/Android-App-Factory
+"$FACTORY_REPO/scripts/bootstrap-external-project.sh" \
+  /path/to/aistudio-export "AppAdi" "com.sirket.app" "Vizyon promptu"
+```
+
+4. Cursor: `/import-aistudio` veya `/baslat`
+
+Detay: [`docs/AI_STUDIO_IMPORT.md`](AI_STUDIO_IMPORT.md)
+
 ## init-new-app.sh Ne Yapar?
 
 | Adım | Açıklama |

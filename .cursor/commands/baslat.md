@@ -8,6 +8,7 @@ Kullanıcının mesajındaki tüm metin = **kaynak prompt**. Ek argüman varsa o
 
 ## Zorunlu sıra
 
+0. **Harici proje (AI Studio import):** `.factory/bootstrap_manifest.json` yoksa → önce `/import-aistudio` veya `bootstrap-external-project.sh` (bkz. `docs/AI_STUDIO_IMPORT.md`). Fabrika şablon reposunda bu adım atlanır.
 1. **Skill:** `.cursor/skills/zero-hallucination/SKILL.md` uygula.
 2. **Oku:** `docs/00-INDEX.md`, `.cursor/rules/00-overmind-zero-hallucination.mdc`
 3. **YAPILACAKLAR oluştur/güncelle:**
