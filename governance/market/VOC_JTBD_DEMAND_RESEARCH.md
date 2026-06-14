@@ -371,7 +371,7 @@
 | **5** | Terapi/uygulama çok pahalı — erişemiyorum | «$100–250 per session» |
 | **6** | Evde doğru pratik yapıp yapmadığımdan emin değilim | «Don't want to reinforce bad habits» |
 | **7** | Belirli ses/harf söylenmiyor (R, S, L…) | «Says W instead of R» |
-| **8** | Konuşma uygulaması gerçekte işe yaramıyor | «Great job when silent» |
+| **8** | Terapi uygulaması gerçekte işe yaramıyor | «Great job when silent» |
 | **9** | Abonelik iptal / para iadesi kabusu | «Charged after cancel» «scam» |
 | **10** | İlerleme göremiyorum — emek boşa mı | «Jury is out» «not making progress» |
 | **11** | Kekemelik günlük hayatı kısıtlıyor | «Can't order coffee» «avoid phone» |
