@@ -29,13 +29,13 @@ secrets.properties
 .cursor/chat/
 .cursor/plans/
 .cursor/mcp.json
-.cursor/snapshots/build/
-.cursor/snapshots/maestro/
-.cursor/snapshots/mcp/
+**/.cursor/snapshots/build/
+**/.cursor/snapshots/maestro/
+**/.cursor/snapshots/mcp/
+**/.cursor/snapshots/recovery/
 !.cursor/snapshots/README.md
 !.cursor/snapshots/HANDOFF.template.json
 !.cursor/snapshots/RECOVERY.template.json
-.cursor/snapshots/recovery/
 
 # OS
 Thumbs.db

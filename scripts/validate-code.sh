@@ -175,6 +175,13 @@ if command -v rg &>/dev/null; then
   fi
 fi
 
+if git -C "$ROOT" rev-parse --git-dir &>/dev/null; then
+  if git -C "$ROOT" ls-files | grep -q 'snapshots/recovery/'; then
+    echo "HATA: Runtime recovery snapshot commit edilmiş — gitignore + git rm --cached"
+    ERRORS=$((ERRORS + 1))
+  fi
+fi
+
 if [[ $ERRORS -gt 0 ]]; then
   echo "==> Doğrulama BAŞARISIZ ($ERRORS hata)"
   exit 1

@@ -64,6 +64,12 @@
 - Scaffold binary copy fix (`gradle-wrapper.jar`)
 - `state-recovery.sh` — `RECOVERY_ROOT` ile alt proje checkpoint
 
+### Gitignore fix (v0.6.6.1)
+
+- `**/.cursor/snapshots/recovery/` — alt projelerde runtime checkpoint commit dışı
+- Yanlışlıkla commit edilen smoke recovery dosyaları kaldırıldı
+- `validate-code.sh` — tracked recovery snapshot kontrolü
+
 ### ADR-009: Executive Operating System
 
 **Durum:** Kabul edildi  

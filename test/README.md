@@ -32,3 +32,5 @@ chmod +x test/*.sh scripts/scaffold-android-project-to.sh
 ## Not
 
 Tam `init-new-app.sh` akışı fabrika **kök** `docs/` dosyalarını değiştirir. Smoke test bunun yerine `scaffold-android-project-to.sh` ile izole `test/factory-smoke-app` kullanır.
+
+**Runtime snapshot'lar** (`test/factory-smoke-app/.cursor/snapshots/recovery/` vb.) `.gitignore` ile commit dışıdır — bootstrap sırasında yerelde oluşur.
