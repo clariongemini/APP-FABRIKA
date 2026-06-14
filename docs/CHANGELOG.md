@@ -8,7 +8,8 @@
 
 - `docs/AUTHOR.md` — proje sahibi ve kullanım notları
 - Editorial geçiş: sade dil, geliştirici hitabı, gereksiz sürüm/emoji/pazarlama dili temizlendi
-- Fabrika sürümü **1.0.0** — script, meta ve proje şablonları hizalandı
+- Fabrika sürümü **1.0.0** — script, meta, LICENSE, GitHub Actions workflow hizalandı
+- `scripts/validate-factory-version.sh` — sürüm tutarlılık denetimi (CI ilk adım)
 
 ### Includes (önceki geliştirme döngüsü)
 

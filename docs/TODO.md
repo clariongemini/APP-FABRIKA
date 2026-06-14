@@ -12,6 +12,7 @@
 
 - [x] Editorial geçiş + Ulaş Kaşıkcı attribution
 - [x] Fabrika sürümü 1.0.0 — script/meta/template hizalama
+- [x] LICENSE + `.github/workflows` v1.0.0 hizalama + `validate-factory-version.sh`
 
 ## Executive OS (2026-06-14)
 

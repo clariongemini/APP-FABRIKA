@@ -59,6 +59,7 @@ REQUIRED_FILES=(
   "governance/executive/HIERARCHICAL_AUDIT_CHAIN.md"
   "governance/executive/AGENT_APPROVAL_PROTOCOL.md"
   "governance/market/DEPARTMENT_CHARTER.md"
+  "scripts/validate-factory-version.sh"
   "scripts/bootstrap-gradle-wrapper.sh"
   "scripts/validate-android-template.sh"
   "scripts/setup-mcp.sh"
@@ -136,7 +137,7 @@ for file in "${REQUIRED_FILES[@]}"; do
 done
 
 # Wrapper scripts must be executable
-for script in run-ceo-cycle init-governance agent-approval-gate gradle-build-loop run-maestro state-recovery scaffold-android-project-to bootstrap-external-project; do
+for script in run-ceo-cycle init-governance agent-approval-gate gradle-build-loop run-maestro state-recovery scaffold-android-project-to bootstrap-external-project validate-factory-version; do
   if [[ ! -x "$ROOT/scripts/${script}.sh" ]]; then
     echo "HATA: Çalıştırılabilir değil — scripts/${script}.sh"
     ERRORS=$((ERRORS + 1))
