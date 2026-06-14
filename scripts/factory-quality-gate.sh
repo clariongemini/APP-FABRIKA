@@ -67,7 +67,7 @@ echo "── Sağlık skoru ──"
 HEALTH_OUT="$(bash scripts/factory-health.sh)"
 echo "$HEALTH_OUT" | tail -5
 
-HEALTH_SCORE="$(echo "$HEALTH_OUT" | grep 'GENEL TOPLAM' | grep -oE '[0-9]+' | head -1)"
+HEALTH_SCORE="$(echo "$HEALTH_OUT" | grep -E 'GENEL TOPLAM|Toplam:' | grep -oE '[0-9]+' | head -1 || true)"
 HEALTH_SCORE="${HEALTH_SCORE:-0}"
 
 TOTAL_CHECKS=$((PASS + FAIL))

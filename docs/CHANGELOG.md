@@ -9,6 +9,16 @@
 - `scripts/validate-reasoning-template-xml.sh` — şablon XML açılış/kapanış dengesi
 - Audit **V2.7–V2.9** (XML script, negative_constraints, kelime cap)
 
+### Added (lab patch)
+
+- `test/run-all-tests.sh` — tek orkestratör (reasoning XML + audit + AI Studio lab + quality gate)
+- `test/bootstrap-aistudio-lab.sh` + `test/fixtures/aistudio-minimal/` — `bootstrap-external-project.sh` dikey doğrulama
+- `test/README.md` — lab ve orkestratör dokümantasyonu
+
+### Fixed
+
+- `scripts/factory-quality-gate.sh` — `Toplam:` grep eşleşmesi; `set -e` sessiz exit 1
+
 ### Changed
 
 - `19-claude-reasoning.mdc` → v2.1 stable; üç blok zorunlu sıra

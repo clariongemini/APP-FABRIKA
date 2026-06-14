@@ -68,6 +68,8 @@ Bu komut:
 3. `init-governance.sh` + `init-yapilacaklar.sh` çalıştırır  
 4. `.factory/bootstrap_manifest.json` yazar (Cursor `/baslat` kapısı)
 
+**Fabrika içi doğrulama:** `./test/bootstrap-aistudio-lab.sh` (fixture → `test/aistudio-lab-run/`, gitignore)
+
 ### Adım 3 — Cursor
 
 ```text

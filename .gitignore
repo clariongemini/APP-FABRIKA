@@ -44,7 +44,7 @@ Thumbs.db
 test/factory-smoke-app/.gradle/
 test/factory-smoke-app/build/
 test/factory-smoke-app/local.properties
-test/.factory/project.json
+test/aistudio-lab-run/
 
 .factory/project.json
 .factory/bootstrap_manifest.json

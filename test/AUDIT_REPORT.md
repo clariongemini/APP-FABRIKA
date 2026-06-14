@@ -1,6 +1,6 @@
 # Factory Audit Report — FactorySmoke
 
-> Oluşturulma: 2026-06-14T18:47:41+0300  
+> Oluşturulma: 2026-06-14T18:55:03+0300  
 > Fabrika: `/Users/ulas/Desktop/Repo`  
 > Smoke app: `test/factory-smoke-app`
 
@@ -8,11 +8,11 @@
 
 | Metrik | Değer |
 |--------|-------|
-| ✅ Geçti | 40 |
+| ✅ Geçti | 41 |
 | ❌ Başarısız | 0 |
-| ⚠️ Uyarı | 1 |
+| ⚠️ Uyarı | 0 |
 | ⏭️ Atlandı | 1 |
-| **Başarı oranı** | **95%** (fail hariç) |
+| **Başarı oranı** | **97%** (fail hariç) |
 
 ## Adım denetimi
 
@@ -58,7 +58,7 @@
 | QG.2 | audit-layers.sh | ✅ pass |  |
 | QG.3 | audit-layer-components.sh | ✅ pass |  |
 | QG.4 | factory-health.sh 100 | ✅ pass |  |
-| QG.5 | factory-quality-gate.sh | ⚠️ warn | MCP yerel uyarı olabilir |
+| QG.5 | factory-quality-gate.sh | ✅ pass | MCP yerel uyarı olabilir |
 | BUILD | factory-smoke-app assembleDebug | ⏭️ skip | JDK yok veya gradlew eksik — docs/BOOTSTRAP.md JDK 17+ |
 
 ## Fabrika akışı (uygulanması gerekenler)

@@ -2,7 +2,7 @@
 
 **Yazar:** [Ulaş Kaşıkcı](docs/AUTHOR.md)
 
-Her Android projesine aktarılabilir fabrika paketi (Executive OS + 16 ajan).
+Her Android projesine aktarılabilir fabrika paketi (Executive OS + 16 ajan) · **v2.1.0-stable**
 
 ---
 
@@ -54,6 +54,7 @@ Her Android projesine aktarılabilir fabrika paketi (Executive OS + 16 ajan).
 python3 scripts/governance/validate-audit-chain.py
 python3 scripts/governance/validate-yapilacaklar.py
 ./scripts/agent-approval-gate.sh
+./test/run-all-tests.sh              # v2.1 — audit + AI Studio lab + quality gate
 ```
 
 ## YAPILACAKLAR (zorunlu plan)

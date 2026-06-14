@@ -96,7 +96,7 @@
 |:---:|:---|:---:|
 | Fabrika sağlığı | `./scripts/factory-health.sh` | 100 / 100 |
 | Bileşik denetim | `./scripts/factory-quality-gate.sh` | CI + pre-commit |
-| Smoke denetimi | `test/run-factory-audit.sh` | 32 kontrol |
+| Smoke denetimi | `test/run-all-tests.sh` | 40+ kontrol + AI Studio lab |
 
 <sub>Designed and maintained by <strong><a href="docs/AUTHOR.md">Ulaş Kaşıkcı</a></strong> · Android factory template · Cursor + Executive OS</sub>
 
@@ -142,7 +142,7 @@ Fabrika Cursor Agent kurallarına göre çalışır; düz sohbet LLM'i ile aynı
 | Denetim | Yok | **Hiyerarşik audit** — tek ajan onayı yasak |
 | Gerçek dünya verisi | Sınırlı | **MCP**: Browser, GitHub, Docker |
 | Komutlar | Yok | `/baslat` `/devam-et` `/denetle` `/faz-durumu` |
-| Otomatik doğrulama | Yok | `pre-commit` + CI + `factory-quality-gate.sh` + `test/run-factory-audit.sh` |
+| Otomatik doğrulama | Yok | `pre-commit` + CI + `factory-quality-gate.sh` + `test/run-all-tests.sh` |
 
 **Cursor yoksa** bu repo statik dokümantasyon + Gradle şablonu. **Cursor varsa** YAPILACAKLAR, ajanlar ve denetim scriptleri devreye girer.
 
@@ -161,7 +161,7 @@ Same factory; English labels in tables below. Expects Cursor Agent rules—not a
 | Audit | None | **Hierarchical audit** — single-agent approval forbidden |
 | Real-world data | Limited | **MCP**: Browser, GitHub, Docker |
 | Commands | None | `/baslat` `/devam-et` `/denetle` `/faz-durumu` |
-| Automated validation | None | `pre-commit` + CI + `factory-quality-gate.sh` + `test/run-factory-audit.sh` |
+| Automated validation | None | `pre-commit` + CI + `factory-quality-gate.sh` + `test/run-all-tests.sh` |
 
 **Without Cursor:** static docs + template. **With Cursor:** phase gates, agents, audit scripts.
 
@@ -570,8 +570,9 @@ python3 scripts/governance/validate-audit-chain.py
 
 ```bash
 ./scripts/factory-quality-gate.sh   # Tüm doğrulamalar — hedef 100/100
-./test/run-factory-audit.sh         # Smoke app + 32 fabrika kontrolü
-./test/bootstrap-smoke-app.sh         # FactorySmoke uygulamasını oluştur
+./test/run-all-tests.sh             # Orkestratör: audit + AI Studio lab + kalite kapısı
+./test/bootstrap-aistudio-lab.sh    # Stitch/AI Studio bootstrap canlı infaz (fixture)
+./test/bootstrap-smoke-app.sh       # FactorySmoke uygulamasını oluştur
 ./scripts/pre-commit.sh             # Commit öncesi denetim
 ./gradlew assembleDebug             # Android derleme kanıtı (JDK 17+)
 ```
@@ -676,7 +677,8 @@ Monetization: [e.g. subscription, 7-day free trial]
 
 ```bash
 ./scripts/factory-quality-gate.sh   # All validations — target 100/100
-./test/run-factory-audit.sh         # Smoke app + 32 factory checks
+./test/run-factory-audit.sh         # Smoke app + 40+ factory checks
+./test/run-all-tests.sh             # Full orchestrator (v2.1.0-stable)
 ./test/bootstrap-smoke-app.sh         # Create FactorySmoke test app
 ./scripts/pre-commit.sh             # Pre-commit audit
 ./gradlew assembleDebug             # Android build proof (JDK 17+)
@@ -695,7 +697,7 @@ Monetization: [e.g. subscription, 7-day free trial]
 │   ├── skills/               # planner, executor, zero-hallucination, audit
 │   ├── agents/               # phase-verifier, plan-expander, auditors
 │   └── snapshots/            # Runtime handoff (build/recovery — gitignore)
-├── test/                     # FactorySmoke + 32-step audit harness
+├── test/                     # FactorySmoke + run-all-tests + AI Studio lab
 │   ├── bootstrap-smoke-app.sh
 │   ├── run-factory-audit.sh
 │   ├── AUDIT_REPORT.md
@@ -847,11 +849,13 @@ Dizin: [`docs/03-STANDARDS/`](docs/03-STANDARDS/)
 
 ### Fabrika Smoke Test (`test/`)
 
-Fabrika kökünü değiştirmeden **32 kontrol** + izole Android uygulaması:
+Fabrika kökünü değiştirmeden **40+ kontrol** + izole Android uygulaması + **AI Studio bootstrap lab**:
 
 ```bash
-./test/bootstrap-smoke-app.sh   # FactorySmoke oluştur (test/factory-smoke-app)
-./test/run-factory-audit.sh     # F0–F8 + Cursor bridge denetimi → test/AUDIT_REPORT.md
+./test/run-all-tests.sh           # Önerilen — tam paket (v2.1.0-stable)
+./test/bootstrap-smoke-app.sh     # FactorySmoke (test/factory-smoke-app)
+./test/bootstrap-aistudio-lab.sh # Ham AI Studio fixture → bootstrap-external-project
+./test/run-factory-audit.sh       # F0–F8 + Cursor bridge → test/AUDIT_REPORT.md
 ```
 
 Detay: [`test/README.md`](test/README.md) · Rapor: [`test/AUDIT_REPORT.md`](test/AUDIT_REPORT.md)
@@ -893,8 +897,10 @@ git submodule update --remote .factory && ./.factory/scripts/sync-standards.sh .
 Template'i güncelledikten veya büyük değişiklikten sonra:
 
 ```bash
+./test/run-all-tests.sh           # Tam paket — audit + lab + quality gate
 ./test/bootstrap-smoke-app.sh
-./test/run-factory-audit.sh    # 32/32 hedef — BUILD satırı JDK 17+ gerektirir
+./test/bootstrap-aistudio-lab.sh  # AI Studio import doğrulama
+./test/run-factory-audit.sh       # 40/40 hedef — BUILD satırı JDK 17+ gerektirir
 ```
 
 Detay: [`test/README.md`](test/README.md) · [`docs/BOOTSTRAP.md`](docs/BOOTSTRAP.md)
@@ -909,6 +915,8 @@ export FACTORY_REPO=~/Android-App-Factory
 ```
 
 Cursor: `/import-aistudio` → `/baslat` — Detay: [`docs/AI_STUDIO_IMPORT.md`](docs/AI_STUDIO_IMPORT.md)
+
+**Fabrika doğrulaması (CI/lokal):** `./test/bootstrap-aistudio-lab.sh` veya `./test/run-all-tests.sh`
 
 ---
 

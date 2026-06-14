@@ -6,7 +6,9 @@ Bu klasör, **fabrika kökünü değiştirmeden** repo özelliklerini doğrular.
 
 ```bash
 chmod +x test/*.sh scripts/scaffold-android-project-to.sh
-./test/bootstrap-smoke-app.sh
+./test/run-all-tests.sh          # tam paket (önerilen)
+./test/bootstrap-smoke-app.sh    # sadece smoke app
+./test/bootstrap-aistudio-lab.sh # AI Studio import canlı infaz
 ```
 
 ## İçerik
@@ -14,6 +16,10 @@ chmod +x test/*.sh scripts/scaffold-android-project-to.sh
 | Yol | Açıklama |
 |-----|----------|
 | `bootstrap-smoke-app.sh` | `test/factory-smoke-app` Android iskeletini oluşturur + audit |
+| `bootstrap-aistudio-lab.sh` | Stitch/AI Studio fixture → `bootstrap-external-project.sh` canlı infaz |
+| `run-all-tests.sh` | Tam paket: reasoning XML + audit + AI Studio lab + kalite kapısı |
+| `fixtures/aistudio-minimal/` | Minimal AI Studio export (hard-coded i18n — kasıtlı) |
+| `aistudio-lab-run/` | Lab çıktısı (gitignore — bootstrap sonrası) |
 | `run-factory-audit.sh` | F0–F8 + Cursor bridge adımlarını denetler |
 | `AUDIT_REPORT.md` | Son denetim raporu (otomatik üretilir) |
 | `factory-smoke-app/` | Minimal 10 modüllü smoke uygulaması |
