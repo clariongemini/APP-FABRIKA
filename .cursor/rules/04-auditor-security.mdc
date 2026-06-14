@@ -34,11 +34,11 @@ Tam bileşen listesi: `docs/33-LAYER-MANIFEST/layer-NN.yaml` (KATMAN 16–19, 21
 1. Her kod değişikliğinde ilgili katmanları kontrol et.
 2. İhlal tespit edilirse süreci DURDUR. Geliştirici ajana spesifik düzeltme emri ver:
    > "Şu dosyada Katman 21 ihlali var. CPU/frame optimizasyonu hatalı. Şu mimariyle düzelt."
-3. `docs/TODO.md` → "Giderilmesi Gereken Hata" olarak kaydet. Mimar onayı olmadan kapatma.
+3. `docs/TODO.md` → "Giderilmesi Gereken Hata" olarak kaydet. Geliştirici onayı olmadan kapatma.
 4. `scripts/validate-code.sh` ve `./scripts/gradle-build-loop.sh` çalıştır (gradlew varsa).
 5. UI smoke (cihaz varsa): `./scripts/run-maestro.sh`
 6. Release öncesi **OEM Denetçisi** onayı al: `./scripts/audit-oem-compat.sh` + `OEM_TEST_REPORT.md` P0 geçti mi?
-7. Tüm kontroller geçmeden Mimar'a "Tamamlandı" deme.
+7. Tüm kontroller geçmeden geliştiriciye "Tamamlandı" deme.
 
 ## RED KRİTERLERİ
 - Hard-coded string (i18n ihlali)

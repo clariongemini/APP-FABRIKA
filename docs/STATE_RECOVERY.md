@@ -1,4 +1,4 @@
-# State Recovery — Durum Kurtarma (v0.6.5)
+# State Recovery — Durum Kurtarma
 
 Composer token truncation veya yarım Gradle/TOML edit sonrası fabrikayı kararlı duruma döndürür.
 

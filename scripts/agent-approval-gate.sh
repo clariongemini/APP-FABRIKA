@@ -30,9 +30,7 @@ check_wp() {
   return 1
 }
 
-echo "╔══════════════════════════════════════════╗"
-echo "║     AJAN ONAY KAPISI — ÇİFT ONAY         ║"
-echo "╚══════════════════════════════════════════╝"
+echo "==> Ajan onay kapısı"
 
 if [[ $# -eq 0 ]]; then
   echo ""

@@ -1,27 +1,25 @@
 # Ulas Autonomous Android APP Factory
 
-<p align="center">
-  <strong>🇹🇷 Otonom Android Uygulama Fabrikası</strong><br>
-  <strong>🇬🇧 Autonomous Android Application Factory</strong>
-</p>
+Android projelerini aynı standartla, Cursor üzerinde ajan kurallarıyla üretmek için kurduğum fabrika reposu.
+
+**Yazar:** [Ulaş Kaşıkcı](docs/AUTHOR.md) · **Lisans:** [MIT](LICENSE)
+
+Bu depo tek bir uygulama değil. Standartlar, governance, Gradle şablonu ve `.cursor/rules/` burada; uygulama kodu `init-new-app.sh` veya `sync-standards.sh` ile hedef projeye gider.
+
+33 katman · Executive OS · 16 ajan · 10 Gradle modülü · MCP (Browser, GitHub)
 
 <p align="center">
-  <code>33 Layers</code> · <code>360 Components</code> · <code>Executive OS</code> · <code>16 AI Agents</code> · <code>10 Gradle Modules</code> · <code>MCP-Powered</code>
-</p>
-
-<p align="center">
-  <a href="https://github.com/clariongemini/Android-App">GitHub Template</a> ·
+  <a href="https://github.com/clariongemini/Android-App">GitHub</a> ·
   <a href="docs/BOOTSTRAP.md">Bootstrap</a> ·
   <a href="docs/EXECUTIVE_OS.md">Executive OS</a> ·
-  <a href="AGENTS.md">Agents</a> ·
-  <a href="LICENSE">MIT License</a>
+  <a href="AGENTS.md">Ajanlar</a>
 </p>
 
 ---
 
 ## İçindekiler / Table of Contents
 
-| 🇹🇷 Türkçe | 🇬🇧 English |
+| Türkçe | English |
 |------------|-------------|
 | [Sistem Özeti](#-türkçe--sistem-özeti) | [System Overview](#-english--system-overview) |
 | [Ne Sunar?](#ne-sunar) | [What It Delivers](#what-it-delivers) |
@@ -40,24 +38,18 @@
 
 ---
 
-> ### 📖 Bu repoya ilk kez mi giriyorsun? / First time here?
->
-> **🇹🇷** Bu repo bir Android uygulaması değil — **Cursor IDE içinde çalışan otonom bir AI fabrikasıdır.** Template'i kopyala → Cursor'da aç → `/baslat` yaz → AI senin adına vizyon, mimari, kod ve denetimi **kurallı** şekilde üretir.
->
-> **🇬🇧** This is not an Android app — it is an **autonomous AI factory that runs inside Cursor IDE.** Copy the template → open in Cursor → type `/baslat` → AI produces vision, architecture, code, and audits **under strict rules**.
->
-> ⏱️ Okuma süresi / Reading time: ~15 dk · Başlangıç / Start: [Adım 1](#adım-1--template-reposunu-oluştur)
+> **İlk kez mi bakıyorsun?** Bu repo bir APK değil; Cursor'da `/baslat` ile faz planı açılır, onaydan sonra kod üretilir. Kurulum: [Bootstrap](docs/BOOTSTRAP.md).
 
 ---
 
-## 🇹🇷 Türkçe — Neden Cursor?
+## Neden Cursor?
 
-Bu fabrika **yalnızca Cursor IDE** (veya Cursor Agent destekli ortamlar) için tasarlanmıştır. Düz ChatGPT veya genel LLM sohbetinden farklı olarak:
+Fabrika Cursor Agent kurallarına göre çalışır; düz sohbet LLM'i ile aynı şey değil.
 
 | Özellik | Genel AI sohbet | Bu fabrika (Cursor) |
 |---------|-----------------|---------------------|
 | Proje hafızası | Her oturum sıfırdan | `.cursorrules` + `docs/00-INDEX.md` kalıcı |
-| Rol bazlı uzmanlık | Tek genel asistan | **16 departman ajanı** (CPO, Mimar, Android…) |
+| Rol bazlı uzmanlık | Tek genel asistan | **16 departman ajanı** (CPO, Baş Mimar, Android…) |
 | Halüsinasyon kontrolü | Kullanıcıya bağlı | **Zorunlu** — dosya okumadan referans yasak |
 | İş akışı | Serbest sohbet | **YAPILACAKLAR F0–F8** faz kapısı |
 | Denetim | Yok | **Hiyerarşik audit** — tek ajan onayı yasak |
@@ -65,13 +57,13 @@ Bu fabrika **yalnızca Cursor IDE** (veya Cursor Agent destekli ortamlar) için 
 | Komutlar | Yok | `/baslat` `/devam-et` `/denetle` `/faz-durumu` |
 | Otomatik doğrulama | Yok | `pre-commit` + CI + `factory-quality-gate.sh` + `test/run-factory-audit.sh` |
 
-**Cursor olmadan** bu repo yalnızca statik dokümantasyon ve Gradle şablonudur. **Cursor ile** canlı, denetimli, çok ajanlı bir **Executive OS** haline gelir.
+**Cursor yoksa** bu repo statik dokümantasyon + Gradle şablonu. **Cursor varsa** YAPILACAKLAR, ajanlar ve denetim scriptleri devreye girer.
 
 ---
 
-## 🇬🇧 English — Why Cursor?
+## Why Cursor? (EN)
 
-This factory is designed **exclusively for Cursor IDE** (or Cursor Agent–enabled environments). Unlike plain ChatGPT or generic LLM chat:
+Same factory; English labels in tables below. Expects Cursor Agent rules—not a generic chat session.
 
 | Feature | Generic AI chat | This factory (Cursor) |
 |---------|-----------------|------------------------|
@@ -84,18 +76,16 @@ This factory is designed **exclusively for Cursor IDE** (or Cursor Agent–enabl
 | Commands | None | `/baslat` `/devam-et` `/denetle` `/faz-durumu` |
 | Automated validation | None | `pre-commit` + CI + `factory-quality-gate.sh` + `test/run-factory-audit.sh` |
 
-**Without Cursor**, this repo is static docs and a Gradle template. **With Cursor**, it becomes a live, audited, multi-agent **Executive OS**.
+**Without Cursor:** static docs + template. **With Cursor:** phase gates, agents, audit scripts.
 
 ---
 
-## Cursor Entegrasyonu — Nasıl İşler? / How It Works in Cursor
-
-### Cursor bileşen yığını / Cursor component stack
+## Cursor entegrasyonu
 
 ```mermaid
 flowchart TB
     subgraph CursorIDE["Cursor IDE"]
-        USER["👤 Geliştirici / Developer"]
+        USER["Geliştirici"]
         CHAT["Chat + Agent Mode"]
 
         subgraph Rules["Always-on Rules"]
@@ -158,7 +148,7 @@ sequenceDiagram
     O->>Y: F0 işleniyor — plan oku
     C->>A: CPO → vizyon belgeleri
     A->>M: Rakip/pazar araştırması (Browser)
-    C->>A: Mimar → MODULE_MAP
+    C->>A: Baş Mimar → MODULE_MAP
     C->>A: Android → kod üretimi
     A->>G: validate-yapilacaklar.py
     G-->>C: ✅ Faz geçerli
@@ -183,9 +173,9 @@ sequenceDiagram
 
 ---
 
-## Sana Ne Katacak? / What You Gain
+## Ne kazandırır?
 
-### 🇹🇷 Cursor kullanıcısı olarak kazanımların
+### Cursor ile pratik farklar
 
 | # | Sorun (fabrika olmadan) | Bu repo ile |
 |---|-------------------------|-------------|
@@ -200,7 +190,7 @@ sequenceDiagram
 | 9 | Ölçüm yok | AID Sprint P event pipeline |
 | 10 | Her app için standart yazmak | `sync-standards.sh` — tek kaynak |
 
-### 🇬🇧 What Cursor users gain
+### What you gain (EN)
 
 | # | Without factory | With this repo |
 |---|-----------------|----------------|
@@ -221,7 +211,7 @@ sequenceDiagram
 09:00  cursor .                          → Proje açılır, Overmind kuralları yüklenir
 09:05  /baslat "Offline habit tracker…"  → YAPILACAKLAR oluşur, F0 başlar
 09:30  Agent: CPO pazar analizi          → MCP Browser → .cursor/snapshots/mcp/
-10:00  Agent: Mimar MODULE_MAP           → 10 modül yapısı onaylanır
+10:00  Agent: Baş Mimar MODULE_MAP      → 10 modül yapısı onaylanır
 11:00  /devam-et                         → F3 Android iskelet doğrulanır
 11:30  ./scripts/gradle-build-loop.sh    → Derleme kanıtı (LATEST.gradle.log)
 14:00  Agent: Android Compose UI         → Liquid Glass tema uygulanır
@@ -253,17 +243,17 @@ Tam `33-LAYER-MANIFEST.yaml` okuma **yasak**. Ajanlar yalnızca ihtiyaç duydukl
 | [`docs/CURSOR_CONTEXT_BUDGET.md`](docs/CURSOR_CONTEXT_BUDGET.md) | Ne zaman ne okunur |
 | `python3 scripts/split-layer-manifest.py` | Dilimleri manifest'ten üret |
 | [`scripts/state-recovery.sh`](scripts/state-recovery.sh) | Truncation → checkpoint + rollback |
-| [`docs/STATE_RECOVERY.md`](docs/STATE_RECOVERY.md) | Durum kurtarma akışı (v0.6.5) |
+| [`docs/STATE_RECOVERY.md`](docs/STATE_RECOVERY.md) | Durum kurtarma (truncation / yarım Gradle) |
 
 **Gradle edit sırası (Composer):** `libs.versions.toml` → `build.gradle.kts` → `AndroidManifest.xml` → `.kt`
 
 ---
 
-## 🇹🇷 Türkçe — Sistem Özeti
+## Sistem Özeti
 
-**Ulas Autonomous Android APP Factory**, tek bir GitHub template reposu üzerinden **sınırsız sayıda Android uygulaması** üretmek için tasarlanmış kurumsal düzeyde bir **AI destekli geliştirme fabrikasıdır**.
+**Ulas Autonomous Android APP Factory**, tek bir GitHub template üzerinden aynı standartla Android uygulamaları üretmek için kurduğum fabrika reposu.
 
-Her yeni uygulamada standartları, mimariyi, güvenlik kurallarını, OEM matrisini ve Gradle iskeletini **sıfırdan yazmak zorunda kalmazsınız**. Fabrika:
+Her yeni uygulamada standartları, mimariyi, güvenlik kurallarını, OEM matrisini ve Gradle iskeletini sıfırdan yazmak zorunda kalmazsın. Fabrika:
 
 1. **Karar verir** — Ürün, pazar, roadmap (CPO, PDC, Mavi Okyanus)
 2. **Tasarlar** — 33 katmanlı mimari, modül haritası (Baş Mimar)
@@ -277,11 +267,11 @@ Tüm süreç **halüsinasyon sıfır** protokolü ve **YAPILACAKLAR.md** faz kap
 
 ---
 
-## 🇬🇧 English — System Overview
+## System Overview (EN)
 
-**Ulas Autonomous Android APP Factory** is an enterprise-grade **AI-powered development factory** built on a single GitHub template repository to produce **unlimited Android applications** with consistent quality.
+**Ulas Autonomous Android APP Factory** is a GitHub template for building Android apps with the same standards, Cursor agent rules, and governance on every project.
 
-You never rewrite standards, architecture, security rules, OEM matrices, or Gradle scaffolds for each new app. The factory:
+You do not rewrite architecture, security, OEM notes, or Gradle scaffolds for each new app. The factory:
 
 1. **Decides** — Product, market, roadmap (CPO, PDC, Blue Ocean)
 2. **Designs** — 33-layer architecture, module map (Chief Architect)
@@ -315,8 +305,8 @@ The entire flow is governed by a **zero-hallucination protocol** and the **YAPIL
 
 ```mermaid
 flowchart TB
-    subgraph Input["Mimar / Architect"]
-        P[Product Prompt]
+    subgraph Input["Geliştirici"]
+        P[Ürün promptu]
     end
 
     subgraph Gate["YAPILACAKLAR Gate"]
@@ -839,6 +829,7 @@ Cursor: `/import-aistudio` → `/baslat` — Detay: [`docs/AI_STUDIO_IMPORT.md`]
 
 | Belge | Açıklama |
 |-------|----------|
+| [`docs/AUTHOR.md`](docs/AUTHOR.md) | Proje sahibi — Ulaş Kaşıkcı |
 | [`docs/00-INDEX.md`](docs/00-INDEX.md) | Proje hafızası |
 | [`docs/BOOTSTRAP.md`](docs/BOOTSTRAP.md) | Detaylı kurulum senaryoları |
 | [`docs/EXECUTIVE_OS.md`](docs/EXECUTIVE_OS.md) | CEO V7, script ağacı |
@@ -854,24 +845,20 @@ Cursor: `/import-aistudio` → `/baslat` — Detay: [`docs/AI_STUDIO_IMPORT.md`]
 
 ---
 
-## Tek Prompt / One Prompt
+## Tek prompt
 
-> 🇹🇷 *"Uygulamayı 33 katman standartlarına göre geliştir."*  
-> 🇬🇧 *"Build the app according to 33-layer standards."*
+Cursor'da yeterli olan kısa ifade:
 
-Overmind önce `YAPILACAKLAR.md` okur, aktif fazı uygular, L1 denetim zincirini takip eder — **rastgele kod üretmez**.
+> *"Uygulamayı 33 katman standartlarına göre geliştir."*
+
+Overmind önce `YAPILACAKLAR.md` okur; aktif faz bitmeden rastgele kod üretmez.
 
 ---
 
 ## License
 
-MIT — see [`LICENSE`](LICENSE)
+MIT — [`LICENSE`](LICENSE)
 
 <p align="center">
-  <strong>Version:</strong> v0.6.6 · State recovery · Smoke test · Context budget · Executive OS 7.0
-</p>
-
-<p align="center">
-  <sub>Designed for architects who build systems, not single apps.</sub><br>
-  <sub>Tek uygulama değil; sistem kuran mimarlar için tasarlandı.</sub>
+  <strong>Ulaş Kaşıkcı</strong> · Android fabrika şablonu · Cursor + Executive OS
 </p>

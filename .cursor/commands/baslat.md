@@ -1,6 +1,6 @@
 # /baslat — Projeyi Hiyerarşik Faz Planıyla Başlat
 
-Mimarın verdiği promptu **kod yazmadan önce** işle. Halüsinasyon sıfır; uydurma yasak.
+Geliştiricinin verdiği promptu **kod yazmadan önce** işle. Halüsinasyon sıfır; uydurma yasak.
 
 ## Girdi
 

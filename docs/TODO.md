@@ -1,19 +1,26 @@
-# TODO — Fabrika Reposu
+# TODO — Fabrika reposu
 
-## Yayın Öncesi (v0.6)
+**Yazar:** Ulaş Kaşıkcı
 
-- [ ] GitHub `main` push — Executive OS v0.6.0
+## Yayın öncesi
+
+- [ ] GitHub `main` push
 - [ ] MCP: `.cursor/mcp.json` + GitHub PAT + Browser etkin
 - [ ] Template repository ayarı GitHub Settings'te doğrula
 
-## v0.6.0 — Executive OS (2026-06-14)
+## v1.0.0 (2026-06-14)
+
+- [x] Editorial geçiş + Ulaş Kaşıkcı attribution
+- [x] Fabrika sürümü 1.0.0 — script/meta/template hizalama
+
+## Executive OS (2026-06-14)
 
 - [x] 16 ajan + Overmind (00) + Growth (17)
 - [x] governance/ charter ağacı + init-governance.sh
 - [x] YAPILACAKLAR sistemi (F0–F8, commands, skills)
 - [x] validate-audit-chain + validate-yapilacaklar
 - [x] CEO/CAO/CEC/EGC/CDID script döngüleri
-- [x] validate-code + factory-health + CI v0.6 hizalama
+- [x] validate-code + factory-health + CI hizalama
 - [x] sync-standards genişletme + DX wrapper script'ler
 
 ## Tamamlanan (v0.5.0)

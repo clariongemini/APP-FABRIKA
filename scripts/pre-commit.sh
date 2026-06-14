@@ -4,7 +4,7 @@ set -euo pipefail
 ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 cd "$ROOT"
 
-echo "==> Otonom Holding — Pre-commit Denetimi (v0.6)"
+echo "==> Pre-commit denetimi"
 
 bash "$ROOT/scripts/validate-code.sh"
 bash "$ROOT/scripts/audit-layers.sh"

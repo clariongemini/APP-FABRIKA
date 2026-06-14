@@ -1,6 +1,8 @@
-# Bootstrap Kılavuzu — Yeni Android Projesi Başlatma
+# Bootstrap — Yeni Android projesi
 
-Bu belge, Autonomous App Factory'yi yeni bir Android projesine nasıl uygulayacağınızı adım adım açıklar.
+Bu belge, fabrikayı yeni bir Android projesine nasıl uygulayacağını adım adım anlatır.
+
+**Yazar:** [Ulaş Kaşıkcı](AUTHOR.md)
 
 ## Senaryo A: GitHub Template ile Sıfırdan
 

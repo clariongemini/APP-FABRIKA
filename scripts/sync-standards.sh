@@ -86,7 +86,7 @@ cat > "$TARGET/.factory/sync.json" <<EOF
 {
   "factory_root": "$FACTORY_ROOT",
   "synced_at": "$(date -u +%Y-%m-%dT%H:%M:%SZ)",
-  "factory_version": "0.6.0"
+  "factory_version": "1.0.0"
 }
 EOF
 

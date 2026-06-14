@@ -1,8 +1,8 @@
 {
   "name": "Ulas Autonomous Android APP Factory",
+  "author": "Ulaş Kaşıkcı",
   "type": "factory",
-  "version": "0.6.6",
-  "status": "publish-ready",
+  "version": "1.0.0",
   "agents": 16,
   "executive_os": "7.0",
   "hierarchical_audit": true,

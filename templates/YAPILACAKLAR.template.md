@@ -12,7 +12,7 @@
 | Oluşturulma | {{DATE}} |
 | Aktif faz | **F0 — Zemin & Temel** |
 | Aktif ajanlar | *(validate-yapilacaklar.py ile otomatik — `governance/phase-agents.json`)* |
-| Kaynak prompt | *(Mimar promptu buraya)* |
+| Kaynak prompt | *(Geliştirici promptu buraya)* |
 
 ---
 
@@ -101,7 +101,7 @@
 | F7.1 | `governance/executive/APPROVAL_QUEUE.md` WP'ler sırayla | CDID | CEC | L1+L2 onay | bekliyor |
 | F7.2 | Roadmap P0 feature implementasyonu | Android Elite | CEC | reality score ↑ | bekliyor |
 
-*Mimar promptundan türeyen ek WP'ler buraya `[EK-YYYYMMDD]` ile eklenir.*
+*Geliştirici promptundan türeyen ek WP'ler buraya `[EK-YYYYMMDD]` ile eklenir.*
 
 ---
 
@@ -111,7 +111,7 @@
 |---|-------|------|----|-------|-------|
 | F8.1 | `python3 scripts/cao/run_cao_audit.py` | CAO | CEO | rapor | bekliyor |
 | F8.2 | `./scripts/ceo/run_ceo_cycle.sh` | CEO | CSGB | cycle ok | bekliyor |
-| F8.3 | `./scripts/agent-approval-gate.sh` | Overmind | Mimar | gate pass | bekliyor |
+| F8.3 | `./scripts/agent-approval-gate.sh` | Overmind | Geliştirici | gate pass | bekliyor |
 | F8.4 | `docs/CHANGELOG.md` + release notları | CEO | EGC | ADR güncel | bekliyor |
 
 ---

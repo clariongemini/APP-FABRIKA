@@ -1,64 +1,57 @@
-# GitHub Repo Açıklamaları / Repository Descriptions
+# GitHub repo açıklamaları
 
-Repo: **[clariongemini/Android-App](https://github.com/clariongemini/Android-App)**  
-Ad / Name: **Ulas Autonomous Android APP Factory**  
-Sürüm / Version: **v0.6.0**
+Repo: [clariongemini/Android-App](https://github.com/clariongemini/Android-App)  
+Ad: **Ulas Autonomous Android APP Factory**  
+Yazar: **Ulaş Kaşıkcı**
 
 ---
 
-## Kısa Açıklama / Short Description (GitHub "About" — max ~350 char)
+## Kısa açıklama (GitHub About — max ~350 karakter)
 
-### 🇹🇷 Türkçe (kısa)
+### Türkçe
 
-Otonom Android fabrikası: 33 katman, Executive OS, 16 AI ajanı, YAPILACAKLAR faz sistemi, MCP, Samsung/MIUI OEM, tam Gradle iskeleti. Tek komutla uygulama temeli.
+Android fabrika şablonu: 33 katman, Executive OS, 16 Cursor ajanı, YAPILACAKLAR faz sistemi, MCP, OEM, tam Gradle iskeleti.
 
-### 🇬🇧 English (short)
+### English
 
-Autonomous Android factory: 33 layers, Executive OS, 16 AI agents, YAPILACAKLAR phase system, MCP, Samsung/MIUI OEM, full Gradle scaffold. One-command app foundation.
+Android factory template: 33 layers, Executive OS, 16 Cursor agents, YAPILACAKLAR phases, MCP, OEM, full Gradle scaffold.
 
 ---
 
 ## GitHub About — kopyala-yapıştır
 
-**Description (EN — önerilen):**
+**Description (EN):**
 ```
-Autonomous Android factory: 33 layers, Executive OS, 16 AI agents, MCP, OEM, full Gradle scaffold.
+Android factory template: 33 layers, Executive OS, 16 Cursor agents, MCP, OEM, Gradle scaffold. By Ulaş Kaşıkcı.
 ```
 
-**Description (TR alternatif):**
+**Description (TR):**
 ```
-Otonom Android fabrikası: 33 katman, Executive OS, 16 AI ajan, MCP, OEM, tam Gradle iskeleti.
+Android fabrika şablonu: 33 katman, Executive OS, 16 Cursor ajan, MCP, OEM, Gradle iskeleti. Ulaş Kaşıkcı.
 ```
 
 ---
 
-## Uzun Açıklama / Long Description
+## Uzun açıklama
 
-### 🇹🇷 Türkçe (detaylı)
+### Türkçe
 
-**Ulas Autonomous Android APP Factory**, gelecekteki tüm Android projelerinin **tek kaynaklı final mimari taslağıdır**.
+**Ulas Autonomous Android APP Factory**, gelecekteki Android projelerinin tek kaynaklı mimari ve Cursor kural setidir.
 
 **Ne sunar?**
-- **The Overmind** — Halüsinasyon sıfır, YAPILACAKLAR kapısı
-- **Executive OS** — CEO V7, hiyerarşik denetim, tek ajan onayı yasak
-- **16 AI Ajanı** — Factory + Intelligence + CEO · CAO · CEC · EGC · CDID · AID
-- **33 Katman** — 360 bileşen manifest
-- **10 Gradle modülü** — Compose Liquid Glass, Billing, FCM, Security, OEM
+- **Overmind** — Halüsinasyon sıfır, YAPILACAKLAR kapısı
+- **Executive OS** — CEO, hiyerarşik denetim, tek ajan onayı yasak
+- **16 ajan** — Factory + Intelligence + executive council
+- **33 katman** — 360 bileşen manifest
+- **10 Gradle modülü** — Compose, Billing, FCM, Security, OEM
 - **MCP** — Browser + GitHub (P0)
 - **Tek komut** — `init-new-app.sh` → belgeler + Android + governance + YAPILACAKLAR
 
-### 🇬🇧 English (detailed)
+### English
 
-**Ulas Autonomous Android APP Factory** is the **single-source blueprint** for all future Android projects.
+**Ulas Autonomous Android APP Factory** is the single-source blueprint for Android projects built with Cursor.
 
-**What it provides:**
-- **The Overmind** — Zero-hallucination, YAPILACAKLAR gate
-- **Executive OS** — CEO V7, hierarchical audit
-- **16 AI Agents** — Factory + Intelligence + executive council
-- **33 Layers** — 360-component manifest
-- **10 Gradle modules** — Compose, Billing, FCM, Security, OEM
-- **MCP** — Browser + GitHub (P0)
-- **One command** — `init-new-app.sh` → docs + Android + governance + YAPILACAKLAR
+**What it provides:** Overmind rules, Executive OS, 16 agents, 33-layer manifest, 10 Gradle modules, MCP, and one-command bootstrap via `init-new-app.sh`.
 
 ---
 
@@ -88,7 +81,7 @@ app-factory
 
 ```bash
 gh repo edit clariongemini/Android-App \
-  --description "Autonomous Android factory: 33 layers, Executive OS, 16 AI agents, MCP, OEM, full Gradle scaffold."
+  --description "Android factory template: 33 layers, Executive OS, 16 Cursor agents, MCP, OEM, Gradle scaffold."
 ```
 
 GitHub → Settings → **Template repository** ✅

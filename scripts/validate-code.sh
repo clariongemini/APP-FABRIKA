@@ -6,7 +6,7 @@ cd "$ROOT"
 
 ERRORS=0
 
-echo "==> Otonom Holding — Kod Doğrulama (v0.6)"
+echo "==> Kod doğrulama"
 
 REQUIRED_FILES=(
   ".cursorrules"

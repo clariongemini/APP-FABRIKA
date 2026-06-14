@@ -4,13 +4,13 @@
 
 ### Neden MCP?
 
-Fabrika ajanları (CPO, Mimar, Denetçi) tek başına sınırlıdır. **MCP (Model Context Protocol)** sunucuları ajanlara gerçek dünya yetenekleri kazandırır:
+Fabrika ajanları (CPO, Baş Mimar, Denetçi) tek başına sınırlıdır. **MCP (Model Context Protocol)** sunucuları ajanlara gerçek dünya yetenekleri kazandırır:
 
 | MCP | Ajan | Görev |
 |-----|------|-------|
 | **Browser** | CPO | Rakip analizi, Play Store, pazar araştırması |
-| **GitHub** | Mimar, Denetçi | Repo, CI, PR, release |
-| **Docker** | Mimar | İzole build ortamı |
+| **GitHub** | Baş Mimar, Denetçi | Repo, CI, PR, release |
+| **Docker** | Baş Mimar | İzole build ortamı |
 | **GitKraken** | Tümü | Git işlemleri, code review |
 | **Fetch** | CPO | Web içerik çekme |
 

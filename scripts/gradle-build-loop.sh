@@ -25,9 +25,7 @@ skip_or_fail() {
   exit 0
 }
 
-echo "╔══════════════════════════════════════════════════════════╗"
-echo "║  Gradle Build Loop — Cursor Terminal Bridge              ║"
-echo "╚══════════════════════════════════════════════════════════╝"
+echo "==> Gradle build loop"
 echo "  Task    : $TASK"
 echo "  Retries : $MAX_RETRIES"
 echo ""

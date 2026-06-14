@@ -1,6 +1,6 @@
 # Release Checklist — Play Store
 
-Mimar onayı + tüm denetçiler geçmeden yayın yok.
+Geliştirici onayı + tüm denetçiler geçmeden yayın yok.
 
 ## Otomatik Denetim
 
@@ -43,4 +43,4 @@ Mimar onayı + tüm denetçiler geçmeden yayın yok.
 | Kod | Android Elite | ⬜ |
 | Güvenlik | Auditor | ⬜ |
 | OEM | OEM Denetçi | ⬜ |
-| Mimar | Ulaş | ⬜ |
+| Sahip | Ulaş Kaşıkcı | ⬜ |

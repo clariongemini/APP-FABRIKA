@@ -52,7 +52,7 @@ Contract: `governance/execution/PDC_CONSUMPTION_CONTRACT.md`
 
 ## RAPOR
 
-Denetim sonucu `docs/02-ARCHITECTURE/OEM_TEST_REPORT.md` dosyasına yazılır. Mimar onayı olmadan P0 OEM testleri "passed" sayılmaz.
+Denetim sonucu `docs/02-ARCHITECTURE/OEM_TEST_REPORT.md` dosyasına yazılır. Geliştirici onayı olmadan P0 OEM testleri "passed" sayılmaz.
 
 ## ANDROID AJANA EMİR FORMATI
 

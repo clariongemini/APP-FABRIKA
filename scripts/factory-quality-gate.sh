@@ -33,9 +33,7 @@ run_warn() {
   fi
 }
 
-echo "╔══════════════════════════════════════════════════════════╗"
-echo "║     FABRİKA KALİTE KAPISI — v0.6                         ║"
-echo "╚══════════════════════════════════════════════════════════╝"
+echo "==> Fabrika kalite kapısı"
 echo ""
 
 echo "── Kod & Standartlar ──"

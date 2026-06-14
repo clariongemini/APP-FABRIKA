@@ -2,7 +2,7 @@
 
 Otomatik güncelleme: `./scripts/factory-health.sh`
 
-## Hedef: Her Kategori 10/10 (v0.6)
+## Hedef: Her kategori 10/10
 
 | # | Kategori | Hedef | İçerik |
 |---|----------|-------|--------|

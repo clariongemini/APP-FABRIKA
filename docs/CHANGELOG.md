@@ -1,6 +1,22 @@
 # CHANGELOG
 
-## [0.6.0] — 2026-06-14 — Executive OS
+## [1.0.0] — 2026-06-14 — İlk kararlı sürüm
+
+**Yazar:** Ulaş Kaşıkcı
+
+### Added
+
+- `docs/AUTHOR.md` — proje sahibi ve kullanım notları
+- Editorial geçiş: sade dil, geliştirici hitabı, gereksiz sürüm/emoji/pazarlama dili temizlendi
+- Fabrika sürümü **1.0.0** — script, meta ve proje şablonları hizalandı
+
+### Includes (önceki geliştirme döngüsü)
+
+Aşağıdaki [0.6.0] bölümündeki tüm özellikler bu sürümde birleştirildi.
+
+---
+
+## [0.6.0] — 2026-06-14 — Executive OS (geliştirme döngüsü)
 
 ### Added
 
@@ -19,7 +35,7 @@
 - Growth ajanı: `05-marketing-growth` → `17-marketing-growth` (OEM 05 çakışması giderildi)
 - Public template metinleri — proje-özel referanslar generic hale getirildi
 
-### Quality gate (v0.6.1)
+### Quality gate
 
 - Gradle wrapper tam bootstrap (`bootstrap-gradle-wrapper.sh` + gerçek `gradlew`)
 - `BillingRepository` Hilt `@ApplicationContext` — derlenebilir şablon
@@ -28,11 +44,11 @@
 - `scripts/setup-mcp.sh`, `validate-android-template.sh`, `validate-factory-governance.sh`
 - Genişletilmiş `.gitignore` — governance runtime JSON
 
-### Documentation (v0.6.2)
+### Documentation
 
 - `README.md` — kapsamlı TR/EN rehber, Cursor entegrasyonu, Mermaid diyagramlar, kullanıcı yolculuğu
 
-### Cursor 10/10 bridge (v0.6.3)
+### Cursor terminal bridge
 
 - `scripts/gradle-build-loop.sh` — Gradle assembleDebug + stacktrace + retry + log snapshot
 - `scripts/run-maestro.sh` — Maestro E2E terminal köprüsü
@@ -41,7 +57,7 @@
 - `00-overmind`, `02-architect`, `03-android`, `04-auditor`, `06-mcp`, `01-cpo` — build loop + glob optimizasyonu
 - `16-analytics` — proje-özel glob kaldırıldı
 
-### Context budget & faz ajanları (v0.6.4)
+### Context budget & faz ajanları
 
 - `docs/33-LAYER-MANIFEST/layer-NN.yaml` — 33 katman dilimi (on-demand yükleme)
 - `scripts/split-layer-manifest.py` + `scripts/validate-layer-slices.sh`
@@ -50,27 +66,27 @@
 - `YAPILACAKLAR.md` — `Aktif ajanlar` satırı; `validate-yapilacaklar.py` otomatik senkron
 - Ajan kuralları (`01`–`05`, `00-overmind`) — dilim referansları
 
-### State Recovery (v0.6.5-recovery-alpha)
+### State Recovery
 
 - `scripts/state-recovery.sh` — `--checkpoint` / `--recover` / `--status`
 - `gradle-build-loop.sh` — pre-build checkpoint + aynı hata ×2 auto-recover
 - `.cursor/rules/18-state-recovery.mdc` — truncation protokolü
 - `docs/STATE_RECOVERY.md` — Teacher/Student recovery akışı
 
-### Factory smoke test (v0.6.6)
+### Factory smoke test
 
 - `test/` — FactorySmoke denetim uygulaması + `run-factory-audit.sh` (32 kontrol)
 - `scripts/scaffold-android-project-to.sh` — hedef dizine Android iskelet
 - Scaffold binary copy fix (`gradle-wrapper.jar`)
 - `state-recovery.sh` — `RECOVERY_ROOT` ile alt proje checkpoint
 
-### Gitignore fix (v0.6.6.1)
+### Gitignore fix
 
 - `**/.cursor/snapshots/recovery/` — alt projelerde runtime checkpoint commit dışı
 - Yanlışlıkla commit edilen smoke recovery dosyaları kaldırıldı
 - `validate-code.sh` — tracked recovery snapshot kontrolü
 
-### AI Studio import (v0.6.7)
+### AI Studio import
 
 - `docs/AI_STUDIO_IMPORT.md` — Stitch → AI Studio → Fabrika iş akışı
 - `scripts/bootstrap-external-project.sh` — harici proje bootstrap (sync + governance + YAPILACAKLAR)

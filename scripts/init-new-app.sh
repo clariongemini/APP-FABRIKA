@@ -9,7 +9,7 @@ cd "$ROOT"
 
 APP_NAME="${1:-}"
 PACKAGE_NAME="${2:-}"
-FACTORY_VERSION="0.6.0"
+FACTORY_VERSION="1.0.0"
 
 if [[ -z "$APP_NAME" || -z "$PACKAGE_NAME" ]]; then
   echo "Kullanım: $0 <UygulamaAdi> <com.sirket.uygulama>"

@@ -33,9 +33,7 @@ if [[ ! -d "$FACTORY_ROOT/.cursor/rules" ]]; then
   exit 1
 fi
 
-echo "╔══════════════════════════════════════════════════════════╗"
-echo "║  Bootstrap External Project — AI Studio / mevcut app     ║"
-echo "╚══════════════════════════════════════════════════════════╝"
+echo "==> Bootstrap external project (AI Studio / mevcut app)"
 echo "  Fabrika : $FACTORY_ROOT"
 echo "  Hedef   : $TARGET"
 echo "  App     : $APP_NAME ($PACKAGE)"

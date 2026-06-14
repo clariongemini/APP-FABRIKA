@@ -8,11 +8,12 @@
 |------|-------|
 | Proje | Factory |
 | Package | `com.ulas.factory` |
-| Fabrika sürümü | v0.6.0 |
+| Yazar | [Ulaş Kaşıkcı](docs/AUTHOR.md) |
+| Fabrika sürümü | v1.0.0 |
 | Oluşturulma | 2026-06-14 |
 | Aktif faz | **F1 — Kolon & Taşıyıcı** |
 | Aktif ajanlar | `01-product-cpo`, `09-product-decision-council`, `17-marketing-growth`, `10-mavi-okyanus` · manifest: `layer-00.yaml`, `layer-01.yaml`, `layer-02.yaml`, `layer-25.yaml`, `layer-26.yaml`, `layer-30.yaml` |
-| Kaynak prompt | Fabrika v0.6 kalite kapısı — Executive OS + 33 katman + Gradle wrapper + governance policy |
+| Kaynak prompt | Fabrika kalite kapısı — Executive OS + 33 katman + Gradle wrapper + governance policy |
 
 ---
 
@@ -101,7 +102,7 @@
 | F7.1 | `governance/executive/APPROVAL_QUEUE.md` WP'ler sırayla | CDID | CEC | L1+L2 onay | bekliyor |
 | F7.2 | Roadmap P0 feature implementasyonu | Android Elite | CEC | reality score ↑ | bekliyor |
 
-*Mimar promptundan türeyen ek WP'ler buraya `[EK-YYYYMMDD]` ile eklenir.*
+*Geliştirici promptundan türeyen ek WP'ler buraya `[EK-YYYYMMDD]` ile eklenir.*
 
 ---
 
@@ -111,7 +112,7 @@
 |---|-------|------|----|-------|-------|
 | F8.1 | `python3 scripts/cao/run_cao_audit.py` | CAO | CEO | rapor | bekliyor |
 | F8.2 | `./scripts/ceo/run_ceo_cycle.sh` | CEO | CSGB | cycle ok | bekliyor |
-| F8.3 | `./scripts/agent-approval-gate.sh` | Overmind | Mimar | gate pass | bekliyor |
+| F8.3 | `./scripts/agent-approval-gate.sh` | Overmind | Geliştirici | gate pass | bekliyor |
 | F8.4 | `docs/CHANGELOG.md` + release notları | CEO | EGC | ADR güncel | bekliyor |
 
 ---

@@ -1,6 +1,8 @@
-# Ulas Autonomous Android APP Factory — Agent Directory
+# Ulas Autonomous Android APP Factory — Ajan Dizini
 
-> **Portable Executive OS** — Her Android projesine aktarılabilir fabrika paketi.
+**Yazar:** [Ulaş Kaşıkcı](docs/AUTHOR.md)
+
+Her Android projesine aktarılabilir fabrika paketi (Executive OS + 16 ajan).
 
 ---
 

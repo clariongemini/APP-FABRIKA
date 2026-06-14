@@ -15,9 +15,7 @@ fi
 
 step() { echo ""; echo "━━━ Step $1: $2 ━━━"; }
 
-echo "╔══════════════════════════════════════════════════╗"
-echo "║  CEO V5 — Product Reality Enforcement            ║"
-echo "╚══════════════════════════════════════════════════╝"
+echo "==> CEO cycle — product reality enforcement"
 echo "Mode: $( $FAST && echo FAST || echo FULL )"
 echo "Principle: No Feature Left Behind — agent freeze active"
 
@@ -108,8 +106,6 @@ step 22 "CEO Autonomous + Reality Reports"
 python scripts/ceo/build_ceo_autonomous_report.py
 
 echo ""
-echo "╔══════════════════════════════════════════════════╗"
-echo "║  ✅ CEO V5 Cycle Complete                        ║"
-echo "║  Reality:  governance/executive/CEO_PRODUCT_REALITY_REPORT.md"
-echo "║  Binding:  governance/egc/EGC_VERDICT.json"
-echo "╚══════════════════════════════════════════════════╝"
+echo "==> CEO cycle tamamlandı"
+echo "  Reality: governance/executive/CEO_PRODUCT_REALITY_REPORT.md"
+echo "  Binding: governance/egc/EGC_VERDICT.json"

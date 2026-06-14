@@ -21,7 +21,7 @@ Fabrika ajanları MCP olmadan kısıtlı kalır. **İlk oturumda** ve **her yeni
 | Ajan | MCP | Kullanım |
 |------|-----|----------|
 | CPO | Browser, Fetch | Rakip analizi, Play Store, pazar verisi |
-| Mimar | GitHub, Docker | CI durumu, build ortamı |
+| Baş Mimar | GitHub, Docker | CI durumu, build ortamı |
 | Android Elite | — | Kod üretimi (MCP gerekmez) |
 | Denetçi | GitHub | PR check, CI sonuçları |
 | OEM Denetçi | Browser | Üretici dokümantasyonu, MIUI rehberleri |

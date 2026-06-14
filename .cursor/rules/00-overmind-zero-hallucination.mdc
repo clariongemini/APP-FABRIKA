@@ -5,7 +5,7 @@ alwaysApply: true
 
 # Overmind — Halüsinasyon Sıfır & YAPILACAKLAR Kapısı
 
-Bu kural **her oturumda otomatik** uygulanır. Mimar halüsinasyon uyarısı yazmasa bile bu protokol geçerlidir.
+Bu kural **her oturumda otomatik** uygulanır. Geliştirici uyarı yazmasa bile bu protokol geçerlidir.
 
 ## Mutlak ön koşul (kod/dosya değişikliği öncesi)
 

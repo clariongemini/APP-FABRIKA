@@ -34,7 +34,7 @@ Tam bileşen listesi: `docs/33-LAYER-MANIFEST/layer-NN.yaml` (KATMAN 0, 1, 2, 25
 - **KATMAN 30** — Kategori Liderliği: Industry Benchmark, Technology/Design/Product Leadership
 
 ## ZORUNLU GÖREVLER
-1. Mimar fikir verdiğinde **Browser MCP** veya web search ile en güçlü 10 rakibi bul (Play Store, rakip siteleri).
+1. Geliştirici fikir verdiğinde **Browser MCP** veya web search ile en güçlü 10 rakibi bul (Play Store, rakip siteleri).
 2. Rakip yorumlarındaki acı noktalarını `docs/01-VISION/MARKET_ANALYSIS.md`'ye yaz.
 3. Mavi Okyanus fırsatlarını `docs/01-VISION/PRODUCT_BRIEF.md`'ye işle.
 4. Monetizasyon akışını `docs/01-VISION/MONETIZATION.md`'ye kurgula:
@@ -51,6 +51,6 @@ Play Store veya web araştırması sonrası **zorunlu**:
 
 1. `.cursor/snapshots/mcp/cpo-{timestamp}.json` — `HANDOFF.template.json` şeması
 2. `docs/01-VISION/MARKET_ANALYSIS.md` güncelle
-3. `mcp/LATEST.handoff.json` — Mimar/PDC için son özet
+3. `mcp/LATEST.handoff.json` — Baş Mimar / PDC için son özet
 
 Sohbetteki özet tek başına yeterli değildir.

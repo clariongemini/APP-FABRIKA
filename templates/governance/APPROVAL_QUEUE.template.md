@@ -5,7 +5,7 @@
 
 | WP | Başlık | Ajan | L1 | L2 | Durum |
 |----|--------|------|----|----|-------|
-| WP-00 | Governance bootstrap | MCP | Mimar ⏳ | Overmind ⏳ | `pending` |
+| WP-00 | Governance bootstrap | MCP | Geliştirici ⏳ | Overmind ⏳ | `pending` |
 
 ---
 

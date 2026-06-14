@@ -8,9 +8,7 @@ APP_NAME="FactorySmoke"
 PACKAGE="com.ulas.factory.smoke"
 DATE="$(date +%Y-%m-%d)"
 
-echo "╔══════════════════════════════════════════════════════════╗"
-echo "║  Factory Smoke App Bootstrap                             ║"
-echo "╚══════════════════════════════════════════════════════════╝"
+echo "==> Factory smoke app bootstrap"
 
 mkdir -p "$REPO_ROOT/test/docs"
 
@@ -63,7 +61,7 @@ cat > "$REPO_ROOT/test/.factory/project.json" <<EOF
   "app_name": "$APP_NAME",
   "package_name": "$PACKAGE",
   "purpose": "factory-smoke-test",
-  "factory_version": "0.6.5-recovery-alpha",
+  "factory_version": "1.0.0",
   "initialized_at": "$DATE"
 }
 EOF

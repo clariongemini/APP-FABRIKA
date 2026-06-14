@@ -1,21 +1,24 @@
-# OTONOM TEKNOLOJİ HOLDİNGİ — FABRİKA HAFIZASI
+# Fabrika hafızası
 
-Bu dosya **fabrika reposunun** merkezi hafızasıdır. Uygulama projelerinde `init-new-app.sh` bu dosyayı proje bilgileriyle günceller.
+Bu dosya fabrika reposunun merkezi hafızasıdır. Uygulama projelerinde `init-new-app.sh` proje bilgileriyle günceller.
 
-## Repo Türü
+**Yazar:** [Ulaş Kaşıkcı](AUTHOR.md)
+
+## Repo türü
 
 | Alan | Değer |
 |------|-------|
-| Tür | **GitHub Template / Standart Kaynağı** |
-| Amaç | Android projelerine tek seferde AI kuralları + 33 katman + Executive OS aktarmak |
-| Sürüm | v0.6.0-publish-ready |
-| Repo | **Ulas Autonomous Android APP Factory** |
-| Son Güncelleme | 2026-06-14 |
+| Tür | GitHub Template / standart kaynağı |
+| Amaç | Android projelerine AI kuralları + 33 katman + Executive OS aktarmak |
+| Sürüm | v1.0.0 |
+| Repo | Ulas Autonomous Android APP Factory |
+| Son güncelleme | 2026-06-14 |
 
 ## Hızlı Bağlantılar
 
 | Belge | Açıklama |
 |-------|----------|
+| [AUTHOR.md](AUTHOR.md) | Ulaş Kaşıkcı — proje sahibi |
 | [README](../README.md) | GitHub ana sayfa |
 | [BOOTSTRAP](./BOOTSTRAP.md) | Yeni proje kurulum kılavuzu |
 | [Executive OS](./EXECUTIVE_OS.md) | CEO V7, hiyerarşik denetim |

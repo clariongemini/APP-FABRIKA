@@ -2,7 +2,7 @@
 
 ## Amaç
 
-Mimar prompt verdiğinde AI **doğrudan koda atlamaz**. Önce `YAPILACAKLAR.md` oluşturulur; temelden (F0) anahtar teslime (F8) kadar faz faz ilerlenir. Halüsinasyon uyarısı her projede tekrar yazılmaz — `.cursor/rules/00-overmind-zero-hallucination.mdc` otomatik uygulanır.
+Geliştirici prompt verdiğinde ajan **doğrudan koda atlamaz**. Önce `YAPILACAKLAR.md` oluşturulur; temelden (F0) anahtar teslime (F8) kadar faz faz ilerlenir. Halüsinasyon protokolü her oturumda otomatik — `.cursor/rules/00-overmind-zero-hallucination.mdc`.
 
 ## Metafor
 
@@ -50,7 +50,7 @@ bash scripts/governance/init-yapilacaklar.sh "ürün açıklaması"
 python3 scripts/governance/validate-yapilacaklar.py
 ```
 
-## İlk prompt (Mimar)
+## İlk prompt
 
 Cursor chat:
 

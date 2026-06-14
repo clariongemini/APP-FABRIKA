@@ -19,9 +19,7 @@ report() {
   TOTAL=$((TOTAL + pct))
 }
 
-echo "╔══════════════════════════════════════════════════════════╗"
-echo "║  Ulas Autonomous Android APP Factory — KUSURSUZLUK v0.6  ║"
-echo "╚══════════════════════════════════════════════════════════╝"
+echo "==> Ulas Autonomous Android APP Factory — sağlık raporu"
 echo ""
 
 # 1. AI Orkestrasyon & Executive OS
@@ -154,18 +152,16 @@ fi
 report "Test & CI/CD & Governance" $c 10
 
 echo ""
-echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
-printf "  GENEL TOPLAM: %d / 100\n" "$TOTAL"
-echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
-
+echo ""
+printf "  Toplam: %d / 100\n" "$TOTAL"
 if [[ $TOTAL -eq 100 ]]; then
-  echo "  Durum: ✅ KUSURSUZ — Tüm kategoriler tam puan."
+  echo "  Durum: tam puan."
 elif [[ $TOTAL -ge 90 ]]; then
-  echo "  Durum: 🟢 Mükemmel — küçük iyileştirme alanı var."
+  echo "  Durum: iyi — küçük iyileştirme alanı var."
 elif [[ $TOTAL -ge 75 ]]; then
-  echo "  Durum: 🟡 İyi — belirgin eksikler mevcut."
+  echo "  Durum: belirgin eksikler mevcut."
 else
-  echo "  Durum: 🔴 Eksik kategori var — yukarıdaki tabloya bakın."
+  echo "  Durum: eksik kategori var — yukarıdaki tabloya bakın."
 fi
 
 exit 0

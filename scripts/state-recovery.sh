@@ -221,9 +221,7 @@ write_handoff() {
 EOF
 
   echo ""
-  echo "╔══════════════════════════════════════════════════════════╗"
-  echo "║  STATE RECOVERY — Agent Handoff                          ║"
-  echo "╚══════════════════════════════════════════════════════════╝"
+  echo "==> State recovery — agent handoff"
   echo "  Sebep     : $reason"
   echo "  Handoff   : $HANDOFF"
   echo "  YAPILACAKLAR fazı değiştirilmedi: $active_phase"

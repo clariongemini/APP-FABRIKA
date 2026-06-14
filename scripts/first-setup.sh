@@ -4,9 +4,7 @@ set -euo pipefail
 ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 cd "$ROOT"
 
-echo "╔══════════════════════════════════════════════════════════════╗"
-echo "║  Ulas Autonomous Android APP Factory — İLK KURULUM          ║"
-echo "╚══════════════════════════════════════════════════════════════╝"
+echo "==> İlk kurulum — Ulas Autonomous Android APP Factory"
 echo ""
 
 # 1. Script izinleri
@@ -42,9 +40,7 @@ echo ""
 bash "$ROOT/scripts/factory-health.sh"
 
 echo ""
-echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
-echo "  Sonraki adımlar:"
+echo "Sonraki adımlar:"
 echo "  1. MCP kurulumunu tamamla (docs/MCP_SETUP.md)"
 echo "  2. ./scripts/init-new-app.sh \"AppAdi\" \"com.sirket.app\""
-echo "  3. Cursor'da: \"AppAdi'ni 33 katman standartlarına göre geliştir\""
-echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+echo "  3. Cursor'da: /baslat"
