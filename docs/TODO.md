@@ -8,6 +8,12 @@
 - [ ] MCP: `.cursor/mcp.json` + GitHub PAT + Browser etkin
 - [ ] Template repository ayarı GitHub Settings'te doğrula
 
+## v2.1.0-stable (2026-06-14)
+
+- [x] negative_constraints + kelime cap 150–200
+- [x] validate-reasoning-template-xml.sh + audit V2.7–V2.9
+- [x] Sürüm 2.1.0-stable senkron
+
 ## v2.0.0-reasoning-alpha (2026-06-14)
 
 - [x] 19-claude-reasoning.mdc + docs/CLAUDE_REASONING.md

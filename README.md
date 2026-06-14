@@ -6,7 +6,7 @@
 
 <br>
 
-[![Version](https://img.shields.io/badge/sürüm-2.0.0--reasoning--alpha-2563eb?style=for-the-badge)](.factory/meta.json)
+[![Version](https://img.shields.io/badge/sürüm-2.1.0--stable-2563eb?style=for-the-badge)](.factory/meta.json)
 [![License](https://img.shields.io/badge/lisans-MIT-059669?style=for-the-badge)](LICENSE)
 [![Factory Health](https://img.shields.io/badge/factory_health-100%2F100-16a34a?style=for-the-badge)](docs/FACTORY_SCORECARD.md)
 [![CI](https://img.shields.io/github/actions/workflow/status/clariongemini/Android-App/validate.yml?branch=main&label=CI&style=for-the-badge)](https://github.com/clariongemini/Android-App/actions/workflows/validate.yml)
@@ -44,7 +44,7 @@
 <p>
 <strong>Yazar</strong> · <a href="docs/AUTHOR.md">Ulaş Kaşıkcı</a><br>
 <strong>Lisans</strong> · <a href="LICENSE">MIT</a><br>
-<strong>Sürüm</strong> · v2.0.0-reasoning-alpha<br>
+<strong>Sürüm</strong> · v2.1.0-stable<br>
 <strong>Ortam</strong> · Cursor IDE + Agent Mode
 </p>
 
@@ -71,7 +71,7 @@
 <p>
 <strong>Author</strong> · <a href="docs/AUTHOR.md">Ulaş Kaşıkcı</a><br>
 <strong>License</strong> · <a href="LICENSE">MIT</a><br>
-<strong>Version</strong> · v2.0.0-reasoning-alpha<br>
+<strong>Version</strong> · v2.1.0-stable<br>
 <strong>Runtime</strong> · Cursor IDE + Agent Mode
 </p>
 

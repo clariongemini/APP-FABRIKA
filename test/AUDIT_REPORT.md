@@ -1,6 +1,6 @@
 # Factory Audit Report — FactorySmoke
 
-> Oluşturulma: 2026-06-14T18:39:51+0300  
+> Oluşturulma: 2026-06-14T18:47:41+0300  
 > Fabrika: `/Users/ulas/Desktop/Repo`  
 > Smoke app: `test/factory-smoke-app`
 
@@ -8,11 +8,11 @@
 
 | Metrik | Değer |
 |--------|-------|
-| ✅ Geçti | 37 |
+| ✅ Geçti | 40 |
 | ❌ Başarısız | 0 |
 | ⚠️ Uyarı | 1 |
 | ⏭️ Atlandı | 1 |
-| **Başarı oranı** | **94%** (fail hariç) |
+| **Başarı oranı** | **95%** (fail hariç) |
 
 ## Adım denetimi
 
@@ -51,6 +51,9 @@
 | V2.4 | .cursorrules Claude-Native protokol | ✅ pass |  |
 | V2.5 | docs/CLAUDE_REASONING.md | ✅ pass |  |
 | V2.6 | 20-aistudio-import (19 reasoning ayrımı) | ✅ pass |  |
+| V2.7 | validate-reasoning-template-xml.sh | ✅ pass | thinking/architecture_check/negative_constraints dengesi |
+| V2.8 | negative_constraints şablon (.mdc) | ✅ pass |  |
+| V2.9 | kelime cap 150-200 (.mdc) | ✅ pass |  |
 | QG.1 | validate-code.sh | ✅ pass |  |
 | QG.2 | audit-layers.sh | ✅ pass |  |
 | QG.3 | audit-layer-components.sh | ✅ pass |  |

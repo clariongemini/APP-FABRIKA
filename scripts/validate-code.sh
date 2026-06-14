@@ -112,6 +112,7 @@ REQUIRED_FILES=(
   "scripts/bootstrap-external-project.sh"
   "docs/AI_STUDIO_IMPORT.md"
   ".cursor/rules/19-claude-reasoning.mdc"
+  "scripts/validate-reasoning-template-xml.sh"
   "docs/CLAUDE_REASONING.md"
   ".cursor/rules/20-aistudio-import.mdc"
   ".cursor/commands/import-aistudio.md"
@@ -139,7 +140,7 @@ for file in "${REQUIRED_FILES[@]}"; do
 done
 
 # Wrapper scripts must be executable
-for script in run-ceo-cycle init-governance agent-approval-gate gradle-build-loop run-maestro state-recovery scaffold-android-project-to bootstrap-external-project validate-factory-version; do
+for script in run-ceo-cycle init-governance agent-approval-gate gradle-build-loop run-maestro state-recovery scaffold-android-project-to bootstrap-external-project validate-factory-version validate-reasoning-template-xml; do
   if [[ ! -x "$ROOT/scripts/${script}.sh" ]]; then
     echo "HATA: Çalıştırılabilir değil — scripts/${script}.sh"
     ERRORS=$((ERRORS + 1))

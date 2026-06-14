@@ -114,6 +114,13 @@ check "V2.5" "docs/CLAUDE_REASONING.md" \
   "$([[ -f "$REPO_ROOT/docs/CLAUDE_REASONING.md" ]] && echo pass || echo fail)"
 check "V2.6" "20-aistudio-import (19 reasoning ayrımı)" \
   "$([[ -f "$REPO_ROOT/.cursor/rules/20-aistudio-import.mdc" ]] && ! [[ -f "$REPO_ROOT/.cursor/rules/19-aistudio-import.mdc" ]] && echo pass || echo fail)"
+check "V2.7" "validate-reasoning-template-xml.sh" \
+  "$(bash "$REPO_ROOT/scripts/validate-reasoning-template-xml.sh" &>/dev/null && echo pass || echo fail)" \
+  "thinking/architecture_check/negative_constraints dengesi"
+check "V2.8" "negative_constraints şablon (.mdc)" \
+  "$(grep -q '<negative_constraints>' "$REASONING" && grep -q '</negative_constraints>' "$REASONING" && echo pass || echo fail)"
+check "V2.9" "kelime cap 150-200 (.mdc)" \
+  "$(grep -q '150–200' "$REASONING" && echo pass || echo fail)"
 
 # --- Kalite kapıları ---
 check "QG.1" "validate-code.sh" "$(bash "$REPO_ROOT/scripts/validate-code.sh" &>/dev/null && echo pass || echo fail)"

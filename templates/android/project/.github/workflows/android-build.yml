@@ -1,7 +1,7 @@
-# Ulas Autonomous Android APP Factory v2.0.0-reasoning-alpha
+# Ulas Autonomous Android APP Factory v2.1.0-stable
 # Copyright (c) 2026 Ulaş Kaşıkcı — MIT License
 
-name: Android Build v2.0.0-reasoning-alpha
+name: Android Build v2.1.0-stable
 
 on:
   push:
@@ -10,7 +10,7 @@ on:
     branches: [main, master]
 
 env:
-  FACTORY_VERSION: "2.0.0-reasoning-alpha"
+  FACTORY_VERSION: "2.1.0-stable"
 
 jobs:
   build:

@@ -44,6 +44,7 @@ run_check "audit-oem-compat.sh" bash scripts/audit-oem-compat.sh
 run_check "audit-security.sh" bash scripts/audit-security.sh
 run_check "audit-android-scaffold.sh" bash scripts/audit-android-scaffold.sh
 run_check "validate-android-template.sh" bash scripts/validate-android-template.sh
+run_check "validate-reasoning-template-xml.sh" bash scripts/validate-reasoning-template-xml.sh
 
 echo ""
 echo "── Executive OS ──"

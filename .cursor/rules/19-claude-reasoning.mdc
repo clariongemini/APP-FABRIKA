@@ -1,60 +1,73 @@
 ---
-description: Claude-Native yapılandırılmış akıl yürütme — thinking & architecture_check (v2)
+description: Claude-Native yapılandırılmış akıl yürütme — thinking, architecture_check, negative_constraints (v2.1 stable)
 alwaysApply: true
 ---
-# Claude-Native Akıl Yürütme Protokolü (v2)
+# Claude-Native Akıl Yürütme Protokolü (v2.1 stable)
 
 Tüm departman ajanları (01–17, 18-state-recovery) **kendi kural setini uygulamadan önce** bu süzgeci uygular.  
 Executive OS, YAPILACAKLAR faz kapısı ve `00-overmind-zero-hallucination` **üstünde değil — onlarla birlikte** çalışır.
 
 Rehber: `docs/CLAUDE_REASONING.md`
 
+## Kelime bütçesi (over-thinking önleme)
+
+`<thinking>`, `<architecture_check>` ve `<negative_constraints>` bloklarının **her biri görev başına en fazla 150–200 kelime**.
+
+- Tekrarlayan paragraf yasak; madde işaretli, doğrudan boşluk analizi
+- Uzun geçmiş özetleme yasak — yalnızca aktif YAPILACAKLAR satırı
+- Muafiyet durumlarında blok açma (token koruma)
+
 ## Ne zaman zorunlu?
 
-Aşağıdakilerden **biri** geçerliyse, kullanıcıya görünür çıktının **en başında** `<thinking>` ve `<architecture_check>` bloklarını aç; kod/dosya değişikliğinden **önce** doldur:
+Aşağıdakilerden **biri** geçerliyse, kullanıcıya görünür çıktının **en başında** üç bloğu **sırayla** aç; kod/dosya değişikliğinden **önce** doldur:
 
 1. YAPILACAKLAR fazı `işleniyor` olarak güncellendi veya yeni faz görevi başlatıldı
-2. **Core dosyalar:** `*.gradle.kts`, `AndroidManifest.xml`, `libs.versions.toml`, Hilt modül `@Module`, Room `@Database`, Navigation graph
+2. **Core dosyalar:** `*.gradle.kts`, `AndroidManifest.xml`, `libs.versions.toml`, Hilt `@Module`, Room `@Database`, Navigation graph
 3. Modüller arası kod taşıma veya yeni Gradle modülü
 4. Veritabanı / ağ katmanı şeması (Entity, DAO, DTO, API interface)
-5. `factory-quality-gate.sh` veya `gradle-build-loop.sh` hata ayıklama (rewrite loop önleme)
-6. F3+ Android kod batch'i (Compose ekran, repository, use-case)
+5. `factory-quality-gate.sh` veya `gradle-build-loop.sh` hata ayıklama
+6. F3+ Android kod batch'i (Compose, repository, use-case)
 
 ## Ne zaman muaf?
 
-Token bütçesini korumak için **blok açma**:
-
 - Yazım/noktalama, yalnızca markdown/doc typo
-- `/faz-durumu` özet raporu (kod yok)
+- `/faz-durumu` özet raporu
 - Salt okuma / soru-cevap (dosya değişikliği yok)
-- `validate-*.sh` / audit script çıktısını kullanıcıya aktarma
+- Audit script çıktısını aktarma
 
-## Şablon (kopyala — maddeleri doldur)
+## Şablon (etiketleri kapat — Format Hatası sayılır)
 
 ```xml
 <thinking>
-- Aktif YAPILACAKLAR.md fazı ve görevin kapsamı nedir?
-- Bu görevin etkilediği Gradle modülleri hangileridir? Modüller arası bağımlılık sınırları ihlal ediliyor mu?
-- 13 Teknik Standarttan hangileri (i18n, Liquid Glass, Security, OEM…) bu görev için bağlayıcıdır?
-- Context budget: yalnızca ilgili layer-NN.yaml dilimi mi okunuyor? (tam manifest yasak)
-- Sonraki adım: hangi script kanıtı gerekir? (gradle-build-loop / state-recovery)
+- Aktif YAPILACAKLAR fazı / görev ID?
+- Etkilenen Gradle modülleri; dependency-rules ihlali var mı?
+- Bağlayıcı 13 standart (i18n, Security, OEM…)?
+- Context budget: yalnızca layer-NN.yaml?
+- Script kanıtı: gradle-build-loop / state-recovery?
 </thinking>
 
 <architecture_check>
-- Üretilecek kodun girdi/çıktı tipleri Clean Architecture (data → domain → presentation) ile uyumlu mu?
-- DTO → Entity → Domain mapping noktalarında mantıksal boşluk var mı?
-- Hilt: @Module / @Inject / @AndroidEntryPoint / @HiltViewModel eksiksiz planlandı mı?
-- i18n: hard-coded string yok; locale JSON anahtarları tanımlı mı?
+- Clean Architecture: data → domain → presentation sınırları?
+- DTO → Entity → Domain mapping boşluğu?
+- Hilt: @Module / @Inject / @AndroidEntryPoint / @HiltViewModel?
+- i18n: hard-coded string yok?
 </architecture_check>
+
+<negative_constraints>
+- Asla mimari katman bypass — üst/alt katmana veri sızdırma.
+- Asla geçici mock / hard-coded test verisi bırakma.
+- Asla @Inject / Hilt kurallarını es geçme.
+</negative_constraints>
 ```
 
 ## Rewrite loop önleme
 
-1. Gradle parse hatası → log oku → **tek dosya** düzelt → `gradle-build-loop.sh` tekrar
-2. Aynı hata 2× → `state-recovery.sh --recover` (YAPILACAKLAR fazını değiştirme)
-3. `<architecture_check>` geçmeden geniş refactor yasak
+1. Gradle parse hatası → log → **tek dosya** düzelt → `gradle-build-loop.sh`
+2. Aynı hata 2× → `state-recovery.sh --recover`
+3. Üç blok tamamlanmadan geniş refactor yasak
 
 ## Denetim
 
-- Statik: `test/run-factory-audit.sh` (V2.* satırları)
-- CAO / F8: reasoning blokları kod batch'inde atlandıysa görev `tamamlandı` sayılmaz
+- Statik şablon XML: `scripts/validate-reasoning-template-xml.sh` · audit V2.7
+- Canlı transcript XML (v2.2): `phase-verifier` — henüz runtime parser yok
+- CAO / F8: blok atlandıysa görev `tamamlandı` sayılmaz

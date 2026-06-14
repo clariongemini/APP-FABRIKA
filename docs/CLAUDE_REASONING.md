@@ -1,40 +1,76 @@
-# Claude-Native Akıl Yürütme (v2)
+# Claude-Native Akıl Yürütme (v2.1 stable)
 
-**Sürüm:** v2.0.0-reasoning-alpha  
+**Sürüm:** v2.1.0-stable  
 **Kural:** `.cursor/rules/19-claude-reasoning.mdc` (`alwaysApply: true`)
 
 ## Amaç
 
 - Halüsinasyon ve rewrite loop riskini düşürmek
-- Token bütçesini korumak (muafiyet kuralları)
-- CAO/CEO denetim zinciri ile uyumlu, kanıtlanabilir planlama
+- **Negative constraints** ile katman/DI/mock tembelliğini engellemek
+- Kelime cap (150–200/blok) ile output token bütçesini korumak
+- CAO/CEO denetim zinciri ile uyumlu planlama
 
-## Akış
+## Akış (v2.1)
 
 ```
-YAPILACAKLAR oku → [zorunluysa] <thinking> + <architecture_check> → departman ajanı → kod → gradle-build-loop → L1
+YAPILACAKLAR oku
+  → <thinking>
+  → <architecture_check>
+  → <negative_constraints>
+  → departman ajanı
+  → kod
+  → gradle-build-loop
+  → L1
 ```
 
-## Zorunlu tetikleyiciler
+## Kelime bütçesi
 
-| Durum | Blok |
-|-------|------|
-| Faz `işleniyor` + kod görevi | Evet |
-| Gradle / Manifest / Room / Network core | Evet |
-| Modüller arası taşıma | Evet |
-| quality-gate / build-loop debug | Evet |
-| Doc typo, `/faz-durumu` | Hayır |
+| Blok | Limit |
+|------|--------|
+| `<thinking>` | max 150–200 kelime |
+| `<architecture_check>` | max 150–200 kelime |
+| `<negative_constraints>` | max 150–200 kelime |
 
-## İlgili dosyalar
+Over-thinking (aynı cümleyi tekrarlama) yasak.
 
-| Dosya | Rol |
-|-------|-----|
-| `.cursorrules` | Overmind anayasası — protokol özeti |
-| `00-overmind-zero-hallucination.mdc` | Faz + build kanıtı |
-| `18-state-recovery.mdc` | Truncation recovery |
-| `docs/CURSOR_CONTEXT_BUDGET.md` | layer-NN.yaml dilimleri |
-| `test/run-factory-audit.sh` | V2.* statik regex denetimi |
+## Negative constraints (özet)
+
+1. Katman bypass / veri sızdırma yok  
+2. Geçici mock veya hard-coded fixture bırakma yok  
+3. Hilt `@Inject` atlama yok  
+
+## Statik XML denetimi (v2.1)
+
+`scripts/validate-reasoning-template-xml.sh` — şablon dosyalarında açılış/kapanış dengesi:
+
+- `.cursor/rules/19-claude-reasoning.mdc`
+- `.cursorrules`
+- `docs/CLAUDE_REASONING.md`
+
+Audit: `test/run-factory-audit.sh` → **V2.7**
+
+## Şablon (kapatılmış etiketler zorunlu)
+
+```xml
+<thinking>
+- Faz / görev kapsamı (kısa)
+</thinking>
+
+<architecture_check>
+- Katman sınırları ve mapping (kısa)
+</architecture_check>
+
+<negative_constraints>
+- Katman bypass yok; mock bırakma yok; DI atlama yok
+</negative_constraints>
+```
+
+## v2.2 (ertelendi)
+
+Canlı Cursor transcript’te kapanmamış etiket → **Format Hatası** runtime parser.  
+İlk AI Studio koşusu sonrası `phase-verifier` checklist’ine eklenecek.
 
 ## Executive OS
 
-Reasoning blokları **tek ajan onayı yerine geçmez**. Hiyerarşik zincir: `governance/executive/HIERARCHICAL_AUDIT_CHAIN.md`.
+Reasoning blokları **tek ajan onayı yerine geçmez**.  
+Zincir: `governance/executive/HIERARCHICAL_AUDIT_CHAIN.md`

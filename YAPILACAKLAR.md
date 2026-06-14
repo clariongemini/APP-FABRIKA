@@ -9,7 +9,7 @@
 | Proje | Factory |
 | Package | `com.ulas.factory` |
 | Yazar | [Ulaş Kaşıkcı](docs/AUTHOR.md) |
-| Fabrika sürümü | v2.0.0-reasoning-alpha |
+| Fabrika sürümü | v2.1.0-stable |
 | Oluşturulma | 2026-06-14 |
 | Aktif faz | **F1 — Kolon & Taşıyıcı** |
 | Aktif ajanlar | `01-product-cpo`, `09-product-decision-council`, `17-marketing-growth`, `10-mavi-okyanus` · manifest: `layer-00.yaml`, `layer-01.yaml`, `layer-02.yaml`, `layer-25.yaml`, `layer-26.yaml`, `layer-30.yaml` |
@@ -113,6 +113,16 @@
 | EK.3 | `19-aistudio` → `20-aistudio-import.mdc` (numara ayrımı) | Overmind | CAO | referans güncel | tamamlandı |
 | EK.4 | `test/run-factory-audit.sh` V2.1–V2.6 statik denetim | Denetçi | CAO | regex/ dosya varlığı | tamamlandı |
 | EK.5 | Fabrika sürümü `2.0.0-reasoning-alpha` | Overmind | CEO | meta + CI hizalı | tamamlandı |
+
+## [EK-20260614-v21] v2.1-stable — Reasoning zırhı · `tamamlandı`
+
+| # | Görev | Ajan | L1 | Kabul | Durum |
+|---|-------|------|----|-------|-------|
+| EK.6 | `<negative_constraints>` — 19-claude-reasoning.mdc | Overmind | CAO | 3 yasak maddesi | tamamlandı |
+| EK.7 | Kelime cap 150–200 / blok | Overmind | CEO | over-thinking önleme | tamamlandı |
+| EK.8 | `validate-reasoning-template-xml.sh` + audit V2.7 | Denetçi | CAO | XML dengesi | tamamlandı |
+| EK.9 | Fabrika sürümü `2.1.0-stable` | Overmind | CEO | badge + CI sync | tamamlandı |
+| EK.10 | v2.2 canlı transcript parser | — | — | AI Studio koşusu sonrası | bekliyor |
 
 ---
 

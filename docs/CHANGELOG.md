@@ -1,5 +1,27 @@
 # CHANGELOG
 
+## [2.1.0-stable] — 2026-06-14 — Reasoning zırhı (v2.1)
+
+### Added
+
+- `<negative_constraints>` — katman bypass, mock, DI atlama yasakları
+- Kelime bütçesi: reasoning blokları başına **150–200 kelime** cap
+- `scripts/validate-reasoning-template-xml.sh` — şablon XML açılış/kapanış dengesi
+- Audit **V2.7–V2.9** (XML script, negative_constraints, kelime cap)
+
+### Changed
+
+- `19-claude-reasoning.mdc` → v2.1 stable; üç blok zorunlu sıra
+- `.cursorrules` — negative_constraints + Format Hatası notu
+- `docs/CLAUDE_REASONING.md` — v2.2 runtime parser erteleme notu
+- Fabrika sürümü: **2.1.0-stable**
+
+### Deferred (v2.2)
+
+- Canlı Cursor transcript XML kapanış parser → `phase-verifier`
+
+---
+
 ## [2.0.0-reasoning-alpha] — 2026-06-14 — Claude-Native akıl yürütme (v2)
 
 ### Added

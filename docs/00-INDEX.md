@@ -10,7 +10,7 @@ Bu dosya fabrika reposunun merkezi hafızasıdır. Uygulama projelerinde `init-n
 |------|-------|
 | Tür | GitHub Template / standart kaynağı |
 | Amaç | Android projelerine AI kuralları + 33 katman + Executive OS aktarmak |
-| Sürüm | v2.0.0-reasoning-alpha |
+| Sürüm | v2.1.0-stable |
 | Repo | Ulas Autonomous Android APP Factory |
 | Son güncelleme | 2026-06-14 |
 
