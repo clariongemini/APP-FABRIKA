@@ -63,7 +63,7 @@ Bu fabrika **yalnızca Cursor IDE** (veya Cursor Agent destekli ortamlar) için 
 | Denetim | Yok | **Hiyerarşik audit** — tek ajan onayı yasak |
 | Gerçek dünya verisi | Sınırlı | **MCP**: Browser, GitHub, Docker |
 | Komutlar | Yok | `/baslat` `/devam-et` `/denetle` `/faz-durumu` |
-| Otomatik doğrulama | Yok | `pre-commit` + CI + `factory-quality-gate.sh` |
+| Otomatik doğrulama | Yok | `pre-commit` + CI + `factory-quality-gate.sh` + `test/run-factory-audit.sh` |
 
 **Cursor olmadan** bu repo yalnızca statik dokümantasyon ve Gradle şablonudur. **Cursor ile** canlı, denetimli, çok ajanlı bir **Executive OS** haline gelir.
 
@@ -82,7 +82,7 @@ This factory is designed **exclusively for Cursor IDE** (or Cursor Agent–enabl
 | Audit | None | **Hierarchical audit** — single-agent approval forbidden |
 | Real-world data | Limited | **MCP**: Browser, GitHub, Docker |
 | Commands | None | `/baslat` `/devam-et` `/denetle` `/faz-durumu` |
-| Automated validation | None | `pre-commit` + CI + `factory-quality-gate.sh` |
+| Automated validation | None | `pre-commit` + CI + `factory-quality-gate.sh` + `test/run-factory-audit.sh` |
 
 **Without Cursor**, this repo is static docs and a Gradle template. **With Cursor**, it becomes a live, audited, multi-agent **Executive OS**.
 
@@ -598,9 +598,11 @@ Monetization: [e.g. subscription, 7-day free trial]
 ### Step 7 — Quality gate (pre-release)
 
 ```bash
-./scripts/factory-quality-gate.sh
-./scripts/pre-commit.sh
-./gradlew assembleDebug
+./scripts/factory-quality-gate.sh   # All validations — target 100/100
+./test/run-factory-audit.sh         # Smoke app + 32 factory checks
+./test/bootstrap-smoke-app.sh         # Create FactorySmoke test app
+./scripts/pre-commit.sh             # Pre-commit audit
+./gradlew assembleDebug             # Android build proof (JDK 17+)
 ```
 
 ---
@@ -611,10 +613,16 @@ Monetization: [e.g. subscription, 7-day free trial]
 .
 ├── .cursorrules              # Overmind — merkezi anayasa
 ├── .cursor/
-│   ├── rules/                # 16 ajan + 00 halüsinasyon kuralı
+│   ├── rules/                # 00–18 agent rules (incl. state-recovery)
 │   ├── commands/             # /baslat /devam-et /denetle /faz-durumu
 │   ├── skills/               # planner, executor, zero-hallucination, audit
-│   └── agents/               # phase-verifier, plan-expander, auditors
+│   ├── agents/               # phase-verifier, plan-expander, auditors
+│   └── snapshots/            # Runtime handoff (build/recovery — gitignore)
+├── test/                     # FactorySmoke + 32-step audit harness
+│   ├── bootstrap-smoke-app.sh
+│   ├── run-factory-audit.sh
+│   ├── AUDIT_REPORT.md
+│   └── factory-smoke-app/    # İzole 10 modüllü denetim uygulaması
 ├── YAPILACAKLAR.md           # Aktif faz planı (proje bazlı)
 ├── AGENTS.md                 # Ajan dizini ve denetim zinciri
 ├── governance/               # Executive OS charter + protokoller
@@ -630,6 +638,8 @@ Monetization: [e.g. subscription, 7-day free trial]
 │   ├── 33-LAYER-MANIFEST.yaml
 │   ├── 33-LAYER-MANIFEST/     # layer-00 … layer-32 dilimleri
 │   ├── CURSOR_CONTEXT_BUDGET.md
+│   ├── CURSOR_TERMINAL_BRIDGE.md
+│   ├── STATE_RECOVERY.md
 │   ├── 03-STANDARDS/         # 13 teknik standart
 │   ├── BOOTSTRAP.md          # Detaylı kurulum kılavuzu
 │   ├── EXECUTIVE_OS.md
@@ -641,7 +651,7 @@ Monetization: [e.g. subscription, 7-day free trial]
     └── YAPILACAKLAR.template.md
 ```
 
-**Runtime vs Git:** Sprint lock, approval queue, roadmap JSON gibi canlı dosyalar `.gitignore` ile dışlanır; `init-governance.sh` her projede sıfırdan üretir. Politika: [`governance/FACTORY_REPO_POLICY.md`](governance/FACTORY_REPO_POLICY.md)
+**Runtime vs Git:** Sprint lock, approval queue, roadmap JSON ve **`.cursor/snapshots/{build,recovery,maestro,mcp}/`** gibi canlı dosyalar `.gitignore` ile dışlanır (`**/` alt projeler dahil); `init-governance.sh` governance JSON'ını her projede sıfırdan üretir. Politika: [`governance/FACTORY_REPO_POLICY.md`](governance/FACTORY_REPO_POLICY.md)
 
 ---
 
@@ -754,7 +764,20 @@ Dizin: [`docs/03-STANDARDS/`](docs/03-STANDARDS/)
 | `validate-audit-chain.py` | Hiyerarşik denetim zinciri | Faz kapanışı |
 | `audit-layers.sh` | 33 katman bütünlüğü | CI |
 | `validate-android-template.sh` | Gradle wrapper, placeholder yok | CI |
+| `state-recovery.sh` | Truncation / yarım Gradle → checkpoint + rollback | F3+ Gradle edit |
+| `validate-layer-slices.sh` | 33 katman manifest dilimleri | CI |
 | `pre-commit.sh` | Yukarıdakilerin birleşimi | Her commit |
+
+### Fabrika Smoke Test (`test/`)
+
+Fabrika kökünü değiştirmeden **32 kontrol** + izole Android uygulaması:
+
+```bash
+./test/bootstrap-smoke-app.sh   # FactorySmoke oluştur (test/factory-smoke-app)
+./test/run-factory-audit.sh     # F0–F8 + Cursor bridge denetimi → test/AUDIT_REPORT.md
+```
+
+Detay: [`test/README.md`](test/README.md) · Rapor: [`test/AUDIT_REPORT.md`](test/AUDIT_REPORT.md)
 
 ```bash
 ./scripts/factory-quality-gate.sh   # ✅ hedef: 100/100
@@ -788,7 +811,16 @@ git submodule add https://github.com/clariongemini/Android-App.git .factory
 git submodule update --remote .factory && ./.factory/scripts/sync-standards.sh .
 ```
 
-Detay: [`docs/BOOTSTRAP.md`](docs/BOOTSTRAP.md)
+### Senaryo D — Fabrika bütünlük testi (smoke)
+
+Template'i güncelledikten veya büyük değişiklikten sonra:
+
+```bash
+./test/bootstrap-smoke-app.sh
+./test/run-factory-audit.sh    # 32/32 hedef — BUILD satırı JDK 17+ gerektirir
+```
+
+Detay: [`test/README.md`](test/README.md) · [`docs/BOOTSTRAP.md`](docs/BOOTSTRAP.md)
 
 ---
 
@@ -801,6 +833,10 @@ Detay: [`docs/BOOTSTRAP.md`](docs/BOOTSTRAP.md)
 | [`docs/EXECUTIVE_OS.md`](docs/EXECUTIVE_OS.md) | CEO V7, script ağacı |
 | [`docs/YAPILACAKLAR_SISTEMI.md`](docs/YAPILACAKLAR_SISTEMI.md) | Faz sistemi, komutlar |
 | [`docs/33-LAYER-ARCHITECTURE.md`](docs/33-LAYER-ARCHITECTURE.md) | 33 katman anayasa |
+| [`docs/CURSOR_CONTEXT_BUDGET.md`](docs/CURSOR_CONTEXT_BUDGET.md) | Token / okuma sırası |
+| [`docs/CURSOR_TERMINAL_BRIDGE.md`](docs/CURSOR_TERMINAL_BRIDGE.md) | Gradle/Maestro terminal köprüsü |
+| [`docs/STATE_RECOVERY.md`](docs/STATE_RECOVERY.md) | Truncation durum kurtarma |
+| [`test/README.md`](test/README.md) | FactorySmoke audit harness |
 | [`docs/MCP_SETUP.md`](docs/MCP_SETUP.md) | MCP kurulum kılavuzu |
 | [`governance/FACTORY_REPO_POLICY.md`](governance/FACTORY_REPO_POLICY.md) | Git vs runtime politika |
 | [`AGENTS.md`](AGENTS.md) | Tam ajan dizini |
@@ -821,7 +857,7 @@ Overmind önce `YAPILACAKLAR.md` okur, aktif fazı uygular, L1 denetim zincirini
 MIT — see [`LICENSE`](LICENSE)
 
 <p align="center">
-  <strong>Version:</strong> v0.6.0-publish-ready · Hierarchical audit · 16 agents · Executive OS 7.0
+  <strong>Version:</strong> v0.6.6 · State recovery · Smoke test · Context budget · Executive OS 7.0
 </p>
 
 <p align="center">
