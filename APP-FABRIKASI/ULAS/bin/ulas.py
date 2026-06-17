@@ -1,11 +1,13 @@
 #!/usr/bin/env python3
 """
-ULAS Decision Execution Engine — Phase 2
+ULAS Decision Execution Engine — Phase 2–3
 Operationalizes policies/workflows/gates/scoring/memory.
+Phase 3: effectiveness instrumentation (metrics, outcome, report).
 
 Usage:
   ulas.py decide --venture SLUG --class B --title "..." --reviewers architect,qa
-  ulas.py gate --decision-id ID
+  ulas.py outcome --decision-id ID --result correct_block
+  ulas.py metrics | report | audit
   ulas.py calibrate --reviewer architect --outcome good|missed
   ulas.py assemble --venture SLUG --class B
 """
@@ -52,6 +54,125 @@ def runtime_decisions_dir() -> Path:
     d = SVOS_ROOT / "10-runtime" / "ulas" / "decisions"
     d.mkdir(parents=True, exist_ok=True)
     return d
+
+
+def runtime_metrics_path() -> Path:
+    d = SVOS_ROOT / "10-runtime" / "ulas" / "metrics"
+    d.mkdir(parents=True, exist_ok=True)
+    return d / "aggregates.json"
+
+
+def load_all_decisions() -> list[dict]:
+    records = []
+    for f in sorted(runtime_decisions_dir().glob("*.json")):
+        try:
+            records.append(_load(f))
+        except (json.JSONDecodeError, OSError):
+            continue
+    return records
+
+
+def rebuild_metrics() -> dict:
+    schema_path = ULAS_ROOT / "scoring" / "metrics-schema.json"
+    metrics = _load(schema_path)
+    dm = metrics["decision_metrics"]
+    tm = metrics["token_metrics"]
+    mm = metrics["memory_metrics"]
+    reviewer_metrics: dict[str, dict] = {}
+    by_class: dict[str, int] = {}
+    by_band: dict[str, int] = {}
+    tier_budgets: list[int] = []
+
+    for rec in load_all_decisions():
+        dm["total_decisions"] += 1
+        status = rec.get("status", "")
+        if status == "APPROVED":
+            dm["approved"] += 1
+        elif status == "BLOCKED":
+            dm["blocked"] += 1
+
+        dc = rec.get("decision_class", "?")
+        by_class[dc] = by_class.get(dc, 0) + 1
+
+        band = rec.get("confidence", {}).get("band", "unknown")
+        by_band[band] = by_band.get(band, 0) + 1
+
+        tier = str(rec.get("context", {}).get("tier", "2"))
+        budget = rec.get("context", {}).get("token_budget_hint", 0)
+        if budget:
+            tier_budgets.append(int(budget))
+        if tier == "1":
+            tm["tier1_usage"] += 1
+        elif tier == "2":
+            tm["tier2_usage"] += 1
+        elif tier == "critical":
+            tm["critical_usage"] += 1
+        else:
+            tm["tier3_usage"] += 1
+
+        mm["never_again_hits"] += len(rec.get("never_again_hits", []))
+
+        blocked_reasons = rec.get("blocked_reasons", [])
+        is_low_conf = any("LOW_CONFIDENCE" in r for r in blocked_reasons)
+        if is_low_conf:
+            dm["low_confidence_blocks"] += 1
+
+        eff = rec.get("effectiveness", {})
+        outcome = eff.get("outcome")
+        if outcome:
+            dm["outcomes_evaluated"] += 1
+            if outcome in dm:
+                dm[outcome] += 1
+            if outcome == "overturned":
+                dm["overturned"] += 1
+            if outcome == "approved_failed":
+                dm["failed_after_approval"] += 1
+            if is_low_conf:
+                if outcome == "correct_block":
+                    dm["low_confidence_correct"] += 1
+                elif outcome == "false_block":
+                    dm["low_confidence_false"] += 1
+            for rev in rec.get("review", {}).get("provided_reviewers", []):
+                if rev not in reviewer_metrics:
+                    reviewer_metrics[rev] = {"reviews": 0, "accurate": 0, "missed": 0, "accuracy": None}
+                reviewer_metrics[rev]["reviews"] += 1
+                if outcome in ("approved_success", "correct_block"):
+                    reviewer_metrics[rev]["accurate"] += 1
+                elif outcome in ("approved_failed", "false_block"):
+                    reviewer_metrics[rev]["missed"] += 1
+
+    evaluated_blocks = dm["low_confidence_correct"] + dm["low_confidence_false"]
+    if evaluated_blocks > 0:
+        dm["low_confidence_precision"] = round(dm["low_confidence_correct"] / evaluated_blocks, 3)
+
+    for rev, rm in reviewer_metrics.items():
+        total = rm["accurate"] + rm["missed"]
+        rm["accuracy"] = round(rm["accurate"] / total, 3) if total > 0 else None
+        metrics["reviewer_metrics"][rev] = rm
+
+    if tier_budgets:
+        tm["average_context_budget"] = round(sum(tier_budgets) / len(tier_budgets))
+
+    metrics["by_class"] = by_class
+    metrics["by_confidence_band"] = by_band
+    metrics["last_rebuilt"] = now_iso()
+    _save(runtime_metrics_path(), metrics)
+    return metrics
+
+
+def find_decision(decision_id: str) -> Path | None:
+    exact = runtime_decisions_dir() / f"{decision_id}.json"
+    if exact.exists():
+        return exact
+    for f in runtime_decisions_dir().glob(f"*{decision_id}*.json"):
+        return f
+    return None
+
+
+OUTCOME_CHOICES = (
+    "correct_block", "false_block", "approved_success",
+    "approved_failed", "overturned", "unknown", "prevented_failure",
+)
 
 
 def now_iso() -> str:
@@ -237,11 +358,18 @@ def cmd_decide(args: argparse.Namespace) -> int:
         "never_again_hits": na_hits,
         "status": status,
         "blocked_reasons": blocked_reasons,
+        "effectiveness": {
+            "outcome_recorded": False,
+            "outcome": None,
+            "note": None,
+            "outcome_at": None,
+        },
         "created_at": now_iso(),
     }
 
     out = runtime_decisions_dir() / f"{decision_id}.json"
     _save(out, record)
+    rebuild_metrics()
 
     print(json.dumps({"status": status, "decision_id": decision_id, "path": str(out.relative_to(REPO_ROOT))}, indent=2))
     if blocked_reasons:
@@ -273,7 +401,95 @@ def cmd_calibrate(args: argparse.Namespace) -> int:
     entry["calibration_delta"] = round(entry.get("calibration_delta", 0) + delta, 2)
     entry["last_calibrated"] = now_iso()
     _save(path, data)
+    rebuild_metrics()
     print(json.dumps({"capability": cap, "trust": entry["trust"], "delta": delta}, indent=2))
+    return 0
+
+
+def cmd_outcome(args: argparse.Namespace) -> int:
+    path = find_decision(args.decision_id)
+    if not path:
+        print(f"Decision not found: {args.decision_id}", file=sys.stderr)
+        return 1
+    rec = _load(path)
+    rec["effectiveness"] = {
+        "outcome_recorded": True,
+        "outcome": args.result,
+        "note": args.note or "",
+        "outcome_at": now_iso(),
+    }
+    _save(path, rec)
+    if args.result == "prevented_failure":
+        m = rebuild_metrics()
+        m["memory_metrics"]["prevented_failures"] += 1
+        _save(runtime_metrics_path(), m)
+    else:
+        rebuild_metrics()
+    print(json.dumps({"decision_id": rec["decision_id"], "outcome": args.result}, indent=2))
+    return 0
+
+
+def cmd_metrics(args: argparse.Namespace) -> int:
+    metrics = rebuild_metrics()
+    print(json.dumps(metrics, indent=2, ensure_ascii=False))
+    return 0
+
+
+def cmd_report(args: argparse.Namespace) -> int:
+    m = rebuild_metrics()
+    dm = m["decision_metrics"]
+    tm = m["token_metrics"]
+    mm = m["memory_metrics"]
+    lines = [
+        "=== ULAS Effectiveness Report ===",
+        f"Last rebuilt: {m.get('last_rebuilt', '—')}",
+        "",
+        "## Decision Metrics",
+        f"  total_decisions:     {dm['total_decisions']}",
+        f"  approved:            {dm['approved']}",
+        f"  blocked:             {dm['blocked']}",
+        f"  outcomes_evaluated:  {dm['outcomes_evaluated']}",
+        f"  overturned:          {dm['overturned']}",
+        f"  failed_after_approval: {dm['failed_after_approval']}",
+        "",
+        "## LOW_CONFIDENCE (6-month question)",
+        f"  low_confidence_blocks:  {dm['low_confidence_blocks']}",
+        f"  correct_block:          {dm['low_confidence_correct']}",
+        f"  false_block:            {dm['low_confidence_false']}",
+        f"  precision:              {dm.get('low_confidence_precision', 'insufficient data (need evaluated blocks)')}",
+        "",
+        "## Token Metrics",
+        f"  tier1: {tm['tier1_usage']}  tier2: {tm['tier2_usage']}  tier3: {tm['tier3_usage']}  critical: {tm['critical_usage']}",
+        f"  avg_context_budget: {tm.get('average_context_budget', 0)}",
+        "",
+        "## Memory Metrics",
+        f"  never_again_hits:    {mm['never_again_hits']}",
+        f"  prevented_failures:  {mm['prevented_failures']}",
+        "",
+        "## Reviewer Accuracy",
+    ]
+    for rev, rm in m.get("reviewer_metrics", {}).items():
+        lines.append(f"  {rev}: reviews={rm['reviews']} accuracy={rm.get('accuracy', '—')}")
+    if not m.get("reviewer_metrics"):
+        lines.append("  (no outcome-tagged reviews yet)")
+    lines.extend([
+        "",
+        "## By Class",
+        f"  {m.get('by_class', {})}",
+        "",
+        "Record outcomes: ulas outcome --decision-id ID --result correct_block|...",
+    ])
+    print("\n".join(lines))
+    return 0
+
+
+def cmd_audit(args: argparse.Namespace) -> int:
+    audit_path = ULAS_ROOT / "AUDIT.md"
+    if audit_path.exists():
+        print(audit_path.read_text(encoding="utf-8"))
+    else:
+        print("AUDIT.md not found", file=sys.stderr)
+        return 1
     return 0
 
 
@@ -317,12 +533,25 @@ def main() -> int:
     p_route = sub.add_parser("route", help="Show routing for decision class")
     p_route.add_argument("--class", dest="class_", default="B")
 
+    p_out = sub.add_parser("outcome", help="Record decision outcome for effectiveness")
+    p_out.add_argument("--decision-id", required=True)
+    p_out.add_argument("--result", choices=list(OUTCOME_CHOICES), required=True)
+    p_out.add_argument("--note", default="")
+
+    sub.add_parser("metrics", help="Rebuild and print effectiveness metrics JSON")
+    sub.add_parser("report", help="Human-readable effectiveness report")
+    sub.add_parser("audit", help="Print ULAS component audit")
+
     args = parser.parse_args()
     handlers = {
         "decide": cmd_decide,
         "assemble": cmd_assemble,
         "calibrate": cmd_calibrate,
         "route": cmd_route,
+        "outcome": cmd_outcome,
+        "metrics": cmd_metrics,
+        "report": cmd_report,
+        "audit": cmd_audit,
     }
     return handlers[args.command](args)
 

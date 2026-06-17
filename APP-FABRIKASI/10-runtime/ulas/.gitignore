@@ -1,2 +1,3 @@
 decisions/*.json
+metrics/aggregates.json
 cache/

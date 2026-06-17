@@ -12,8 +12,9 @@
 | Knowledge compression | **75** | Templates ready |
 | Pattern extraction | **70** | Workflow defined |
 | Decision audit | **75** | Schema ready |
-| **Operational validation** | **15** | Engine runs; venture ship unproven |
-| **Composite** | **72** | Decision Execution OS scaffold operational |
+| **Operational validation** | **25** | Engine + outcome loop; N<10 decisions |
+| **Effectiveness proof** | **10** | 1 outcome tagged; need 10→50→100 |
+| **Composite** | **78** | Decision OS instrumented; venture proof pending |
 
 > ULAS 62 ≠ SVOS 58 kötü değil — **karar katmanı iskeleti hazır, venture kanıtı yok.**
 

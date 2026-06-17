@@ -4,7 +4,7 @@
 
 | Meta | Değer |
 |------|-------|
-| **Phase** | 2 — Operational |
+| **Phase** | 3 — Consolidation (measure) |
 | **Engine** | `bin/ulas.py` |
 | **CLI** | `APP-FABRIKASI/scripts/ulas.sh` |
 
@@ -13,11 +13,11 @@
 ## Komutlar
 
 ```bash
-./APP-FABRIKASI/scripts/ulas.sh route --class C
-./APP-FABRIKASI/scripts/ulas.sh assemble --venture ulas-player --class B
-./APP-FABRIKASI/scripts/ulas.sh decide --venture ulas-player --class B \
-  --title "..." --reviewers architect,qa
-./APP-FABRIKASI/scripts/ulas.sh calibrate --reviewer architect --outcome good
+./APP-FABRIKASI/scripts/ulas.sh decide ...
+./APP-FABRIKASI/scripts/ulas.sh outcome --decision-id ID --result correct_block
+./APP-FABRIKASI/scripts/ulas.sh report      # effectiveness
+./APP-FABRIKASI/scripts/ulas.sh metrics     # JSON aggregates
+./APP-FABRIKASI/scripts/ulas.sh audit       # component audit
 ```
 
 ---
@@ -58,7 +58,7 @@ Kayıt: `10-runtime/ulas/decisions/{id}.json`
 | Trust Score | `scoring/trust-scores.json` |
 | Memory Severity | `memory/never-again.json` |
 
-→ [`PHASE2.md`](PHASE2.md) · [`SOURCE_PRINCIPLES.md`](SOURCE_PRINCIPLES.md)
+→ [`PHASE2.md`](PHASE2.md) · [`CONSOLIDATION.md`](CONSOLIDATION.md) · [`scoring/EFFECTIVENESS.md`](scoring/EFFECTIVENESS.md)
 
 ---
 

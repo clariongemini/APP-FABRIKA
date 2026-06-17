@@ -106,14 +106,13 @@ Charter: [`08-ventures/ulas-player/venture.json`](08-ventures/ulas-player/ventur
 
 > Kurum hafızası ve karar mühendisliği. **Prompt arşivi değil.**
 
-→ [`ULAS/README.md`](ULAS/README.md) · **Phase 2:** [`ULAS/PHASE2.md`](ULAS/PHASE2.md) · `scripts/ulas.sh decide`
+→ [`ULAS/README.md`](ULAS/README.md) · **Phase 3:** [`ULAS/CONSOLIDATION.md`](ULAS/CONSOLIDATION.md) · `ulas report`
 
-| ULAS modülü | Soru |
-|-------------|------|
-| policies/ | Class A–D · tier escalation · review matrix |
-| bin/ulas.py | Context → confidence → gate → audit |
-| scoring/ | Trust calibration (not punishment) |
-| memory/ | NEVER_AGAIN severity |
+| ULAS | Rol |
+|------|-----|
+| `ulas decide` | Route · gate · audit |
+| `ulas outcome` | Effectiveness feedback loop |
+| `ulas report` | LOW_CONFIDENCE precision · tier usage |
 
 CL4R1T4S'tan **prensip** çıkarıldı; prompt metni repoda **yok**.
 
