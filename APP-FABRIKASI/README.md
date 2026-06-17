@@ -102,7 +102,23 @@ Charter: [`08-ventures/ulas-player/venture.json`](08-ventures/ulas-player/ventur
 
 ---
 
-## Intelligence zinciri
+## ULAS — Decision Intelligence Layer
+
+> Kurum hafızası ve karar mühendisliği. **Prompt arşivi değil.**
+
+→ [`ULAS/README.md`](ULAS/README.md) · Prensip haritası: [`ULAS/SOURCE_PRINCIPLES.md`](ULAS/SOURCE_PRINCIPLES.md)
+
+| ULAS modülü | Soru |
+|-------------|------|
+| 01 context-engineering | Bağlam tam mı? (`READ_MORE_REQUIRED`) |
+| 02 decision-reliability | Confidence yeterli mi? |
+| 03 review-chains | ≥2 reviewer? |
+| 05 institutional-memory | NEVER_AGAIN çakışması? |
+| 06 token-economy | Tier risk ile uyumlu mu? |
+
+CL4R1T4S'tan **prensip** çıkarıldı; prompt metni repoda **yok**.
+
+---
 
 ```
 Knowledge (06) → Insight (01) → Decision (ADR) → Execution (venture)
@@ -117,6 +133,7 @@ Knowledge (06) → Insight (01) → Decision (ADR) → Execution (venture)
 ```
 APP-FABRIKA/
 ├── APP-FABRIKASI/          ← SVOS (bu dosya)
+│   ├── ULAS/               ← Decision intelligence (not prompts)
 │   ├── NORTH_STAR.md
 │   ├── STABILIZATION.md
 │   ├── 01-core … 10-runtime/   (+ PURPOSE.md her birinde)

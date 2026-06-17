@@ -23,6 +23,7 @@ Run the **first real venture** through the complete lifecycle.
 | New agent capabilities | 7 capability yeterli |
 | New intelligence engines | Veri yokken motor anlamsız |
 | New top-level folders | 01–10 yapısı kilitli |
+| CL4R1T4S / prompt archives | Prensip only — [`ULAS/`](ULAS/) |
 
 ---
 
@@ -31,6 +32,7 @@ Run the **first real venture** through the complete lifecycle.
 | İzin | Örnek |
 |------|-------|
 | Venture charter + ship | `ulas-player` |
+| **ULAS decision layer** | Framework only — validate via venture |
 | Evidence / outcome / postmortem | Gerçek store verisi |
 | PURPOSE.md, README clarifications | Hafıza — unutmayı önler |
 | Bugfix (Android adapter) | CI regression |
