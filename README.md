@@ -1091,6 +1091,7 @@ Cursor: `/import-aistudio` → `/baslat` — Detay: [`docs/AI_STUDIO_IMPORT.md`]
 | [`docs/BOOTSTRAP.md`](docs/BOOTSTRAP.md) | Setup scenarios |
 | [`docs/EXECUTIVE_OS.md`](docs/EXECUTIVE_OS.md) | CEO V7, script tree |
 | [`docs/FACTORY_V4_PRODUCTIZATION.md`](docs/FACTORY_V4_PRODUCTIZATION.md) | Portfolio + outcomes |
+| [`docs/FACTORY_EVOLUTION_DIRECTIVE_AUDIT.md`](docs/FACTORY_EVOLUTION_DIRECTIVE_AUDIT.md) | 12-layer directive vs repo (gap only) |
 | [`factory/outcomes/README.md`](factory/outcomes/README.md) | Outcome validation |
 | [`AGENTS.md`](AGENTS.md) | Full agent directory |
 

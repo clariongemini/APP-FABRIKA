@@ -24,6 +24,7 @@ Yasak: V5 · yeni ajan · council · katman · intelligence motoru
 ## Backlog (freeze sonrası — şimdi uygulanmaz)
 
 - [ ] [`docs/FACTORY_UPGRADE_STRATEGY.md`](FACTORY_UPGRADE_STRATEGY.md) → `migrate-project.sh` *(trigger: v3 app shipped + breaking factory release)*
+- [ ] [`docs/FACTORY_EVOLUTION_DIRECTIVE_AUDIT.md`](FACTORY_EVOLUTION_DIRECTIVE_AUDIT.md) — 12-layer prompt gap analysis *(no new agents — post-validation tooling only)*
 
 ---
 
