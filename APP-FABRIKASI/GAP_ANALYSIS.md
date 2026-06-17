@@ -92,6 +92,8 @@ SVOS is **production-ready** when:
 
 ## Recommendation
 
-**Do not expand scaffold.** Select venture → ship → evidence → learning loop.
+**STABILIZATION MODE active** — see [`STABILIZATION.md`](STABILIZATION.md).
 
-Next score jump: **58 → 75** comes from first real product, not new folders.
+**Do not expand scaffold.** Run `ulas-player` → ship → evidence → learning loop.
+
+Next score jump: **58 → 75** comes from first real venture lifecycle, not new folders.

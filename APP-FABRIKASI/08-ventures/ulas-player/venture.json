@@ -1,0 +1,30 @@
+{
+  "name": "ulas-player",
+  "slug": "ulas-player",
+  "display_name": "Ulaş Player",
+  "platform": ["android"],
+  "template": "android-app",
+  "stage": "charter",
+  "status": "charter",
+  "evidence_status": "none",
+  "charter": {
+    "problem": "Kullanıcılar çevrimdışı ortamda (uçak, metro, kısıtlı veri) medya oynatmak istiyor; mevcut uygulamalar ya abonelik duvarı, ya reklam yoğunluğu ya da gereksiz karmaşık arayüz sunuyor.",
+    "solution": "Offline-first, sade arayüzlü medya oynatıcı — yerel dosyalardan müzik/video, minimum izin, hızlı başlatma.",
+    "market": "Android offline media player — global, TR + EN ilk pazarlar.",
+    "competition": ["VLC", "Poweramp", "Phonograph", "YouTube Music (online-only sınırı)"],
+    "monetization": "7 gün deneme + yıllık abonelik (premium özellikler: eşitleme, tema, gelişmiş EQ — charter sonrası netleşir)",
+    "success_metric": "İlk 100 organik kullanıcı + crash-free rate > %99 + ilk ödeme veya charter'da tanımlı alternatif north star"
+  },
+  "results": {
+    "launched_at": null,
+    "users": null,
+    "revenue_usd": null,
+    "rating": null,
+    "crash_free_rate": null
+  },
+  "evidence_ref": "07-evidence/ulas-player/",
+  "learning_refs": [],
+  "adapter": "02-platforms/android/ADAPTER.md",
+  "created": "2026-06-14",
+  "owner": "Ulaş Kaşıkcı"
+}

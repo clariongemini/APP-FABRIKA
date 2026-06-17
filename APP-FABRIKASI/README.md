@@ -1,98 +1,150 @@
 # APP-FABRIKASI — Software Venture Operating System (SVOS)
 
-> **One Venture OS. Multiple platform adapters.**  
-> Governance, knowledge, intelligence and quality are platform-independent.  
-> Android, iOS, Web, Backend and AI products plug in — they do not rebuild the core.
+> **Mission:** Create repeatable software ventures that learn from evidence and improve capital allocation over time.  
+> → [`NORTH_STAR.md`](NORTH_STAR.md)
 
 | Meta | Değer |
 |------|-------|
-| **Sürüm** | v1.0.0-svos-scaffold |
-| **Durum** | Scaffold — blueprints only, no production code |
+| **Sürüm** | v1.1.0-stabilization |
+| **Mod** | **STABILIZATION** — scaffold genişlemesi durdu |
 | **Canonical repo** | [github.com/clariongemini/APP-FABRIKA](https://github.com/clariongemini/APP-FABRIKA) |
-| **Android Factory** | Repo kökünde — **dokunulmaz**, operasyonel |
+| **İlk validation venture** | [`ulas-player`](08-ventures/ulas-player/venture.json) |
+| **Readiness** | **58/100** — iskelet tamam, kas yok (beklenen) |
 
 ---
 
-## İlişki: Android Factory ↔ SVOS
+## Factory değil, Operating System
+
+| | Android-App (Factory) | APP-FABRIKASI (OS) |
+|---|----------------------|---------------------|
+| **Soru** | Nasıl üretirim? | Nasıl şirketleşirim, öğrenirim, portföy yönetirim? |
+| **Birim** | Modül, APK | Venture |
+| **Konum** | Repo kökü — **dokunulmaz** | `APP-FABRIKASI/` |
+| **Başarı** | CI green | İlk venture uçtan uca |
+
+Android Factory bir **platform adaptörünün** tam implementasyonudur. OS onu büyütmez; venture lifecycle'ında **referans eder**.
+
+---
+
+## Neden 01 … 10? (Tasarım hafızası)
+
+Birkaç ay sonra "neden böyle?" diye sormaman için:
+
+| # | Klasör | Neden ayrı? | PURPOSE |
+|---|--------|-------------|---------|
+| **01** | core | Governance platformdan bağımsız olmalı — iOS'a geçince kurallar yeniden yazılmaz | [`01-core/PURPOSE.md`](01-core/PURPOSE.md) |
+| **02** | platforms | HOW ayrı WHAT'tan — Kotlin/Swift/TS sızmasın core'a | [`02-platforms/PURPOSE.md`](02-platforms/PURPOSE.md) |
+| **03** | agents | 16 departman yerine 7 yetenek — enflasyon ölümü | [`03-agents/PURPOSE.md`](03-agents/PURPOSE.md) |
+| **04** | design | AI-slop değil, kasıtlı UI — tüm venture'lar aynı kalite çubuğu | [`04-design/PURPOSE.md`](04-design/PURPOSE.md) |
+| **05** | templates | Her venture sıfırdan checklist yazmasın | [`05-templates/PURPOSE.md`](05-templates/PURPOSE.md) |
+| **06** | learning | Geçmiş unutulmasın — ADR, pattern, postmortem | [`06-learning/PURPOSE.md`](06-learning/PURPOSE.md) |
+| **07** | evidence | **En kritik** — kanıt olmadan öğrenme yalan | [`07-evidence/PURPOSE.md`](07-evidence/PURPOSE.md) |
+| **08** | ventures | Takip edilen birim kod değil girişim | [`08-ventures/PURPOSE.md`](08-ventures/PURPOSE.md) |
+| **09** | portfolio | 100 saat nereye? — yalnızca veri sonrası | [`09-portfolio/PURPOSE.md`](09-portfolio/PURPOSE.md) |
+| **10** | runtime | OS ne öğrendiğini bilsin — context assembly | [`10-runtime/PURPOSE.md`](10-runtime/PURPOSE.md) |
+
+**Kural:** Bir şey nereye gideceğini bilmiyorsan → önce `08-ventures` charter'ına bak, sonra ilgili PURPOSE.md.
+
+---
+
+## Stabilization Mode (aktif)
+
+→ [`STABILIZATION.md`](STABILIZATION.md)
+
+| Yasak | İzin |
+|-------|------|
+| Yeni platform adapter | `ulas-player` ship |
+| Yeni governance / agent | Evidence, postmortem, ADR |
+| Yeni intelligence motor | Gerçek outcome verisi |
+| Yeni üst klasör | PURPOSE / README netliği |
+
+**Tek başarı metriği:** APP-FABRIKASI ilk gerçek venture'ını uçtan uca yönetti.
+
+---
+
+## İlk venture: ulas-player
 
 ```
-Repo (APP-FABRIKA)
-├── [Android Factory]     ← v3.1 frozen, CI green, template + governance
-│   templates/android/
-│   governance/
-│   knowledge/            ← geçiş döneminde referans; SVOS kendi katmanını büyütür
-│   scripts/
-│   ...
-└── APP-FABRIKASI/        ← YENİ: platform-bağımsız Venture OS çekirdeği
-    01-core … 10-runtime
+08-ventures/ulas-player/venture.json   ← charter (şimdi)
+        ↓
+02-platforms/android + init-new-app    ← build
+        ↓
+Play Store release
+        ↓
+07-evidence/ulas-player/               ← analytics, crash, revenue
+        ↓
+outcome + 06-learning/postmortem
+        ↓
+01-core/intelligence                   ← gerçek veri
+        ↓
+09-portfolio (N≥2 sonrası)
 ```
 
-Android Factory bir **platform adaptörünün** ilk implementasyonudur. SVOS onu büyütmez; ona **bağlanır**.
+Charter: [`08-ventures/ulas-player/venture.json`](08-ventures/ulas-player/venture.json)
 
 ---
 
-## Çekirdek felsefe
+## Olgunluk tablosu (dürüst skor)
 
-| Yapma | Yap |
-|-------|-----|
-| Ayrı Android / iOS / Web fabrikası | Tek Venture OS |
-| Departman enflasyonu | Yetenek tanımları (planner, architect, …) |
-| Prompt arşivi / sızdırılmış içerik | Tasarım prensibi çıkarımı |
-| Klasör sayısı = başarı | Kanıtlanabilir venture çıktısı |
+| Alan | Skor | Durum |
+|------|------|-------|
+| Architecture | 92 | Güçlü |
+| Governance | 88 | Güçlü |
+| Android adapter | 95 | Operasyonel |
+| Learning | 75 | Hazır, veri bekliyor |
+| Intelligence | 35 | Şema hazır, veri yok |
+| Evidence | 15 | Boş — doğru |
+| Portfolio | 15 | Boş — doğru |
+| **Venture validation** | **0** | **ulas-player bekliyor** |
+| **Composite** | **58** | İskelet tamam, kas yok |
 
-**Ayrım:** *WHAT we build* (venture, product, market) · *HOW we build it* (platform adapter)
-
----
-
-## Dizin haritası
-
-| # | Dizin | Sorumluluk |
-|---|-------|------------|
-| 01 | [`01-core/`](01-core/) | Governance, standards, intelligence — platform-bağımsız |
-| 02 | [`02-platforms/`](02-platforms/) | android · ios · web · backend · ai adaptörleri |
-| 03 | [`03-agents/`](03-agents/) | Yetenek tanımları (departman değil) |
-| 04 | [`04-design/`](04-design/) | Ürün tasarım sistemi blueprint |
-| 05 | [`05-templates/`](05-templates/) | Venture şablonları (blueprint only) |
-| 06 | [`06-learning/`](06-learning/) | ADR · pattern · failure · postmortem |
-| 07 | [`07-evidence/`](07-evidence/) | Analytics · crash · revenue · retention |
-| 08 | [`08-ventures/`](08-ventures/) | Girişim kaydı (kod değil, venture birimi) |
-| 09 | [`09-portfolio/`](09-portfolio/) | Capital allocation (gelecek — veri sonrası) |
-| 10 | [`10-runtime/`](10-runtime/) | Context assembly · retrieval · lookup |
-
----
-
-## Master directive çıktıları
-
-| # | Belge | Konum |
-|---|-------|-------|
-| 1 | Repository Structure | Bu dosya + [`ARCHITECTURE.md`](ARCHITECTURE.md) |
-| 2 | Governance Design | [`01-core/governance/GOVERNANCE_DESIGN.md`](01-core/governance/GOVERNANCE_DESIGN.md) |
-| 3 | Platform Adapter Design | [`02-platforms/ADAPTER_DESIGN.md`](02-platforms/ADAPTER_DESIGN.md) |
-| 4 | Design System Blueprint | [`04-design/DESIGN_SYSTEM.md`](04-design/DESIGN_SYSTEM.md) |
-| 5 | Learning System Blueprint | [`06-learning/LEARNING_SYSTEM.md`](06-learning/LEARNING_SYSTEM.md) |
-| 6 | Evidence System Blueprint | [`07-evidence/EVIDENCE_SYSTEM.md`](07-evidence/EVIDENCE_SYSTEM.md) |
-| 7 | Venture Management Blueprint | [`08-ventures/VENTURE_MANAGEMENT.md`](08-ventures/VENTURE_MANAGEMENT.md) |
-| 8 | Portfolio Intelligence Blueprint | [`09-portfolio/PORTFOLIO_INTELLIGENCE.md`](09-portfolio/PORTFOLIO_INTELLIGENCE.md) |
-| 9 | Migration Path | [`MIGRATION.md`](MIGRATION.md) |
-| 10 | Gap Analysis & Readiness | [`GAP_ANALYSIS.md`](GAP_ANALYSIS.md) |
+58 kötü değil. **58 + ilk venture loop = 75–80.**
 
 ---
 
 ## Intelligence zinciri
 
 ```
-Knowledge → Insight → Decision → Execution
-     ↑                              │
-     └──────── Evidence ────────────┘
+Knowledge (06) → Insight (01) → Decision (ADR) → Execution (venture)
+         ↑                                            │
+         └──────────── Evidence (07) ─────────────────┘
 ```
 
 ---
 
-## Tasarım ilhamı (prensip only)
+## Repo haritası
 
-Cursor · Claude · Devin · Factory.ai · Linear · Figma · Stripe · Notion · Vercel — **context engineering, validation gates, phase separation, decision memory**.  
-Harici referans: [CL4R1T4S](https://github.com/elder-plinius/CL4R1T4S) (tasarım gözlemi; prompt kopyalama yasak).
+```
+APP-FABRIKA/
+├── APP-FABRIKASI/          ← SVOS (bu dosya)
+│   ├── NORTH_STAR.md
+│   ├── STABILIZATION.md
+│   ├── 01-core … 10-runtime/   (+ PURPOSE.md her birinde)
+│   └── 08-ventures/ulas-player/
+├── templates/android/      ← Android adapter impl (frozen)
+├── governance/               ← geçiş — Android Factory
+└── scripts/                  ← init-new-app, CI
+```
 
 ---
 
-**Sonraki adım:** İlk venture seç → platform adaptörü → ship → evidence → learning loop.
+## Belge indeksi
+
+| Belge | İçerik |
+|-------|--------|
+| [`ARCHITECTURE.md`](ARCHITECTURE.md) | Katman diyagramı, bağımlılık kuralları |
+| [`GAP_ANALYSIS.md`](GAP_ANALYSIS.md) | Gap'ler ve readiness |
+| [`MIGRATION.md`](MIGRATION.md) | Standalone repo yol haritası |
+| [`01-core/governance/GOVERNANCE_DESIGN.md`](01-core/governance/GOVERNANCE_DESIGN.md) | Lightweight governance |
+
+---
+
+## Yasaklar (hatırlatma)
+
+- Leaked prompt / CL4R1T4S kopyalama
+- Scaffold hızı > venture hızı
+- "Yeni klasör = ilerleme" illüzyonu
+
+---
+
+**Sonraki adım:** `ulas-player` build & ship — OS'u validate et, genişletme.

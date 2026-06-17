@@ -1,13 +1,25 @@
 {
   "name": "APP-FABRIKASI",
   "full_name": "Software Venture Operating System",
-  "version": "1.0.0-svos-scaffold",
-  "status": "SCAFFOLD",
+  "version": "1.1.0-stabilization",
+  "status": "STABILIZATION",
+  "mode": "validate_through_ventures",
   "canonical_repo": "https://github.com/clariongemini/APP-FABRIKA",
   "android_factory_ref": "../.factory/meta.json",
   "android_factory_policy": "UNTOUCHED",
-  "platforms": ["android", "ios", "web", "backend", "ai"],
+  "north_star": "NORTH_STAR.md",
+  "stabilization": "STABILIZATION.md",
+  "first_validation_venture": "ulas-player",
+  "readiness_score": 58,
+  "platforms": {
+    "android": "operational",
+    "ios": "blueprint_frozen",
+    "web": "blueprint_frozen",
+    "backend": "blueprint_frozen",
+    "ai": "blueprint_frozen"
+  },
   "agent_model": "capabilities_not_departments",
   "intelligence_chain": ["knowledge", "insight", "decision", "execution"],
-  "created": "2026-06-14"
+  "created": "2026-06-14",
+  "stabilization_from": "2026-06-14"
 }
