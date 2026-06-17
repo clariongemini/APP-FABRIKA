@@ -1,0 +1,3 @@
+cache/
+**/raw/
+*.local.json

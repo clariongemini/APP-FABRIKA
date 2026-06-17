@@ -1,0 +1,13 @@
+{
+  "name": "APP-FABRIKASI",
+  "full_name": "Software Venture Operating System",
+  "version": "1.0.0-svos-scaffold",
+  "status": "SCAFFOLD",
+  "canonical_repo": "https://github.com/clariongemini/APP-FABRIKA",
+  "android_factory_ref": "../.factory/meta.json",
+  "android_factory_policy": "UNTOUCHED",
+  "platforms": ["android", "ios", "web", "backend", "ai"],
+  "agent_model": "capabilities_not_departments",
+  "intelligence_chain": ["knowledge", "insight", "decision", "execution"],
+  "created": "2026-06-14"
+}
