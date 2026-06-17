@@ -15,7 +15,14 @@
 
 ## ULAS checklist (lifecycle)
 
-- [ ] Context manifest T2 assembled
+Run before ship:
+
+```bash
+./APP-FABRIKASI/scripts/ulas.sh decide --venture ulas-player --class D \
+  --title "Play Store release" --reviewers security,qa,auditor
+```
+
+- [ ] Context manifest T2+ assembled (`ulas assemble`)
 - [ ] NEVER_AGAIN scan (empty registry — pass)
 - [ ] Charter review chain complete
 - [ ] Ship decision audited

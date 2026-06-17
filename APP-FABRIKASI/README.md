@@ -106,15 +106,14 @@ Charter: [`08-ventures/ulas-player/venture.json`](08-ventures/ulas-player/ventur
 
 > Kurum hafızası ve karar mühendisliği. **Prompt arşivi değil.**
 
-→ [`ULAS/README.md`](ULAS/README.md) · Prensip haritası: [`ULAS/SOURCE_PRINCIPLES.md`](ULAS/SOURCE_PRINCIPLES.md)
+→ [`ULAS/README.md`](ULAS/README.md) · **Phase 2:** [`ULAS/PHASE2.md`](ULAS/PHASE2.md) · `scripts/ulas.sh decide`
 
 | ULAS modülü | Soru |
 |-------------|------|
-| 01 context-engineering | Bağlam tam mı? (`READ_MORE_REQUIRED`) |
-| 02 decision-reliability | Confidence yeterli mi? |
-| 03 review-chains | ≥2 reviewer? |
-| 05 institutional-memory | NEVER_AGAIN çakışması? |
-| 06 token-economy | Tier risk ile uyumlu mu? |
+| policies/ | Class A–D · tier escalation · review matrix |
+| bin/ulas.py | Context → confidence → gate → audit |
+| scoring/ | Trust calibration (not punishment) |
+| memory/ | NEVER_AGAIN severity |
 
 CL4R1T4S'tan **prensip** çıkarıldı; prompt metni repoda **yok**.
 

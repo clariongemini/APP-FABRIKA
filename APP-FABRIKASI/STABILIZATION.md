@@ -32,7 +32,7 @@ Run the **first real venture** through the complete lifecycle.
 | İzin | Örnek |
 |------|-------|
 | Venture charter + ship | `ulas-player` |
-| **ULAS decision layer** | Framework only — validate via venture |
+| **ULAS decision layer** | **Phase 2 operational** — `scripts/ulas.sh` |
 | Evidence / outcome / postmortem | Gerçek store verisi |
 | PURPOSE.md, README clarifications | Hafıza — unutmayı önler |
 | Bugfix (Android adapter) | CI regression |
