@@ -7,7 +7,7 @@ ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd)"
 echo "==> Runtime consolidation (V3.1)"
 
 mkdir -p "$ROOT/runtime"/{governance/memory,governance/execution,governance/egc}
-mkdir -p "$ROOT/runtime/factory"/{proof,memory,decision_accuracy,revenue,benchmark,portfolio,certification,regression,outcomes}
+mkdir -p "$ROOT/runtime/factory"/{proof,memory,decision_accuracy,revenue,benchmark,portfolio,certification,regression,outcomes,ventures}
 mkdir -p "$ROOT/runtime/analytics"
 mkdir -p "$ROOT/runtime/telemetry"
 
@@ -17,6 +17,7 @@ export RUNTIME_FACTORY_ROOT="$FACTORY_RUNTIME"
 python3 "$ROOT/scripts/factory/seed-intelligence.py"
 python3 "$ROOT/scripts/factory/seed-portfolio.py"
 python3 "$ROOT/scripts/factory/seed-outcomes.py"
+python3 "$ROOT/scripts/factory/seed-ventures.py"
 
 # Migrate legacy factory/runtime → runtime/factory if newer legacy exists
 LEG="$ROOT/factory/runtime"

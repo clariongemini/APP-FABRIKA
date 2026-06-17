@@ -9,6 +9,20 @@ Cursor Agent'ın context penceresi sınırlıdır. Fabrika **minimum kanıt, mak
 3. **MCP çıktısı sohbete değil dosyaya** — `.cursor/snapshots/mcp/LATEST.handoff.json`.
 4. **Build kanıtı log dosyasından** — `.cursor/snapshots/build/LATEST.gradle.log`.
 5. **v2 reasoning (zorunlu tetikleyicide)** — `<thinking>` + `<architecture_check>` + `<negative_constraints>`; max 150–200 kelime/blok. Rehber: `docs/CLAUDE_REASONING.md`.
+6. **Intent Gate** — soru = DIAGNOSTIC (dosya değiştirme yok); uygulama = IMPLEMENTATION. Kural: `.cursor/rules/20-agent-intent-gate.mdc`.
+
+## Kısmi okuma yasağı (CL4R1T4S disiplini)
+
+Dosyanın **%20'sini okuyup karar verme** — özellikle `.kt`, `build.gradle.kts`, manifest, navigation graph.
+
+| Durum | Yap |
+|-------|-----|
+| Araç kısmi satır döndürdü | Eksik satır var mı kontrol et; şüphede **tekrar oku** |
+| Import / Hilt / Room / Nav graph değişecek | İlgili dosyanın **tamamını** veya en azından tüm sınıfı oku |
+| 250 satır limiti yetmedi | Ardışık `read` ile devam et; "yeterli" demeden önce dependency zincirini doğrula |
+| Büyük dosya (>400 satır) | Önce grep/symbol bul → sonra hedef bölüm + çevre context |
+
+**Kural:** Karar vermeden önce "bu dosyada görmediğim kritik bir şey var mı?" sorusunu sor.
 
 ## Oturum başlangıcı (her zaman)
 
@@ -16,6 +30,13 @@ Cursor Agent'ın context penceresi sınırlıdır. Fabrika **minimum kanıt, mak
 |-------|--------|
 | `YAPILACAKLAR.md` | Aktif faz, görevler, aktif ajanlar |
 | `docs/00-INDEX.md` | Proje hafızası özeti |
+| `.factory/context/SESSION_CONTEXT.md` | `assemble-context.sh` — manifest + faz + LAST_DECISION |
+
+```bash
+./scripts/factory/assemble-context.sh
+```
+
+Manifest: `.factory/context/CONTEXT_MANIFEST.json` · Rehber: `docs/KNOWLEDGE_OS.md`
 
 ## Faz bazlı okuma
 

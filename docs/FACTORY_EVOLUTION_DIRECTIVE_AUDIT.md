@@ -328,4 +328,20 @@ Only for proven app types (media, utility, etc.) — max 2 templates.
 
 ---
 
-**North star:** [`FACTORY_MISSION.md`](../FACTORY_MISSION.md) · **Freeze:** [`FACTORY_FREEZE.md`](FACTORY_FREEZE.md)
+## Update (2026-06-14) — Knowledge OS
+
+Mimar: değer **context + öğrenme** katmanında; yeni executive değil.
+
+| System | Path |
+|--------|------|
+| Context OS | `.factory/context/` + `assemble-context.sh` |
+| Decision Memory | `knowledge/adr/` + `record-adr.py` |
+| Pattern Library | `knowledge/patterns/` (6 vertical) |
+| Failure Intelligence | `knowledge/failures/` + `promote-failure.py` |
+| Outcome Intelligence | `analyze-outcomes.py` + genişletilmiş `record-outcome.py` |
+
+Skor: **82 → 86** (Mimar ölçeği). Kalan gap: gerçek proje verisi.
+
+---
+
+**North star:** [`FACTORY_MISSION.md`](../FACTORY_MISSION.md) · **Freeze:** [`FACTORY_FREEZE.md`](FACTORY_FREEZE.md) · **Knowledge:** [`KNOWLEDGE_OS.md`](KNOWLEDGE_OS.md)

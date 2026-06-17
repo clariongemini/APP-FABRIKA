@@ -11,11 +11,13 @@ Bu kural **her oturumda otomatik** uygulanır. Geliştirici uyarı yazmasa bile 
 
 1. **`YAPILACAKLAR.md` oku** — yoksa, boşsa veya `uninitialized` ise **önce** `/baslat` veya `init-new-app.sh` / `init-yapilacaklar.sh` akışını uygula.
 2. **`docs/00-INDEX.md`** + aktif faz satırlarını oku.
-3. **Halüsinasyon sıfır:** Var olmayan dosya, sınıf, API, script veya governance kaydı **uydurma**. Okumadan referans verme.
-4. **Araç zorunluluğu:** Dosya içeriği, grep, glob, terminal — tahmin değil kanıt.
-5. **Tek faz kuralı:** Aynı anda yalnızca **bir** faz `işleniyor` olabilir.
-6. **Claude-Native reasoning (v2):** Kod/core değişikliği öncesi `19-claude-reasoning.mdc` — `<thinking>` + `<architecture_check>` (muafiyetler hariç). Rehber: `docs/CLAUDE_REASONING.md`.
-7. **Build kanıtı (F3+):** Android/Gradle değişikliği sonrası `./scripts/gradle-build-loop.sh` çalıştır. FAIL → `.cursor/snapshots/build/LATEST.gradle.log` oku; aynı parse hatası tekrarlanırsa `./scripts/state-recovery.sh --recover`. PASS olmadan F3+ satırını `tamamlandı` yapma.
+3. **Context OS:** `./scripts/factory/assemble-context.sh` → `.factory/context/SESSION_CONTEXT.md` (varsa `LAST_DECISION.md`).
+4. **Intent Gate:** Soru/inceleme = DIAGNOSTIC (dosya değiştirme yok). Uygulama = IMPLEMENTATION. Kural: `20-agent-intent-gate.mdc`.
+5. **Halüsinasyon sıfır:** Var olmayan dosya, sınıf, API, script veya governance kaydı **uydurma**. Okumadan referans verme.
+6. **Araç zorunluluğu:** Dosya içeriği, grep, glob, terminal — tahmin değil kanıt.
+7. **Tek faz kuralı:** Aynı anda yalnızca **bir** faz `işleniyor` olabilir.
+8. **Claude-Native reasoning (v2):** Kod/core değişikliği öncesi `19-claude-reasoning.mdc` — `<thinking>` + `<architecture_check>` (muafiyetler hariç). Rehber: `docs/CLAUDE_REASONING.md`.
+9. **Build kanıtı (F3+):** Android/Gradle değişikliği sonrası `./scripts/gradle-build-loop.sh` çalıştır. FAIL → `.cursor/snapshots/build/LATEST.gradle.log` oku; aynı parse hatası tekrarlanırsa `./scripts/state-recovery.sh --recover`. PASS olmadan F3+ satırını `tamamlandı` yapma.
 
 ## Cursor terminal köprüsü
 

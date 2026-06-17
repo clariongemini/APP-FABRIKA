@@ -19,7 +19,8 @@
     "bugfix",
     "documentation",
     "sync_standards_improvements",
-    "real_app_data_entry"
+    "real_app_data_entry",
+    "knowledge_os"
   ],
   "allowed_without_release": [
     "factory/certification",

@@ -29,6 +29,8 @@ secrets.properties
 .cursor/chat/
 .cursor/plans/
 .cursor/mcp.json
+.factory/context/SESSION_CONTEXT.md
+knowledge/evidence/*/raw/
 **/.cursor/snapshots/build/
 **/.cursor/snapshots/maestro/
 **/.cursor/snapshots/mcp/

@@ -1,0 +1,5 @@
+{
+  "updated_at": "{{DATE}}",
+  "schema": "factory.ventures.registry.v1",
+  "ventures": []
+}

@@ -41,6 +41,11 @@ SYNC_ITEMS=(
   "docs/33-LAYER-MANIFEST.yaml"
   "docs/33-LAYER-MANIFEST/README.md"
   "docs/CURSOR_CONTEXT_BUDGET.md"
+  "docs/KNOWLEDGE_OS.md"
+  "docs/LEARNING_FACTORY.md"
+  "docs/V3_EVIDENCE.md"
+  "knowledge"
+  ".factory/context"
   "governance/phase-agents.json"
   "scripts/split-layer-manifest.py"
   "scripts/validate-layer-slices.sh"
@@ -82,11 +87,12 @@ done
 
 # Fabrika meta
 mkdir -p "$TARGET/.factory"
+FACTORY_VERSION="$(python3 -c "import json; print(json.load(open('$FACTORY_ROOT/.factory/meta.json'))['version'])")"
 cat > "$TARGET/.factory/sync.json" <<EOF
 {
   "factory_root": "$FACTORY_ROOT",
   "synced_at": "$(date -u +%Y-%m-%dT%H:%M:%SZ)",
-  "factory_version": "2.1.0-stable"
+  "factory_version": "$FACTORY_VERSION"
 }
 EOF
 

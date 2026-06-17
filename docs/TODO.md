@@ -23,6 +23,10 @@ Yasak: V5 · yeni ajan · council · katman · intelligence motoru
 
 ## Backlog (freeze sonrası — şimdi uygulanmaz)
 
+- [x] **Knowledge OS** — context, ADR, patterns, failure, outcome ([`docs/KNOWLEDGE_OS.md`](KNOWLEDGE_OS.md))
+- [x] **CL4R1T4S disiplin paketi** — Intent Gate (`20-agent-intent-gate.mdc`), Context Budget kısmi okuma, linter max 3
+- [x] **V3 Evidence scaffold** — `knowledge/evidence/` + `init-evidence-bundle.sh` ([`docs/V3_EVIDENCE.md`](V3_EVIDENCE.md))
+- [ ] **DUR** — repo geliştirme freeze; ilk shipped app + evidence bundle
 - [ ] [`docs/FACTORY_UPGRADE_STRATEGY.md`](FACTORY_UPGRADE_STRATEGY.md) → `migrate-project.sh` *(trigger: v3 app shipped + breaking factory release)*
 - [ ] [`docs/FACTORY_EVOLUTION_DIRECTIVE_AUDIT.md`](FACTORY_EVOLUTION_DIRECTIVE_AUDIT.md) — 12-layer prompt gap analysis *(no new agents — post-validation tooling only)*
 

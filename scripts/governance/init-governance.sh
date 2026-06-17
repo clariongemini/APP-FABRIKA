@@ -10,7 +10,7 @@ APP_NAME="${1:-}"
 PACKAGE_NAME="${2:-}"
 SLUG="${3:-}"
 DATE="$(date +%Y-%m-%d)"
-FACTORY_VERSION="3.0.0-intelligence-alpha"
+FACTORY_VERSION="$(python3 -c "import json; print(json.load(open('$ROOT/.factory/meta.json'))['version'])")"
 
 if [[ -z "$APP_NAME" || -z "$PACKAGE_NAME" ]]; then
   if [[ -f "$ROOT/.factory/project.json" ]]; then

@@ -106,6 +106,21 @@ Fabrika tek başına bir uygulama değildir. Bu repoda APK yaşamaz; `templates/
 | **Sürüm** | v3.1.0-intelligence-operational |
 | **Durum** | Development freeze — 3 production release sonrası meta-genişleme |
 
+### Platform yol haritası ve AI referans kütüphanesi
+
+Bu repo **Android** için Software Venture Operating System'tir. Gelecekte planlanan varyasyonlar:
+
+| Platform | Hedef repo (plan) | Not |
+|----------|-------------------|-----|
+| **Android** | Bu repo (`Android-App`) | Aktif — Gradle, Compose, Play Store |
+| **iOS** | Ayrı fabrika şablonu | SwiftUI, SPM, App Store parity |
+| **Web** | Ayrı fabrika şablonu | React/Next veya eşdeğer stack |
+| **Claude / Agent** | Kural ve context katmanları | Cursor rules + Knowledge OS |
+
+**Harici bilgi kütüphanesi:** Gelişmiş AI ajan tasarımı (context engineering, tool disiplini, intent gate) için [CL4R1T4S](https://github.com/elder-plinius/CL4R1T4S) referans alınabilir — *prompt kopyalama değil*, tasarım prensibi gözlemi. Bu fabrikanın kendi kuralları: `.cursor/rules/`, [`docs/KNOWLEDGE_OS.md`](docs/KNOWLEDGE_OS.md), [`docs/LEARNING_FACTORY.md`](docs/LEARNING_FACTORY.md).
+
+> CL4R1T4S şeffaflık arşividir; jailbreak veya sızdırılmış prompt'ları repoya yapıştırmayın.
+
 ### Ne sağlar?
 
 - **YAPILACAKLAR (F0–F8)** — Plan onaylanmadan kod üretilmez; aynı anda tek faz `işleniyor`
@@ -173,6 +188,21 @@ The factory is not an application. No APK lives here; the **10-module Gradle sca
 | **License** | [MIT](LICENSE) |
 | **Version** | v3.1.0-intelligence-operational |
 | **Status** | Development freeze — meta expansion after 3 production releases |
+
+### Platform roadmap & AI reference library
+
+This repo is the **Android** Software Venture OS. Planned factory variants:
+
+| Platform | Target repo (planned) | Notes |
+|----------|----------------------|-------|
+| **Android** | This repo (`Android-App`) | Active — Gradle, Compose, Play Store |
+| **iOS** | Separate factory template | SwiftUI, SPM, App Store parity |
+| **Web** | Separate factory template | React/Next or equivalent stack |
+| **Claude / Agents** | Rules & context layers | Cursor rules + Knowledge OS |
+
+**External knowledge library:** For advanced agent design patterns (context engineering, tool discipline, intent gates), see [CL4R1T4S](https://github.com/elder-plinius/CL4R1T4S) — observe **design principles**, do not copy proprietary prompts. This factory's canonical rules live in `.cursor/rules/`, [`docs/KNOWLEDGE_OS.md`](docs/KNOWLEDGE_OS.md), and [`docs/LEARNING_FACTORY.md`](docs/LEARNING_FACTORY.md).
+
+> CL4R1T4S is a transparency archive; do not paste leaked prompts or jailbreaks into this repo.
 
 ### What you get
 

@@ -17,6 +17,12 @@ echo "    Workdir: $WORK"
 "$ROOT/scripts/scaffold-android-project-to.sh" "$WORK/ci-smoke" "FactoryCiSmoke" "com.ulas.factory.ci"
 bash "$ROOT/scripts/bootstrap-gradle-wrapper.sh" "$WORK/ci-smoke" &>/dev/null
 
+# CI smoke: minimal google-services.json (Firebase plugin requires file; not a real project)
+GS_EXAMPLE="$ROOT/templates/android/project/app/google-services.json.example"
+if [[ -f "$GS_EXAMPLE" ]]; then
+  sed "s/{{PACKAGE}}/com.ulas.factory.ci/g" "$GS_EXAMPLE" > "$WORK/ci-smoke/app/google-services.json"
+fi
+
 if ! command -v java &>/dev/null; then
   echo "HATA: JDK 17+ gerekli"
   exit 1

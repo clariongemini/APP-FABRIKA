@@ -80,6 +80,9 @@ python3 scripts/governance/validate-yapilacaklar.py
 |-----|--------|
 | Rules | `00-overmind-zero-hallucination.mdc` + `01`–`17` + `18-state-recovery` + `19-claude-reasoning` + `20-aistudio-import` |
 | Skills | `zero-hallucination`, `yapilacaklar-planner`, `yapilacaklar-executor`, `hierarchical-audit` |
+| Knowledge OS | `docs/KNOWLEDGE_OS.md` · `.factory/context/` · `knowledge/` |
+| Learning Factory | `docs/LEARNING_FACTORY.md` · `intelligence-engine.py` |
+| V3 Evidence | `docs/V3_EVIDENCE.md` · `knowledge/evidence/` |
 | Commands | `baslat`, `devam-et`, `denetle`, `faz-durumu`, `yeni-proje` |
 | Subagents | `phase-verifier`, `plan-expander`, `phase-auditor`, `hallucination-guard` |
 

@@ -32,7 +32,7 @@ Aşağıdakilerden **biri** geçerliyse, kullanıcıya görünür çıktının *
 
 - Yazım/noktalama, yalnızca markdown/doc typo
 - `/faz-durumu` özet raporu
-- Salt okuma / soru-cevap (dosya değişikliği yok)
+- Salt okuma / soru-cevap (dosya değişikliği yok) — **Intent Gate: DIAGNOSTIC** (`20-agent-intent-gate.mdc`)
 - Audit script çıktısını aktarma
 
 ## Şablon (etiketleri kapat — Format Hatası sayılır)
@@ -65,6 +65,14 @@ Aşağıdakilerden **biri** geçerliyse, kullanıcıya görünür çıktının *
 1. Gradle parse hatası → log → **tek dosya** düzelt → `gradle-build-loop.sh`
 2. Aynı hata 2× → `state-recovery.sh --recover`
 3. Üç blok tamamlanmadan geniş refactor yasak
+
+## Linter / fix döngü limiti (max 3)
+
+Aynı dosyada lint veya aynı derleme hatası için **en fazla 3 düzeltme denemesi**.
+
+- 3. denemeden sonra hâlâ FAIL → dur, kök nedeni raporla, kullanıcıya sor
+- "fix fix fix" sonsuz döngüsü yasak
+- Her denemede farklı hipotez veya yeni kanıt (log satırı) olmalı
 
 ## Denetim
 

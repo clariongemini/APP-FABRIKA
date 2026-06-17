@@ -21,7 +21,7 @@ for mod in app core:common core:designsystem core:i18n core:database core:networ
   fi
 done
 
-if grep -q "com.ulas.factory" "$ROOT/governance/dependency-rules.json" 2>/dev/null; then
+if grep -q "com.example.app" "$ROOT/governance/dependency-rules.json" 2>/dev/null; then
   echo "  ✅ dependency-rules.json package"
 else
   echo "  ❌ dependency-rules.json package uyumsuz"

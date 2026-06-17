@@ -1,7 +1,7 @@
-# Ulas Autonomous Android APP Factory v2.1.0-stable
+# Ulas Autonomous Android APP Factory v3.1.0-intelligence-operational
 # Copyright (c) 2026 Ulaş Kaşıkcı — MIT License
 
-name: Android Build v2.1.0-stable
+name: Android Build v3.1.0
 
 on:
   push:
@@ -10,7 +10,7 @@ on:
     branches: [main, master]
 
 env:
-  FACTORY_VERSION: "2.1.0-stable"
+  FACTORY_VERSION: "3.1.0-intelligence-operational"
 
 jobs:
   build:

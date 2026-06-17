@@ -17,7 +17,8 @@ def ensure_runtime_tree() -> None:
         "governance/memory", "governance/execution", "governance/egc",
         "factory/proof", "factory/memory", "factory/decision_accuracy",
         "factory/revenue", "factory/benchmark", "factory/portfolio",
-        "factory/certification", "factory/regression", "factory/outcomes", "analytics", "telemetry",
+        "factory/certification", "factory/regression", "factory/outcomes",
+        "factory/ventures", "analytics", "telemetry",
     ):
         (runtime_root() / sub).mkdir(parents=True, exist_ok=True)
 

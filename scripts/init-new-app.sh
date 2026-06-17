@@ -9,7 +9,7 @@ cd "$ROOT"
 
 APP_NAME="${1:-}"
 PACKAGE_NAME="${2:-}"
-FACTORY_VERSION="2.1.0-stable"
+FACTORY_VERSION="$(python3 -c "import json; print(json.load(open('$ROOT/.factory/meta.json'))['version'])")"
 
 if [[ -z "$APP_NAME" || -z "$PACKAGE_NAME" ]]; then
   echo "Kullanım: $0 <UygulamaAdi> <com.sirket.uygulama>"

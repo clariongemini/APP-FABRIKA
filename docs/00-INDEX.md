@@ -10,7 +10,7 @@ Bu dosya fabrika reposunun merkezi hafızasıdır. Uygulama projelerinde `init-n
 |------|-------|
 | Tür | GitHub Template / standart kaynağı |
 | Amaç | Android projelerine AI kuralları + 33 katman + Executive OS aktarmak |
-| Sürüm | v2.1.0-stable |
+| Sürüm | v3.1.0-intelligence-operational |
 | Repo | Ulas Autonomous Android APP Factory |
 | Son güncelleme | 2026-06-14 |
 
@@ -31,6 +31,8 @@ Bu dosya fabrika reposunun merkezi hafızasıdır. Uygulama projelerinde `init-n
 | [33 Katman Manifest](./33-LAYER-MANIFEST.yaml) | Kaynak doğruluk (tam dosya okuma yasak) |
 | [33 Katman Dilimleri](./33-LAYER-MANIFEST/README.md) | On-demand `layer-NN.yaml` — Cursor context budget |
 | [Cursor Context Budget](./CURSOR_CONTEXT_BUDGET.md) | Token / okuma sırası rehberi |
+| [Knowledge OS](./KNOWLEDGE_OS.md) | Context + ADR + pattern + failure + outcome |
+| [Learning Factory](./LEARNING_FACTORY.md) | V2.1 Intelligence Engine — Knowledge → Insight |
 | [State Recovery](./STATE_RECOVERY.md) | Truncation / yarım Gradle kurtarma |
 | [ANDROID_STRUCTURE](./02-ARCHITECTURE/ANDROID_STRUCTURE.md) | Standart klasör yapısı |
 | [Standartlar](./03-STANDARDS/) | Liquid Glass, i18n, Test, Performans |

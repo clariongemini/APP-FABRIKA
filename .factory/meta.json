@@ -16,6 +16,13 @@
   "development_freeze": ".factory/freeze.json",
   "v4_target": "4.0.0-productization",
   "v4_surface": ["portfolio", "outcomes", "certification", "regression", "roi_dashboard"],
+  "knowledge_os": {
+    "context": ".factory/context/",
+    "knowledge": "knowledge/",
+    "doc": "docs/KNOWLEDGE_OS.md",
+    "learning_factory": "docs/LEARNING_FACTORY.md",
+    "intelligence_engine": "scripts/factory/intelligence-engine.py"
+  },
   "executive_os": "7.0",
   "hierarchical_audit": true,
   "layers": 33,
