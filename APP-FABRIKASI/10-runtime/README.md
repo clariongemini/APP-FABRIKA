@@ -1,5 +1,7 @@
 # Runtime System — Context Assembly & Retrieval
 
+> **Taşınabilir şablon.** `context/`, `evidence/`, utilization ve maturity çıktıları hedef projede oluşur — çoğu `.gitignore` ile commit edilmez.
+
 OS'un "ne öğrendiğini bilmesi" için runtime katmanı.
 
 ## Sorumluluklar
@@ -28,11 +30,23 @@ OS'un "ne öğrendiğini bilmesi" için runtime katmanı.
 ```
 10-runtime/
 ├── README.md
-├── context/           # Generated manifests
-├── ventures/          # Runtime venture state mirrors
-├── evidence-index/    # Index only
-└── .gitignore         # cache/, raw/
+├── context/              # {slug}/ manifests (gitignore — per venture)
+├── evidence/             # {slug}/ bridge copies (gitignore)
+├── capability-memory/      # utilization + quality reports (gitignore)
+├── maturity-report.json  # svos-health output (gitignore)
+├── ulas/                 # decisions, work, execution (gitignore JSON)
+└── .gitignore
 ```
+
+## Üretilen raporlar (hedef projede)
+
+| Rapor | Komut |
+|-------|--------|
+| Maturity | `./APP-FABRIKASI/scripts/svos-health.sh` |
+| Memory quality | `ulas memory quality-report` |
+| Memory utilization | `ulas memory utilization` |
+| Dispatch audit | `ulas dispatch audit` |
+| Feedback closure | `ulas feedback-audit` |
 
 ## Android Factory referans
 

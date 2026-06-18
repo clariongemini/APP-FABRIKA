@@ -63,6 +63,7 @@ SYNC_ITEMS=(
   "docs/03-STANDARDS"
   "scripts"
   "templates"
+  "APP-FABRIKASI"
 )
 
 for item in "${SYNC_ITEMS[@]}"; do
@@ -101,6 +102,7 @@ python3 "$TARGET/scripts/split-layer-manifest.py" 2>/dev/null || true
 
 echo ""
 echo "    Executive OS: cd \"$TARGET\" && ./scripts/governance/init-governance.sh"
+echo "    SVOS health:  cd \"$TARGET\" && ./APP-FABRIKASI/scripts/svos-health.sh"
 echo "==> Senkronizasyon tamamlandı."
 echo "    Hedef projede çalıştır: ./scripts/init-new-app.sh \"AppAdi\" \"com.pkg.app\""
 echo "    veya mevcut projede: ./scripts/governance/init-governance.sh"

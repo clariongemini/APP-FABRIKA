@@ -34,6 +34,7 @@ cd my-venture
 - `./scripts/factory-quality-gate.sh`
 - GitHub Actions: Factory Validation v3.1.0
 - Platform gate: `assembleDebug` smoke
+- SVOS bridge defaults: [`bridge.defaults.json`](bridge.defaults.json) — override in `venture.json` → `build`
 
 ## SVOS ilişkisi
 

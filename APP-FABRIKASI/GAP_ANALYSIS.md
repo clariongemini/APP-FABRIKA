@@ -1,7 +1,9 @@
-# Gap Analysis & Production Readiness — SVOS v1.0 Scaffold
+# Gap Analysis & Production Readiness — SVOS Template
+
+> **Taşınabilir şablon.** Repoda örnek venture yok. Skorlar hedef projede `ulas maturity audit` ile ölçülür.
 
 **Tarih:** 2026-06-14  
-**Kapsam:** APP-FABRIKASI scaffold vs production Venture OS
+**Kapsam:** APP-FABRIKASI scaffold vs production Venture OS (her projede ayrı validate)
 
 ---
 
@@ -41,7 +43,7 @@
 
 | Gap | Çözüm |
 |-----|-------|
-| No venture charter实例 | İlk venture `08-ventures/{slug}/` |
+| No venture charter | `init-venture.sh` → `08-ventures/{slug}/` |
 | No evidence data | `07-evidence` bundle post-release |
 | iOS/Web/Backend no CI | Adapter impl when venture selects platform |
 
@@ -94,6 +96,11 @@ SVOS is **production-ready** when:
 
 **STABILIZATION MODE active** — see [`STABILIZATION.md`](STABILIZATION.md).
 
-**Do not expand scaffold.** Run `ulas-player` → ship → evidence → learning loop.
+**Do not expand scaffold.** Hedef projede: `init-venture.sh` → ship → evidence → learning loop.
+
+```bash
+./APP-FABRIKASI/scripts/init-venture.sh "Proje Adı" {slug} path/to/codebase/
+./APP-FABRIKASI/scripts/bridge-venture.sh {slug}
+```
 
 Next score jump: **58 → 75** comes from first real venture lifecycle, not new folders.

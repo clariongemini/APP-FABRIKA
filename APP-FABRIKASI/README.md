@@ -8,8 +8,9 @@
 | **Sürüm** | v1.1.0-stabilization |
 | **Mod** | **STABILIZATION** — scaffold genişlemesi durdu |
 | **Canonical repo** | [github.com/clariongemini/APP-FABRIKA](https://github.com/clariongemini/APP-FABRIKA) |
-| **İlk validation venture** | [`ulas-player`](08-ventures/ulas-player/venture.json) |
-| **Readiness** | **58/100** — iskelet tamam, kas yok (beklenen) |
+| **İlk venture** | `init-venture.sh` ile oluşturulur — repoda örnek venture **yok** |
+| **Köprü (P0)** | `./APP-FABRIKASI/scripts/bridge-venture.sh SLUG` |
+| **Olgunluk** | `ulas maturity audit` — ilk venture sonrası ölçülür |
 
 ---
 
@@ -53,52 +54,92 @@ Birkaç ay sonra "neden böyle?" diye sormaman için:
 
 | Yasak | İzin |
 |-------|------|
-| Yeni platform adapter | `ulas-player` ship |
+| Yeni platform adapter | İlk venture ship |
 | Yeni governance / agent | Evidence, postmortem, ADR |
 | Yeni intelligence motor | Gerçek outcome verisi |
 | Yeni üst klasör | PURPOSE / README netliği |
 
-**Tek başarı metriği:** APP-FABRIKASI ilk gerçek venture'ını uçtan uca yönetti.
+**Tek başarı metriği:** İlk gerçek venture uçtan uca yönetildi (charter → ship → evidence → learning).
 
 ---
 
-## İlk venture: ulas-player
+## İlk venture (şablon)
+
+Repoda hazır venture **bulunmaz** — her projede sıfırdan charter:
+
+```bash
+./APP-FABRIKASI/scripts/init-venture.sh "My App" my-app path/to/codebase/
+./APP-FABRIKASI/scripts/bridge-venture.sh my-app
+```
+
+Döngü:
 
 ```
-08-ventures/ulas-player/venture.json   ← charter (şimdi)
+08-ventures/{slug}/venture.json   ← charter
         ↓
-02-platforms/android + init-new-app    ← build
+02-platforms/{platform} + build
         ↓
-Play Store release
+release / ship
         ↓
-07-evidence/ulas-player/               ← analytics, crash, revenue
+07-evidence/{slug}/               ← analytics, crash, revenue
         ↓
 outcome + 06-learning/postmortem
         ↓
-01-core/intelligence                   ← gerçek veri
+01-core/intelligence              ← gerçek veri
         ↓
 09-portfolio (N≥2 sonrası)
 ```
 
-Charter: [`08-ventures/ulas-player/venture.json`](08-ventures/ulas-player/venture.json)
+Şablon: [`08-ventures/_template/venture.json`](08-ventures/_template/venture.json)
 
 ---
 
-## Olgunluk tablosu (dürüst skor)
+## Olgunluk tablosu (`ulas maturity audit`)
 
-| Alan | Skor | Durum |
-|------|------|-------|
-| Architecture | 92 | Güçlü |
-| Governance | 88 | Güçlü |
-| Android adapter | 95 | Operasyonel |
-| Learning | 75 | Hazır, veri bekliyor |
-| Intelligence | 35 | Şema hazır, veri yok |
-| Evidence | 15 | Boş — doğru |
-| Portfolio | 15 | Boş — doğru |
-| **Venture validation** | **0** | **ulas-player bekliyor** |
-| **Composite** | **58** | İskelet tamam, kas yok |
+```bash
+./APP-FABRIKASI/scripts/svos-health.sh
+# veya: ./scripts/ulas.sh maturity audit
+# JSON: ./APP-FABRIKASI/scripts/svos-health.sh --json
+```
 
-58 kötü değil. **58 + ilk venture loop = 75–80.**
+> **Şablon durumu:** Repoda validation venture yok — skorlar ilk gerçek venture sonrası anlam kazanır. Rapor: `10-runtime/maturity-report.json`
+
+| Alan | Şablon beklentisi |
+|------|-------------------|
+| Architecture / Governance / ULAS | Scaffold tam — 100'e yakın |
+| Learning / Evidence / Portfolio | Venture yokken düşük — **normal** |
+| Venture validation | İlk ship + outcome sonrası yükselir |
+| **Composite** | `svos-health.sh` ile canlı ölçüm |
+
+**İlk venture sonrası checklist:**
+
+1. `init-venture.sh` + `bridge-venture.sh`
+2. `ulas decide` → `work` → `dispatch` → `execute` → `outcome`
+3. ADR + postmortem → `06-learning/`
+4. `ulas memory ingest` → capability knowledge
+5. Play Store ship → `stage: shipped`
+
+---
+
+## Her yeni projeye aktarım
+
+Bu repo **Operating System** olarak tasarlandı — uygulama kodundan bağımsız:
+
+```bash
+# Fabrikadan hedef projeye (Android Factory + SVOS)
+./scripts/sync-standards.sh /path/to/my-project
+
+# Yalnızca SVOS katmanı
+./APP-FABRIKASI/scripts/install-svos-into-project.sh /path/to/my-project
+
+# Yeni girişim charter
+./APP-FABRIKASI/scripts/init-venture.sh "My App" my-app src/
+
+# AI bağlamı (8K token bütçesi)
+./APP-FABRIKASI/scripts/assemble-svos-context.sh my-app
+```
+
+Proje kökünde `.svos.json` kurulum meta verisini tutar. AI akışı: **YAPILACAKLAR → dispatch queue → IDE düzeltme → verify → evidence**.
 
 ---
 
@@ -106,15 +147,38 @@ Charter: [`08-ventures/ulas-player/venture.json`](08-ventures/ulas-player/ventur
 
 > Kurum hafızası ve karar mühendisliği. **Prompt arşivi değil.**
 
-→ [`ULAS/README.md`](ULAS/README.md) · **Phase 3:** [`ULAS/CONSOLIDATION.md`](ULAS/CONSOLIDATION.md) · `ulas report`
+→ [`ULAS/capability-memory/CAPABILITY_MEMORY_AUDIT_v2.md`](ULAS/capability-memory/CAPABILITY_MEMORY_AUDIT_v2.md)
 
 | ULAS | Rol |
 |------|-----|
 | `ulas decide` | Route · gate · audit |
+| `ulas work generate` | Decision → work packages + manifests |
+| `ulas capability route` | Capability → provider matching |
+| `ulas dispatch plan` | Provider dispatch contracts |
+| `ulas memory query` | Capability operational knowledge |
+| `ulas execute run` | Verify → self-heal → evidence bridge |
+| `ulas dispatch next` | IDE queue card (no API key) |
+| `ulas evidence collect` | Bridge + failure report sync |
 | `ulas outcome` | Effectiveness feedback loop |
 | `ulas report` | LOW_CONFIDENCE precision · tier usage |
+| `ulas maturity audit` | Olgunluk skoru + açık gap listesi |
 
 CL4R1T4S'tan **prensip** çıkarıldı; prompt metni repoda **yok**.
+
+### AI Dispatch (IDE — birincil yol)
+
+API anahtarı gerekmez. Cursor/Claude içinde kuyruk kartı:
+
+```bash
+ulas dispatch plan --decision-id ID
+ulas dispatch execute --decision-id ID      # queue kartları oluşturur
+ulas dispatch next --decision-id ID           # sıradaki kartı göster
+# IDE'de düzelt → ulas dispatch complete --decision-id ID --dispatch-id DID --result success
+ulas execute run --decision-id ID             # yeniden doğrula
+ulas dispatch reset --decision-id ID          # skipped → pending
+```
+
+Kural: [`.cursor/rules/dispatch-ide.mdc`](.cursor/rules/dispatch-ide.mdc) · Opsiyonel SDK: `--mode sdk` + `CURSOR_API_KEY`
 
 ---
 
@@ -135,7 +199,7 @@ APP-FABRIKA/
 │   ├── NORTH_STAR.md
 │   ├── STABILIZATION.md
 │   ├── 01-core … 10-runtime/   (+ PURPOSE.md her birinde)
-│   └── 08-ventures/ulas-player/
+│   └── 08-ventures/_template/
 ├── templates/android/      ← Android adapter impl (frozen)
 ├── governance/               ← geçiş — Android Factory
 └── scripts/                  ← init-new-app, CI
@@ -162,4 +226,4 @@ APP-FABRIKA/
 
 ---
 
-**Sonraki adım:** `ulas-player` build & ship — OS'u validate et, genişletme.
+**Sonraki adım:** Hedef projede `install-svos-into-project.sh` veya `init-venture.sh` ile ilk venture charter'ı oluştur.

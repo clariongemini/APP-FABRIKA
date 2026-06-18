@@ -21,7 +21,7 @@ Bilinen hataları tekrarlamamak.
   "id": "NA-001",
   "category": "architecture",
   "summary": "One-line lesson",
-  "venture_slug": "ulas-player",
+  "venture_slug": "{slug}",
   "adr_ref": "SVOS-ADR-003",
   "failure_ref": "06-learning/failures/...",
   "created": "2026-06-14",

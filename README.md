@@ -11,19 +11,20 @@
 # Ulas Autonomous Android APP Factory
 
 <h3>
-  <em>Cursor-native · GitHub Template · Executive OS · Product Portfolio</em>
+  <em>Android Factory · Software Venture OS · Cursor-native · GitHub Template</em>
 </h3>
 
 <p>
-  <strong>🇹🇷</strong> Android uygulamalarını her projede aynı mühendislik disipliniyle üreten<br>
-  <strong>standart, governance, intelligence ve Gradle fabrika şablonu.</strong><br>
-  Plan onaylanmadan kod üretilmez; fabrika başarısı portföydeki gerçek ürün sonuçlarıyla ölçülür.
+  <strong>🇹🇷</strong> Android uygulamalarını aynı mühendislik disipliniyle üreten<br>
+  <strong>standart, governance, intelligence ve Gradle fabrika şablonu</strong> —<br>
+  üzerine taşınabilir <strong>Software Venture OS</strong> (<code>APP-FABRIKASI/</code>) katmanı.<br>
+  Plan onaylanmadan kod üretilmez; örnek venture veya validation verisi repoda tutulmaz.
 </p>
 
 <p>
   <strong>🇬🇧</strong> A production-grade <strong>standards, governance, intelligence & Gradle factory template</strong><br>
-  that ships Android apps under the same engineering discipline — every time.<br>
-  No code before an approved phase plan; factory success is measured by real product outcomes in your portfolio.
+  with a portable <strong>Software Venture OS</strong> (<code>APP-FABRIKASI/</code>) for venture lifecycle,<br>
+  evidence, and ULAS decision intelligence — no sample app or pre-seeded venture data in git.
 </p>
 
 <br>
@@ -39,7 +40,7 @@
 [![Version](https://img.shields.io/badge/sürüm-3.1.0-2563eb?style=flat-square)](.factory/meta.json)
 [![License](https://img.shields.io/badge/lisans-MIT-059669?style=flat-square)](LICENSE)
 [![Factory Health](https://img.shields.io/badge/factory_health-100%2F100-16a34a?style=flat-square)](docs/FACTORY_SCORECARD.md)
-[![CI](https://img.shields.io/github/actions/workflow/status/clariongemini/Android-App/validate.yml?branch=main&label=CI&style=flat-square)](https://github.com/clariongemini/Android-App/actions/workflows/validate.yml)
+[![CI](https://img.shields.io/github/actions/workflow/status/clariongemini/APP-FABRIKA/validate.yml?branch=main&label=CI&style=flat-square)](https://github.com/clariongemini/APP-FABRIKA/actions/workflows/validate.yml)
 
 <br>
 
@@ -47,7 +48,7 @@
 [![33 Layers](https://img.shields.io/badge/33_katman-360_bileşen-6366f1?style=flat-square)](docs/33-LAYER-ARCHITECTURE.md)
 [![Executive OS](https://img.shields.io/badge/Executive_OS-7.0-8b5cf6?style=flat-square)](docs/EXECUTIVE_OS.md)
 [![Agents](https://img.shields.io/badge/Cursor_ajanları-16-0ea5e9?style=flat-square)](AGENTS.md)
-[![Portfolio](https://img.shields.io/badge/V4-portfolio_·_outcomes-d97706?style=flat-square)](factory/outcomes/README.md)
+[![SVOS](https://img.shields.io/badge/SVOS-APP--FABRIKASI-7c3aed?style=flat-square)](APP-FABRIKASI/README.md)
 [![MCP](https://img.shields.io/badge/MCP-Browser_·_GitHub-64748b?style=flat-square)](docs/MCP_SETUP.md)
 
 <br><br>
@@ -71,7 +72,8 @@
 
 <br>
 
-**[Use this template](https://github.com/clariongemini/Android-App/generate)** ·
+**[Use this template](https://github.com/clariongemini/APP-FABRIKA/generate)** ·
+**[SVOS](APP-FABRIKASI/README.md)** ·
 **[Bootstrap](docs/BOOTSTRAP.md)** ·
 **[Factory Mission](FACTORY_MISSION.md)** ·
 **[Executive OS](docs/EXECUTIVE_OS.md)** ·
@@ -95,7 +97,9 @@
 
 **Ulas Autonomous Android APP Factory**, Android uygulamalarını her seferinde aynı mühendislik disipliniyle üretmek için tasarlanmış **GitHub template fabrika reposudur**. Cursor Agent Mode üzerinde çalışır: **16 departman ajanı**, **33 katmanlı governance**, **Executive OS**, otomatik kalite kapıları ve **Factory Intelligence** katmanı ile karar → mimari → kod → denetim → ölçüm → **ürün sonucu** zinciri yönetilir.
 
-Fabrika tek başına bir uygulama değildir. Bu repoda APK yaşamaz; `templates/android/project/` altındaki **10 modüllü Gradle iskeleti**, `init-new-app.sh` veya `sync-standards.sh` ile hedef projenize aktarılır. Governance ve intelligence verileri proje bazlı `runtime/` ağacında tutulur — fabrika şablonu temiz kalır, örnek uygulama adı taşımaz.
+Fabrika tek başına bir uygulama değildir. Bu repoda APK yaşamaz; `templates/android/project/` altındaki **10 modüllü Gradle iskeleti**, `init-new-app.sh` veya `sync-standards.sh` ile hedef projenize aktarılır. Governance ve intelligence verileri proje bazlı `runtime/` ağacında tutulur — fabrika şablonu temiz kalır.
+
+**Software Venture OS:** [`APP-FABRIKASI/`](APP-FABRIKASI/README.md) taşınabilir venture katmanıdır (ULAS, evidence, learning, portfolio). Repoda **hazır venture yok** — her projede `init-venture.sh` ile charter oluşturulur; runtime raporları `.gitignore` ile commit edilmez.
 
 **North star:** [`FACTORY_MISSION.md`](FACTORY_MISSION.md) — *Factory'nin amacı daha fazla governance üretmek değil, daha kısa sürede daha başarılı Android ürünleri üretmektir.*
 
@@ -112,7 +116,7 @@ Bu repo **Android** için Software Venture Operating System'tir. Gelecekte planl
 
 | Platform | Hedef repo (plan) | Not |
 |----------|-------------------|-----|
-| **Android** | Bu repo (`Android-App`) | Aktif — Gradle, Compose, Play Store |
+| **Android** | Bu repo (`APP-FABRIKA`) | Aktif — Gradle, Compose, Play Store, SVOS |
 | **iOS** | Ayrı fabrika şablonu | SwiftUI, SPM, App Store parity |
 | **Web** | Ayrı fabrika şablonu | React/Next veya eşdeğer stack |
 | **Claude / Agent** | Kural ve context katmanları | Cursor rules + Knowledge OS |
@@ -123,6 +127,7 @@ Bu repo **Android** için Software Venture Operating System'tir. Gelecekte planl
 
 ### Ne sağlar?
 
+- **APP-FABRIKASI (SVOS)** — Taşınabilir venture OS: charter → evidence → ULAS → learning ([`APP-FABRIKASI/README.md`](APP-FABRIKASI/README.md))
 - **YAPILACAKLAR (F0–F8)** — Plan onaylanmadan kod üretilmez; aynı anda tek faz `işleniyor`
 - **16 departman ajanı** — CPO, Baş Mimar, Android Elite, güvenlik, OEM, CEO/CAO/EGC…
 - **33 katman · 360 bileşen** — Merkezi denetim çerçevesi (`docs/33-LAYER-ARCHITECTURE.md`)
@@ -134,9 +139,27 @@ Bu repo **Android** için Software Venture Operating System'tir. Gelecekte planl
 
 ### Hızlı başlangıç
 
+**Yeni Android uygulaması**
+
+```bash
+./scripts/first-setup.sh
+./scripts/init-new-app.sh "My App" "com.company.myapp"
+# Cursor → /baslat
 ```
-Use this template → ./scripts/first-setup.sh → ./scripts/init-new-app.sh "App" "com.pkg.app"
-→ Cursor'da /baslat
+
+**Mevcut projeye fabrika + SVOS**
+
+```bash
+./scripts/sync-standards.sh /path/to/existing-project
+cd /path/to/existing-project && ./scripts/governance/init-governance.sh
+./APP-FABRIKASI/scripts/init-venture.sh "My App" my-app .
+./APP-FABRIKASI/scripts/svos-health.sh
+```
+
+**Yalnızca SVOS katmanı**
+
+```bash
+./APP-FABRIKASI/scripts/install-svos-into-project.sh /path/to/project
 ```
 
 ### Kalite kapısı
@@ -195,7 +218,7 @@ This repo is the **Android** Software Venture OS. Planned factory variants:
 
 | Platform | Target repo (planned) | Notes |
 |----------|----------------------|-------|
-| **Android** | This repo (`Android-App`) | Active — Gradle, Compose, Play Store |
+| **Android** | This repo (`APP-FABRIKA`) | Active — Gradle, Compose, Play Store, SVOS |
 | **iOS** | Separate factory template | SwiftUI, SPM, App Store parity |
 | **Web** | Separate factory template | React/Next or equivalent stack |
 | **Claude / Agents** | Rules & context layers | Cursor rules + Knowledge OS |
@@ -217,9 +240,27 @@ This repo is the **Android** Software Venture OS. Planned factory variants:
 
 ### Quick start
 
+**New Android app**
+
+```bash
+./scripts/first-setup.sh
+./scripts/init-new-app.sh "My App" "com.company.myapp"
+# Cursor → /baslat
 ```
-Use this template → ./scripts/first-setup.sh → ./scripts/init-new-app.sh "App" "com.pkg.app"
-→ /baslat in Cursor
+
+**Existing project + factory + SVOS**
+
+```bash
+./scripts/sync-standards.sh /path/to/existing-project
+cd /path/to/existing-project && ./scripts/governance/init-governance.sh
+./APP-FABRIKASI/scripts/init-venture.sh "My App" my-app .
+./APP-FABRIKASI/scripts/svos-health.sh
+```
+
+**SVOS layer only**
+
+```bash
+./APP-FABRIKASI/scripts/install-svos-into-project.sh /path/to/project
 ```
 
 ### Quality gate
@@ -579,7 +620,7 @@ Same pipeline as the diagram above: **YAPILACAKLAR gate** → Factory Division (
 
 ### Adım 1 — Template reposunu oluştur
 
-1. [github.com/clariongemini/Android-App](https://github.com/clariongemini/Android-App) adresine git
+1. [github.com/clariongemini/APP-FABRIKA](https://github.com/clariongemini/APP-FABRIKA) adresine git
 2. **Use this template** → **Create a new repository**
 3. Yeni repoyu klonla ve Cursor'da aç:
 
@@ -729,7 +770,7 @@ python3 scripts/governance/validate-audit-chain.py
 
 ### Step 1 — Create from template
 
-1. Go to [github.com/clariongemini/Android-App](https://github.com/clariongemini/Android-App)
+1. Go to [github.com/clariongemini/APP-FABRIKA](https://github.com/clariongemini/APP-FABRIKA)
 2. Click **Use this template** → **Create a new repository**
 3. Clone and open in Cursor:
 
@@ -832,6 +873,11 @@ Monetization: [e.g. subscription, 7-day free trial]
 │   ├── commands/             # /baslat /devam-et /denetle /faz-durumu
 │   ├── skills/               # planner, executor, zero-hallucination, audit
 │   └── agents/               # phase-verifier, plan-expander, auditors
+├── APP-FABRIKASI/             # Software Venture OS (portable, no pre-seeded venture)
+│   ├── scripts/               # init-venture, bridge-venture, svos-health
+│   ├── 02-platforms/          # Android bridge defaults
+│   ├── 08-ventures/_template/ # Charter şablonu (canlı venture gitignore)
+│   └── ULAS/                  # Decision intelligence
 ├── factory/                  # Intelligence + Portfolio + Outcomes (canonical, git)
 │   ├── proof/ memory/ decision_accuracy/ revenue/ benchmark/
 │   ├── portfolio/            # App registry scaffold
@@ -1043,7 +1089,7 @@ GitHub Template → `first-setup.sh` → `init-new-app.sh` → `/baslat`
 ### Senaryo B — Mevcut Android projesine aktarma
 
 ```bash
-git clone https://github.com/clariongemini/Android-App.git ~/android-factory
+git clone https://github.com/clariongemini/APP-FABRIKA.git ~/android-factory
 ~/android-factory/scripts/sync-standards.sh /path/to/existing-app
 cd /path/to/existing-app && ./scripts/governance/init-governance.sh
 ```
@@ -1053,7 +1099,7 @@ Mevcut `app/` kodu korunur; AI kuralları ve governance eklenir.
 ### Senaryo C — Submodule ile güncel standart
 
 ```bash
-git submodule add https://github.com/clariongemini/Android-App.git .factory
+git submodule add https://github.com/clariongemini/APP-FABRIKA.git .factory
 ./.factory/scripts/sync-standards.sh .
 git submodule update --remote .factory && ./.factory/scripts/sync-standards.sh .
 ```
@@ -1075,13 +1121,25 @@ Detay: [`docs/BOOTSTRAP.md`](docs/BOOTSTRAP.md)
 Prompt → Google Stitch (tasarım) → AI Studio (Android export) → fabrika ile olgunlaştırma:
 
 ```bash
-export FACTORY_REPO=~/Android-App-Factory
+export FACTORY_REPO=~/APP-FABRIKA-Factory
 "$FACTORY_REPO/scripts/bootstrap-external-project.sh" /path/to/export "App" "com.app" "vizyon"
 ```
 
 Cursor: `/import-aistudio` → `/baslat` — Detay: [`docs/AI_STUDIO_IMPORT.md`](docs/AI_STUDIO_IMPORT.md)
 
 **Fabrika doğrulaması (CI/lokal):** `./scripts/factory-quality-gate.sh` · `./scripts/run-factory-audit.sh`
+
+### Senaryo F — Software Venture OS (SVOS)
+
+Mevcut veya yeni kod tabanında venture charter, build köprüsü ve olgunluk denetimi:
+
+```bash
+./APP-FABRIKASI/scripts/init-venture.sh "My App" my-app /path/to/codebase
+./APP-FABRIKASI/scripts/bridge-venture.sh my-app
+./APP-FABRIKASI/scripts/svos-health.sh
+```
+
+Detay: [`APP-FABRIKASI/README.md`](APP-FABRIKASI/README.md) · [`APP-FABRIKASI/NORTH_STAR.md`](APP-FABRIKASI/NORTH_STAR.md)
 
 ### Usage Scenarios (EN) {#usage-scenarios-en}
 
@@ -1092,6 +1150,7 @@ Cursor: `/import-aistudio` → `/baslat` — Detay: [`docs/AI_STUDIO_IMPORT.md`]
 | **C — Submodule** | Add factory as submodule; `sync-standards.sh` on update |
 | **D — Integrity check** | `run-factory-audit.sh` + `factory-quality-gate.sh` + `ci-template-build.sh` |
 | **E — AI Studio import** | `bootstrap-external-project.sh` → `/baslat` |
+| **F — SVOS venture** | `init-venture.sh` → `bridge-venture.sh` → `svos-health.sh` |
 
 ---
 
@@ -1099,6 +1158,7 @@ Cursor: `/import-aistudio` → `/baslat` — Detay: [`docs/AI_STUDIO_IMPORT.md`]
 
 | Belge | Açıklama |
 |-------|----------|
+| [`APP-FABRIKASI/README.md`](APP-FABRIKASI/README.md) | Software Venture OS — charter, evidence, ULAS |
 | [`docs/AUTHOR.md`](docs/AUTHOR.md) | Proje sahibi — Ulaş Kaşıkcı |
 | [`docs/00-INDEX.md`](docs/00-INDEX.md) | Proje hafızası |
 | [`docs/BOOTSTRAP.md`](docs/BOOTSTRAP.md) | Detaylı kurulum senaryoları |
@@ -1142,5 +1202,5 @@ Overmind önce `YAPILACAKLAR.md` okur; aktif faz bitmeden rastgele kod üretmez.
 MIT — [`LICENSE`](LICENSE)
 
 <p align="center">
-  <strong>Ulaş Kaşıkcı</strong> · Android fabrika şablonu · Cursor + Executive OS
+  <strong>Ulaş Kaşıkcı</strong> · Android Factory + Software Venture OS · Cursor + Executive OS
 </p>

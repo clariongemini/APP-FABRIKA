@@ -17,7 +17,7 @@
 
 > Scaffold üretme hızı, venture üretme hızını geçer.
 
-**Kontrol:** Success = `ulas-player` 7-step lifecycle, not new ULAS folders.
+**Kontrol:** Success = first venture 7-step lifecycle, not new ULAS folders.
 
 ## Security
 

@@ -3,13 +3,41 @@
   "description": "Calibration not punishment. Trust 0-100 per capability.",
   "initial_trust": 85,
   "capabilities": {
-    "planner": {"trust": 85, "reviews": 0, "calibration_delta": 0},
-    "architect": {"trust": 92, "reviews": 0, "calibration_delta": 0},
-    "security": {"trust": 95, "reviews": 0, "calibration_delta": 0},
-    "qa": {"trust": 88, "reviews": 0, "calibration_delta": 0},
-    "performance": {"trust": 85, "reviews": 0, "calibration_delta": 0},
-    "ux": {"trust": 85, "reviews": 0, "calibration_delta": 0},
-    "auditor": {"trust": 90, "reviews": 0, "calibration_delta": 0}
+    "planner": {
+      "trust": 85,
+      "reviews": 0,
+      "calibration_delta": 0
+    },
+    "architect": {
+      "trust": 85,
+      "reviews": 0,
+      "calibration_delta": 0
+    },
+    "security": {
+      "trust": 85,
+      "reviews": 0,
+      "calibration_delta": 0
+    },
+    "qa": {
+      "trust": 85,
+      "reviews": 0,
+      "calibration_delta": 0
+    },
+    "performance": {
+      "trust": 85,
+      "reviews": 0,
+      "calibration_delta": 0
+    },
+    "ux": {
+      "trust": 85,
+      "reviews": 0,
+      "calibration_delta": 0
+    },
+    "auditor": {
+      "trust": 85,
+      "reviews": 0,
+      "calibration_delta": 0
+    }
   },
   "calibration": {
     "good_outcome_delta": 0.5,

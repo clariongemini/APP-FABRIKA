@@ -30,20 +30,26 @@ Değil: "Yeni klasör oluşturuldu."
 
 ---
 
-## İlk validation venture
+## İlk venture (her projede)
 
-| Alan | Değer |
-|------|-------|
-| **Slug** | `ulas-player` |
-| **Ad** | Ulaş Player |
-| **Platform** | Android (mevcut adaptör) |
+Repoda hazır venture **yok**. Hedef projede `init-venture.sh` ile oluşturulur:
+
+```bash
+./APP-FABRIKASI/scripts/init-venture.sh "My App" my-app path/to/codebase/
+```
+
+| Alan | Şablon |
+|------|--------|
+| **Slug** | `{slug}` — örn. `my-app` |
+| **Ad** | Charter'da tanımlanır |
+| **Platform** | `android`, `ios`, `web`, … |
 | **Durum** | Charter → build → ship → evidence |
 
 ### Lifecycle checklist
 
-- [ ] 1. Venture charter created (`08-ventures/ulas-player/`)
-- [ ] 2. Product shipped (Play Store)
-- [ ] 3. Evidence bundle generated (`07-evidence/ulas-player/`)
+- [ ] 1. Venture charter created (`08-ventures/{slug}/`)
+- [ ] 2. Product shipped (store / production)
+- [ ] 3. Evidence bundle generated (`07-evidence/{slug}/`)
 - [ ] 4. Outcome recorded
 - [ ] 5. Postmortem completed (`06-learning/postmortems/`)
 - [ ] 6. Learning artifacts updated (ADR / pattern)
@@ -65,4 +71,4 @@ Değil: "Yeni klasör oluşturuldu."
 
 → [`STABILIZATION.md`](STABILIZATION.md)
 
-Scaffold genişlemesi durdu. Venture validation başladı.
+Scaffold genişlemesi durdu. İlk venture hedef projede validate edilir.

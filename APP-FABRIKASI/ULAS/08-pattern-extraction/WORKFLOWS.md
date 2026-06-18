@@ -35,4 +35,4 @@ Outcome, failure, postmortem, venture → **reusable pattern**.
 
 ## Başarı ölçütü
 
-`ulas-player` postmortem → ≥1 experimental pattern veya NEVER_AGAIN entry.
+venture postmortem → ≥1 experimental pattern veya NEVER_AGAIN entry.

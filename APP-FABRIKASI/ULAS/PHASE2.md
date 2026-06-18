@@ -1,5 +1,7 @@
 # ULAS Phase 2 — Decision Execution OS
 
+> **Taşınabilir şablon.** `SLUG` = hedef projede `init-venture.sh` ile oluşturduğunuz venture slug'ı. Repoda önceden tanımlı venture yoktur.
+
 ## Shift
 
 | Phase 1 | Phase 2 |
@@ -15,11 +17,11 @@
 ./APP-FABRIKASI/scripts/ulas.sh route --class D
 
 # Context assembly only
-./APP-FABRIKASI/scripts/ulas.sh assemble --venture ulas-player --class B
+./APP-FABRIKASI/scripts/ulas.sh assemble --venture SLUG --class B
 
 # Full lifecycle gate
 ./APP-FABRIKASI/scripts/ulas.sh decide \
-  --venture ulas-player \
+  --venture SLUG \
   --class B \
   --title "Charter approval" \
   --reviewers architect,qa

@@ -18,4 +18,4 @@ OS'un **ne öğrendiğini bilmesi** — context assembly, decision/pattern/evide
 
 ## Başarı ölçütü
 
-`ulas-player` build sırasında context manifest 8K token bütçesine uygun assemble edildi — gereksiz dosya okunmadı.
+Venture build sırasında context manifest 8K token bütçesine uygun assemble edildi — gereksiz dosya okunmadı (`assemble-svos-context.sh`).

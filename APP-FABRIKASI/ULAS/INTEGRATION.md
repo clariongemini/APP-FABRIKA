@@ -41,11 +41,11 @@ APP-FABRIKASI/10-runtime/ulas/
 └── never-again-index.json
 ```
 
-Scaffold: şema tanımlı; script `ulas-assemble-context.sh` — **ulas-player ship sonrası**.
+Scaffold: şema tanımlı; script `ulas-assemble-context.sh` — **first venture ship sonrası**.
 
 ---
 
-## İlk venture (`ulas-player`) ULAS checklist
+## İlk venture (`{slug}`) ULAS checklist
 
 - [ ] Context manifest assembled (Tier 2)
 - [ ] Charter confidence scored

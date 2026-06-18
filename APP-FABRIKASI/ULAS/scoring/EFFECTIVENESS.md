@@ -1,5 +1,7 @@
 # ULAS Effectiveness Framework
 
+> **Taşınabilir şablon.** Metrikler hedef projede `ulas outcome` ve `ulas report` ile dolar; repoda örnek karar/outcome yoktur.
+
 ## Purpose
 
 Prove — not assume — that ULAS improves decisions over time.
@@ -70,7 +72,7 @@ Hypothesis: correct escalation → lower average waste vs always-T3.
 
 ```bash
 ./APP-FABRIKASI/scripts/ulas.sh outcome \
-  --decision-id ulas-player-b-20260617194455 \
+  --decision-id {decision-id} \
   --result correct_block \
   --note "Would have shipped without evidence"
 ```

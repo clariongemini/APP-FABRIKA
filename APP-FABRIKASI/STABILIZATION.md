@@ -8,9 +8,9 @@
 
 ## Primary objective
 
-Run the **first real venture** through the complete lifecycle.
+Run the **first real venture** through the complete lifecycle in each deployed project.
 
-**Target venture:** [`ulas-player`](08-ventures/ulas-player/venture.json)
+**Target:** Venture created via `init-venture.sh` — not pre-seeded in the template repo.
 
 ---
 
@@ -31,8 +31,8 @@ Run the **first real venture** through the complete lifecycle.
 
 | İzin | Örnek |
 |------|-------|
-| Venture charter + ship | `ulas-player` |
-| **ULAS decision layer** | **Phase 3 Consolidation** — `ulas report` · `ulas outcome` |
+| Venture charter + ship | `init-venture.sh` + `bridge-venture.sh` |
+| **ULAS decision layer** | `ulas report` · `ulas outcome` |
 | Evidence / outcome / postmortem | Gerçek store verisi |
 | PURPOSE.md, README clarifications | Hafıza — unutmayı önler |
 | Bugfix (Android adapter) | CI regression |
@@ -54,6 +54,6 @@ Run the **first real venture** through the complete lifecycle.
 
 ## Exit condition
 
-Stabilization lifts when **ulas-player** checklist 7/7 complete.
+Stabilization lifts when the **first venture** checklist 7/7 is complete in the target project.
 
 Sonra: ikinci venture — yine adapter genişletmesi değil, kanıt tekrarı.

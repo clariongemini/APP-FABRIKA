@@ -18,4 +18,4 @@ OS'un takip ettiği birim **kod değil, girişimdir**. Problem, market, sonuç, 
 
 ## Başarı ölçütü
 
-**İlk gerçek venture uçtan uca yönetildi:** `ulas-player` charter → ship → evidence → learning.
+**İlk gerçek venture uçtan uca yönetildi:** charter → ship → evidence → learning (`init-venture.sh` ile başlar).

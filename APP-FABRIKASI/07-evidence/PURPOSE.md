@@ -19,4 +19,4 @@
 
 ## Başarı ölçütü
 
-`ulas-player` ship sonrası: Play Console + Firebase (veya eşdeğer) summary mevcut, `evidence_status: collected`.
+İlk venture ship sonrası: Play Console + Firebase (veya eşdeğer) summary mevcut, `evidence_status: collected`.

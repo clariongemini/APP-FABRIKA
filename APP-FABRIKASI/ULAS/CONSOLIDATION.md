@@ -33,7 +33,7 @@ Bu riski kapat.
 |------|
 | `ulas outcome` — karar sonucu kaydı |
 | `ulas metrics` / `ulas report` — effectiveness |
-| Venture ship + evidence (ulas-player) |
+| Venture ship + evidence (first venture) |
 
 ---
 
@@ -58,3 +58,30 @@ ULAS şunları cevaplayabilmeli:
 ```
 
 → [`scoring/EFFECTIVENESS.md`](scoring/EFFECTIVENESS.md) · [`AUDIT.md`](AUDIT.md)
+
+---
+
+## Phase 4 — Feedback closure (successor)
+
+→ [`PHASE4_FEEDBACK_CLOSURE_AUDIT.md`](PHASE4_FEEDBACK_CLOSURE_AUDIT.md)
+
+```bash
+./APP-FABRIKASI/scripts/ulas.sh feedback-audit
+./APP-FABRIKASI/scripts/ulas.sh calibrate --reviewer architect --outcome good --decision-id ID --reason "..."
+```
+
+No new motors — validate self-improvement loops only.
+
+---
+
+## Phase 6 — Predictive risk (gated)
+
+→ [`PHASE6_PREDICTIVE_DECISION.md`](PHASE6_PREDICTIVE_DECISION.md)
+
+```bash
+./APP-FABRIKASI/scripts/ulas.sh risk-gate
+./APP-FABRIKASI/scripts/ulas.sh risk --venture SLUG --class B --reviewers architect,qa
+```
+
+Designed now; **enforcement** when evidence gate opens.
+

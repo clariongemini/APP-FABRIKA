@@ -19,4 +19,4 @@ Geçmişten öğrenmek — **ADR, pattern, failure, postmortem** venture ve plat
 
 ## Başarı ölçütü
 
-`ulas-player` postmortem sonrası en az 1 ADR ve 0–1 pattern promotion (evidence-linked).
+İlk venture postmortem sonrası en az 1 ADR ve 0–1 pattern promotion (evidence-linked).

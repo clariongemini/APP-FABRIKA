@@ -8,7 +8,7 @@ Audio/video playback with background, cache, and OEM battery constraints.
 
 ## When to use
 
-- Players, podcasts, offline media libraries
+- Media player apps, podcasts, offline media libraries
 
 ## Architecture checklist
 

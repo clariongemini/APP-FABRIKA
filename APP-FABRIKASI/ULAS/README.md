@@ -1,24 +1,21 @@
-# ULAS — Decision Execution OS
+# ULAS — Work Engine (P2)
 
-> **Phase 2:** Prensip deposu değil — **çalışan karar motoru**.
+> **Decision → Work Package → Execution → Verification → Evidence**
 
 | Meta | Değer |
 |------|-------|
-| **Phase** | 3 — Consolidation (measure) |
-| **Engine** | `bin/ulas.py` |
-| **CLI** | `APP-FABRIKASI/scripts/ulas.sh` |
-
----
-
-## Komutlar
+| **Execution** | `ulas work` — P2 |
+| **Workforce** | P4 — blocked until work proven |
 
 ```bash
 ./APP-FABRIKASI/scripts/ulas.sh decide ...
-./APP-FABRIKASI/scripts/ulas.sh outcome --decision-id ID --result correct_block
-./APP-FABRIKASI/scripts/ulas.sh report      # effectiveness
-./APP-FABRIKASI/scripts/ulas.sh metrics     # JSON aggregates
-./APP-FABRIKASI/scripts/ulas.sh audit       # component audit
+./APP-FABRIKASI/scripts/ulas.sh work generate --decision-id ID
+./APP-FABRIKASI/scripts/ulas.sh work show --decision-id ID
+./APP-FABRIKASI/scripts/init-venture.sh "My App" my-app path/to/codebase/
+./APP-FABRIKASI/scripts/bridge-venture.sh my-app
 ```
+
+→ [`work/WORK_ENGINE.md`](work/WORK_ENGINE.md) · [`FOUR_AXES.md`](FOUR_AXES.md)
 
 ---
 
