@@ -1,3 +1,5 @@
+> ⚠️ Bu repo arşivlenmiştir. Aktif geliştirme: https://github.com/UlasKasikci/repo
+
 # App-Fabrika Web Edition
 
 **Freelance web projesi üretim fabrikası:** deterministik state graph, 5 ajanlı
